@@ -73,12 +73,15 @@ body {
 
 @layer utilities{
   .main-navbar{
-    @apply bg-primary-1 flex flex-row p-4 hidden sm:block  cursor-pointer 
+    @apply bg-primary-1 flex flex-row p-4 hidden sm:block  cursor-pointer w-full
   }
-  .hero-card{
-    @apply flex flex-row gap-10  mt-[100px] ml-40  text-[50px]
+  .hero-card{ 
+    @apply flex flex-row gap-10  mt-[100px] ml-40  text-[50px] w-full
   }
   .main-btn{
-    @apply bg-secondry-3 border-r-0  text-foreground p-4 rounded-md cursor-pointer hover:translate-x-2
+    @apply bg-secondry-3 border-r-0  text-foreground p-6 rounded-md cursor-pointer hover:translate-x-4 hover:transition-all
+  }
+  .video-player{
+    @apply w-[600px] h-[350px]   ml-[100px]
   }
 }
