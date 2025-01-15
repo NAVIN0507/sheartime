@@ -11,17 +11,19 @@ export default function Home() {
    <section className="flex flex-col">
     <div className="flex flex-col">
       <Navbar/>
+       <div className="line" />
       <div className="flex items-center">
-        
+      
         <HeroCard/>
       </div>
-    
+     <div className="line" />
       <h1 className="guide-title">How to use ShearTime?</h1>
       <div className="grid grid-rows-1">
         <Guidecard imageUrl="/icons/1.svg" title="Create your Account" des="Create your new account in ShearTime" className="text-green-1 ml-[300px] mt-20"/>
         <Guidecard imageUrl="/icons/2.svg" title="Book Your Slot" des="Book your first slot now ShearTime" className="ml-[800px] mt-5 text-red-400 "/>
         <Guidecard imageUrl="/icons/3.svg" title="Get your Hair Cut" des="Go to shop at time and get hair cut" className="text-secondry-1 ml-[300px] mt-5"/>
       </div>
+      <div className="line" />
       <div>
         <h1 className={cn("guide-title" , 'text-green-4')}>Development Team and Contact</h1>
         <Testimonial/>

@@ -24,13 +24,7 @@ const HeroCard = () => {
     </div>
     </div>
     <div className='video-player'>
-       {/* <Image
-       src="/images/herobanner.svg"
-         alt='hero-banner'
-         width={600}
-         height={200}
-         className='w-full' 
-         /> */}
+      
          {/* <Herocarousel/> */}
          {/* <HeroCircle/> */}
     </div>

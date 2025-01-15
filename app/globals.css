@@ -180,5 +180,5 @@ body {
   }
 }
 .line{
-  @apply w-[500px] ml-20 border-2
+  @apply w-[500px]  border-2 items-center justify-center ml-[500px] mt-10 border-green-1
 }
