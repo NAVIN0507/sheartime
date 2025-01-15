@@ -76,6 +76,9 @@ body {
     @apply bg-primary-1 flex flex-row p-4 hidden sm:block  cursor-pointer 
   }
   .hero-card{
-    @apply flex flex-row gap-10  mt-[80px] ml-40
+    @apply flex flex-row gap-10  mt-[100px] ml-40  text-[50px]
+  }
+  .main-btn{
+    @apply bg-secondry-3 border-r-0  text-foreground p-4 rounded-md cursor-pointer hover:translate-x-2
   }
 }
