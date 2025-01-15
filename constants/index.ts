@@ -1,0 +1,1 @@
+export const mainNavItems = ["Home" ,"About" , "Contact"]
