@@ -3,6 +3,7 @@ import { Button } from './ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
 import Herocarousel from './Herocarousel'
+import HeroCircle from './HeroCircle'
 
 const HeroCard = () => {
   return (
@@ -30,7 +31,8 @@ const HeroCard = () => {
          height={200}
          className='w-full' 
          /> */}
-         <Herocarousel/>
+         {/* <Herocarousel/> */}
+         {/* <HeroCircle/> */}
     </div>
   </section>
   )

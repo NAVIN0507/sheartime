@@ -76,12 +76,109 @@ body {
     @apply bg-primary-1 flex flex-row p-4 hidden sm:block  cursor-pointer w-full
   }
   .hero-card{ 
-    @apply flex flex-row gap-10  mt-[100px] ml-40  text-[50px] w-full
+    @apply flex flex-row gap-20  mt-[100px] ml-40  text-[50px] w-full
   }
   .main-btn{
     @apply bg-secondry-3 border-r-0  text-foreground p-6 rounded-md cursor-pointer hover:translate-x-4 hover:transition-all
   }
   .video-player{
-    @apply w-[600px] h-[350px]   ml-[100px]
+    @apply w-[600px] h-[350px]   ml-[200px]
   }
+}
+/* In your global styles (e.g., styles/globals.css) */
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-from-left {
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+/* Optional: Add delays for staggered animation */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+@layer utilities{
+  .guide-container{
+    @apply mt-[50px]
+  }
+  .guide-item{
+    @apply  w-[400px] text-white gap-4 h-[200px] bg-primary-2 items-center justify-center text-center p-4 
+
+    rounded-lg
+  }
+  .guide-title{
+    @apply text-5xl mt-20 ml-40 text-white  
+  }
+}
+/* In your styles/globals.css or a dedicated CSS file */
+
+@keyframes circularMotion {
+  0% {
+    transform: rotate(0deg) translateX(200px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(200px) rotate(-360deg);
+  }
+}
+
+@layer utilities {
+  .guide-containerc {
+    @apply mt-[100px];
+  }
+
+  .guide-itemc {
+    @apply absolute flex flex-col items-center   w-[150px] h-[150px] text-center justify-center text-gray-800 p-4 rounded-full;
+  }
+
+  /* Apply animation for circular motion */
+  .animate-circular-motion {
+    animation: circularMotion 12s linear infinite;
+  }
+
+  /* Delay animations for each guide item */
+  .delay-0 {
+    animation-delay: 0s;
+  }
+  .delay-1 {
+    animation-delay: 2s;
+  }
+  .delay-2 {
+    animation-delay: 4s;
+  }
+  .delay-3 {
+    animation-delay: 6s;
+  }
+  .delay-4 {
+    animation-delay: 8s;
+  }
+  .delay-5 {
+    animation-delay: 10s;
+  }
+}
+@layer utilities{
+  .guide-card{
+    @apply bg-primary-2 w-[400px] h-[150px] p-4 rounded-lg hover:translate-x-2 hover:transition-all cursor-pointer
+  }
+  .guide-info{
+    @apply mt-20 text-white ml-[300px]
+  }
+  .guide-des{
+    @apply text-2xl  ml-[50px] mt-5
+  }
+}
+.line{
+  @apply w-[500px] ml-20 border-2
 }
