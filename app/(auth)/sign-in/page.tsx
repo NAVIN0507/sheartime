@@ -18,6 +18,7 @@ import { signInSchema } from '@/lib/validations/auth.validation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Loader } from 'lucide-react'
+import Typewriter from '@/components/fancy/typewriter'
 export const page = () => {
     const [isLoading, setisLoading] = useState(false)
     const form = useForm<z.infer<typeof signInSchema>>({
@@ -48,7 +49,20 @@ export const page = () => {
             </div>
             <div className='flex flex-col gap-4'>
                 <h1 className='text-2xl font-semibold text-white'>
-                    Welcome back to ShearTime
+                    Welcome back to 
+                    <Typewriter
+                    text={[
+            "ShearTime",
+            "ShearTime",
+            "ShearTime",
+            "ShearTime"
+          ]}
+          speed={70}
+          className="text-white ml-2 text-[23px]"
+          waitTime={1500}
+          deleteSpeed={40}
+          cursorChar={"#"}
+                    />
                 </h1>
                 <p className='text-white'>
                     Sign in to access your account and continue Shearing
