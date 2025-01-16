@@ -29,6 +29,7 @@ const HeroCard = () => {
             }}
             falloff="gaussian"
             radius={100}
+            //@ts-ignore
             containerRef={containerRef}   
       />
       <Typewriter
