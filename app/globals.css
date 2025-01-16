@@ -105,7 +105,7 @@ body {
 
 @layer utilities{
   .guide-card{
-    @apply bg-primary-2 w-[400px] h-[150px] p-4 rounded-lg hover:translate-x-2 hover:transition-all cursor-pointer max-lg:flex-col max-lg:ml-[-200px] max-lg:justify-start max-lg:items-start
+    @apply bg-primary-2 w-[400px] h-[150px] p-4 rounded-lg hover:translate-x-2 hover:transition-all cursor-pointer max-lg:flex-col max-lg:ml-[-200px] max-lg:justify-start max-lg:items-start 
   } 
   .guide-info{
     @apply mt-20 text-white ml-[300px]
@@ -117,4 +117,28 @@ body {
 .line{
   @apply w-[500px]  border-2 items-center justify-center ml-[500px] mt-10 border-secondry-1  max-lg:hidden
 }
+/* AUTH STYLING */
+@layer utilities{
+  .auth-container{
+    @apply relative flex flex-col-reverse text-white sm:flex-row
+  }
+  .auth-form{
+    @apply my-auto flex h-full min-h-screen flex-1 items-center   bg-primary-1 px-5 py-10
+  }
+  .auth-box{
+    @apply mx-auto flex max-w-xl flex-col gap-6 rounded-lg p-10
+}
+.auth-illustration{
+  @apply sticky h-40 w-full sm:top-0 sm:min-h-screen sm:flex-1
+}
+}
 
+@layer components{
+  .form-btn{
+    @apply bg-green-1 text-black  inline-flex min-h-14 
+    w-full items-center justify-center rounded-md px-6 py-2 font-bold text-base !important
+  }
+  .form-input{
+    @apply w-full min-h-14 border-none  text-base font-bold placeholder:font-normal text-white focus-visible:ring-0 focus-visible:shadow-none bg-primary-1 !important;
+  }
+}

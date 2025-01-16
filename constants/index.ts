@@ -13,3 +13,7 @@ export const developers = [
     {name: 'Mahendrean', image: '/sample/gogo.jpg' , role:"Frontend"},
     {name: 'Vijay Barathi', image: '/sample/killu.jpg' , role:"UI/UX"},
 ]
+export const SIGNIN_FIELD_NAMES ={
+    email:'Email',
+    password:'Password'
+}
