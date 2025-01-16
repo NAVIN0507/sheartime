@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import { heroImages } from '@/constants';
 import Image from 'next/image';
+
 const Herocarousel = () => {
   return (
    <Carousel
@@ -13,7 +14,7 @@ infiniteLoop
 interval={2000}
 showArrows={false}
 showStatus={false}
-
+showIndicators={false}
 >
 {heroImages.map((item)=>(
     <Image 

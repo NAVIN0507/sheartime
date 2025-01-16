@@ -10,21 +10,21 @@ const links =[
 ]
 const Footer = () => {
   return (
-    <footer className='bg-secondry-1 w-full h-[50px] max-lg:w-[500px] max-lg:h-[110px] max-lg:mt-[60px]'>
+    <footer className='bg-primary-4 text-white  w-full h-[50px] max-lg:w-[500px] max-lg:h-[110px] max-lg:mt-[60px]'>
          <div className='container mx-auto flex flex-col items-center justify-between gap-4 px-4 md:flex-row mt-5'>
-            <p className='text-center text-sm md:text-left'>
+            <p className='text-center text-sm md:text-left hover:text-secondry-1'>
                  &copy; Nova 2025. All rights reserved
             </p>
             <div className='flex justify-center gap-4 md:justify-start'>
 {links.map((link)=>(
-    <a key={link.href} href={link.href} target='_blank' rel='noopener noreferrer' className='text-black transition-colors duration-500 ease-in-out hover:text-white'>
+    <a key={link.href} href={link.href} target='_blank' rel='noopener noreferrer' className='text-white transition-colors duration-500 ease-in-out hover:text-secondry-1'>
         {link.icon}
     </a>
 ))}
             </div>
              <a
           href="#privacy-policy"
-          className="text-center text-sm font-light hover:underline md:text-right"
+          className="text-center text-sm font-light hover:underline hover:text-secondry-1 md:text-right"
         >
           Privacy Policy
         </a>
