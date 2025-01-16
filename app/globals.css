@@ -73,7 +73,7 @@ body {
 
 @layer utilities{
   .main-navbar{
-    @apply bg-primary-1 flex flex-row p-4 hidden sm:block  cursor-pointer w-full
+    @apply bg-primary-1 flex flex-row p-4 hidden sm:block  cursor-pointer w-full sticky
   }
   .hero-card{ 
     @apply flex flex-row gap-20  mt-[100px] ml-40  text-[50px] w-full
@@ -82,7 +82,7 @@ body {
     @apply bg-secondry-3 border-r-0  text-foreground p-6 rounded-md cursor-pointer hover:translate-x-4 hover:transition-all
   }
   .video-player{
-    @apply w-[600px] h-[350px]   ml-[200px]
+    @apply w-[600px] h-[300px] mb-[200px]   ml-[100px]
   }
 }
 /* In your global styles (e.g., styles/globals.css) */
@@ -170,8 +170,8 @@ body {
 }
 @layer utilities{
   .guide-card{
-    @apply bg-primary-2 w-[400px] h-[150px] p-4 rounded-lg hover:translate-x-2 hover:transition-all cursor-pointer
-  }
+    @apply bg-primary-2 w-[400px] h-[150px] p-4 rounded-lg hover:translate-x-2 hover:transition-all cursor-pointer max-lg:flex-col max-lg:ml-[-200px] max-lg:justify-start max-lg:items-start
+  } 
   .guide-info{
     @apply mt-20 text-white ml-[300px]
   }
@@ -180,5 +180,6 @@ body {
   }
 }
 .line{
-  @apply w-[500px]  border-2 items-center justify-center ml-[500px] mt-10 border-green-1
+  @apply w-[500px]  border-2 items-center justify-center ml-[500px] mt-10 border-secondry-1  max-lg:hidden
 }
+

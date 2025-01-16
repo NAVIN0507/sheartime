@@ -9,7 +9,7 @@ interface Props{
 }
 const Guidecard = ({title , imageUrl , des , className}:Props) => {
   return (
-    <div className={cn(  className ?    className:'guide-info'  ) }>
+    <div className={cn(  className ? className :'guide-info'  ) }>
     <div className='flex flex-col guide-card'>
         <div className='flex flex-row gap-2'>
         <Image

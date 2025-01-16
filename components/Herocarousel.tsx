@@ -13,6 +13,7 @@ infiniteLoop
 interval={2000}
 showArrows={false}
 showStatus={false}
+
 >
 {heroImages.map((item)=>(
     <Image 

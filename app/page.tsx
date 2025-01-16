@@ -5,8 +5,9 @@ import Navbar from "@/components/Navbar";
 import Testimonial from "@/components/Testimonial";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-
+import { developers } from "@/constants";
 export default function Home() {
+  
   return (
    <section className="flex flex-col">
     <div className="flex flex-col">
@@ -25,8 +26,12 @@ export default function Home() {
       </div>
       <div className="line" />
       <div>
-        <h1 className={cn("guide-title" , 'text-green-4')}>Development Team and Contact</h1>
-        <Testimonial/>
+        <h1 className={cn("guide-title max-lg:hidden")}>Development Team and Contact</h1>
+        <div className=" grid grid-cols-4 gap-4 items-center ml-20 mt-10 mb-10">
+          {developers.map((dev)=>( <Testimonial name={dev.name} image={dev.image} role={dev.role}/>))}
+       
+       
+        </div>
       </div>
           </div>
           <Footer/>

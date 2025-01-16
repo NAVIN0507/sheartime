@@ -23,9 +23,9 @@ const HeroCard = () => {
         </Button>
     </div>
     </div>
-    <div className='video-player'>
+    <div className='video-player mt-[-100px] bg-primary-2 max-lg:hidden '>
       
-         {/* <Herocarousel/> */}
+         <Herocarousel/>
          {/* <HeroCircle/> */}
     </div>
   </section>
