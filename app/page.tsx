@@ -6,6 +6,7 @@ import Testimonial from "@/components/Testimonial";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { developers } from "@/constants";
+import Typewriter from "@/components/fancy/typewriter";
 export default function Home() {
   
   return (
@@ -20,8 +21,21 @@ export default function Home() {
       </div>
      <div className="line" />
      <section id="guide">
-     <div className="items-center text-center ">
-      <h1 className="guide-title">How to use ShearTime?</h1>
+     <div className="items-center text-center mt-10">
+      <Typewriter
+      text={[
+        "How to use ShearTime?",
+        "How to use ShearTime?",
+        "How to use ShearTime?",
+        "How to use ShearTime?",
+      ]}
+      speed={70}
+          className="guide-title"
+          waitTime={1500}
+          deleteSpeed={40}
+          cursorChar={""}
+      />
+    
       </div>
       <div className="grid grid-rows-1">
         <Guidecard imageUrl="/icons/1.svg" title="Create your Account" des="Create your new account in ShearTime" className="text-green-1 ml-[300px] mt-20 "/>
@@ -32,8 +46,20 @@ export default function Home() {
       <div className="line" />
       <div>
         <section id="contact">
-        <div className="items-center text-center">
-        <h1 className={cn("guide-title max-lg:hidden")}>Development Team and Contact</h1>
+        <div className="items-center text-center mt-10">
+        <Typewriter
+      text={[
+        "Development Team and Contact",
+        "Development Team and Contact",
+        "Development Team and Contact",
+        "Development Team and Contact",
+      ]}
+      speed={70}
+          className="guide-title"
+          waitTime={1500}
+          deleteSpeed={40}
+          cursorChar={""}
+      />
         </div>
         <div className=" grid grid-cols-4 gap-4 items-center ml-20 mt-20 mb-10">
           {developers.map((dev)=>( <Testimonial name={dev.name} image={dev.image} role={dev.role} key={dev.name}/>))}
