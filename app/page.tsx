@@ -9,6 +9,7 @@ import { developers } from "@/constants";
 export default function Home() {
   
   return (
+    <main>
    <section className="flex flex-col">
     <div className="flex flex-col">
       <Navbar/>
@@ -18,6 +19,7 @@ export default function Home() {
         <HeroCard/>
       </div>
      <div className="line" />
+     <section id="guide">
      <div className="items-center text-center ">
       <h1 className="guide-title">How to use ShearTime?</h1>
       </div>
@@ -26,17 +28,21 @@ export default function Home() {
         <Guidecard imageUrl="/icons/2.svg" title="Book Your Slot" des="Book your first slot now ShearTime" className="ml-[800px] mt-5 text-red-400 "/>
         <Guidecard imageUrl="/icons/3.svg" title="Get your Hair Cut" des="Go to shop at time and get hair cut" className="text-secondry-1 ml-[300px] mt-5"/>
       </div>
+      </section>
       <div className="line" />
       <div>
+        <section id="contact">
         <div className="items-center text-center">
         <h1 className={cn("guide-title max-lg:hidden")}>Development Team and Contact</h1>
         </div>
         <div className=" grid grid-cols-4 gap-4 items-center ml-20 mt-20 mb-10">
-          {developers.map((dev)=>( <Testimonial name={dev.name} image={dev.image} role={dev.role}/>))}
+          {developers.map((dev)=>( <Testimonial name={dev.name} image={dev.image} role={dev.role} key={dev.name}/>))}
        </div>
+       </section>
       </div>
           </div>
           <Footer/>
    </section>
+   </main>
   );
 }

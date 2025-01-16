@@ -17,11 +17,11 @@ const Navbar = () => {
     </Link>
     <div className='mt-2'>
         <ul className='flex flex-row text-white gap-[50px]  mt-2 text-[23px]'> 
-            <li className='hover:text-secondry-2 cursor-pointer hover:underline'>Home</li>
-            <li className='hover:text-secondry-2 cursor-pointer hover:underline'>About</li>
-            <li className='hover:text-secondry-2 cursor-pointer hover:underline'>Contact</li>
-            <li className='hover:text-secondry-2 cursor-pointer hover:underline'>SignIn</li>
-            <li className='hover:text-secondry-2 cursor-pointer hover:underline'>SignUp</li>
+         <a href="/">   <li className='hover:text-secondry-2 cursor-pointer hover:underline'>Home</li></a>
+          <a href="#guide"> <li className='hover:text-secondry-2 cursor-pointer hover:underline'>About</li></a> 
+          <a href="#contact">  <li className='hover:text-secondry-2 cursor-pointer hover:underline'>Contact</li></a>
+           <a href="/sign-in"> <li className='hover:text-secondry-2 cursor-pointer hover:underline'>SignIn</li></a>
+          <a href="/sign-up">  <li className='hover:text-secondry-2 cursor-pointer hover:underline'>SignUp</li> </a>
         </ul>
     </div>
    </div>
