@@ -27,10 +27,11 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { SignUp } from '@/lib/actions/auth'
+import { useRouter } from 'next/navigation'
 
 const page = () => {
   const [isLoading, setisLoading] = useState(false);
-
+  const router = useRouter();
   const form = useForm<z.infer<typeof signUpSchema>>({
     resolver:zodResolver(signUpSchema),
     defaultValues:{
@@ -52,13 +53,18 @@ const page = () => {
               password: values.password,
              
             });
+            //@ts-ignore
             console.log(result?.userData[0]?.fullName)
             if(result?.success){
-            toast(`SuccessFully Signed Up ` ,{
+              //@ts-ignore
+            toast(`SuccessFully Signed Up ${result?.userData[0]?.fullName} ` ,{
               className:"bg-green-1 text-white border-none text-bold",
               duration: 5000,
               icon:<Check width={20} height={20} className='rounded-full object-fill'/>
-          })}
+          })
+          router.push(`/customers/${result?.userData[0]?.id}`) 
+        }
+
           else{
             toast("Error in Signed In" ,{
               className:"bg-red-500 text-white border-none text-bold",

@@ -1,17 +1,25 @@
-import { integer, text, boolean, pgTable, uuid  , varchar, pgEnum, date, timestamp} from "drizzle-orm/pg-core";
-export  const ROLE_ENUM = pgEnum('' ,['CUSTOMER' , 'ADMIN']);
+
+import {  text,  pgTable, uuid  , varchar, pgEnum,  boolean  ,timestamp} from "drizzle-orm/pg-core";
+
 export const users = pgTable("users", {
   id: uuid('id').notNull().primaryKey().defaultRandom().unique(),
   fullName: varchar("full_name" , {length:255}).notNull(),
   email:text("email").notNull().unique(),
   phone:varchar("phone_number").notNull(),
   password:text("passowrd").notNull(),
-
- 
-  isAdmin: ROLE_ENUM('isAdmin').default('CUSTOMER'),
- 
+  isAdmins: boolean().default(false).notNull(),
   createdAt: timestamp('created_at' , {
     withTimezone:true
   }).defaultNow(),
   
 });
+export const shops = pgTable("admin_shops" , {
+  id:uuid('id').notNull().primaryKey().defaultRandom().unique(),
+  adminId:varchar("admin_id").notNull(),
+  shopName:varchar("shop_name").notNull(),
+  shopAddress:varchar("shop_address").notNull(),
+  shopDescription:text("shop_description"),
+  shopPhone:varchar("shop_phone"),
+  shopEmail:text("shop_email"),
+  shopImageUrl:varchar("shop_image_url")
+})
