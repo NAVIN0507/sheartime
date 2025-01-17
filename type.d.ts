@@ -3,6 +3,5 @@ interface AuthCredentials{
     phone:number;
     email:string;
     password: string;
-    isAdmin?:string
-
+    isAdmin?:boolean;
 }

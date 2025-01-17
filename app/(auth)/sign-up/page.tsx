@@ -46,11 +46,13 @@ const page = () => {
       setisLoading(true);
           console.log(values)
           try {
+            if(values.role === 'Admin'){
             const result = await SignUp({
               fullName: values.name,
               phone: values.phone,
               email: values.email,
               password: values.password,
+              isAdmin:true
              
             });
             //@ts-ignore
@@ -62,15 +64,57 @@ const page = () => {
               duration: 5000,
               icon:<Check width={20} height={20} className='rounded-full object-fill'/>
           })
-          router.push(`/customers/${result?.userData[0]?.id}`) 
+          
+          //@ts-ignore
         }
-
+        
           else{
             toast("Error in Signed In" ,{
               className:"bg-red-500 text-white border-none text-bold",
               duration: 5000,
               icon:<Check width={20} height={20} className='rounded-full object-fill'/>
           })}
+          if(result.userData[0].isAdmins){
+           return router.push('/admin')
+          }
+          //@ts-ignore
+         return router.push(`/customers/${result.userData[0].id}`)
+        
+      }
+      else{
+        try {
+           const result = await SignUp({
+              fullName: values.name,
+              phone: values.phone,
+              email: values.email,
+              password: values.password,
+              isAdmin:false
+           })
+            if(result?.success){
+              //@ts-ignore
+            toast(`SuccessFully Signed Up ${result?.userData[0]?.fullName} ` ,{
+              className:"bg-green-1 text-white border-none text-bold",
+              duration: 5000,
+              icon:<Check width={20} height={20} className='rounded-full object-fill'/>
+          })
+          
+          //@ts-ignore
+        }
+        
+          else{
+            toast("Error in Signed In" ,{
+              className:"bg-red-500 text-white border-none text-bold",
+              duration: 5000,
+              icon:<Check width={20} height={20} className='rounded-full object-fill'/>
+          })}
+          if(!result.userData[0].isAdmins){
+           return router.push(`/customers/${result.userData[0].id}`)
+          }
+        } catch (error) {
+          console.log(error)
+        }
+      }
+
           setisLoading(false);
           } catch (error: any) {
             console.log(error)

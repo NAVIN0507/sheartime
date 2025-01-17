@@ -10,19 +10,21 @@ export const SignUp = async({fullName , password , phone , email , isAdmin}:Auth
     if(existingUser.length >0){
         return {success : false , error :"User already exists"}
     }
+    console.log(isAdmin)
     const hashedPassword = await hash(password , 10);
     try {
-        if(isAdmin === "ADMIN"){
+        if(isAdmin){
             //@ts-ignore
       const result  =  await db.insert(users).values({
             fullName,
             phone,
             email,
             password:hashedPassword,
-            isAdmin:true
+            isAdmins:true
         })
     }
     //@ts-ignore
+    else{
     const result  =  await db.insert(users).values({
             fullName,
             phone,
@@ -30,6 +32,7 @@ export const SignUp = async({fullName , password , phone , email , isAdmin}:Auth
             password:hashedPassword,
             
     })
+}
        const userData = await db.select().from(users).where(eq(users.email , email)).limit(1)
         return {success : true , userData}
     } catch (error) {
