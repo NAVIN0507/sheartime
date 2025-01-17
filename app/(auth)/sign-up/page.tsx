@@ -26,6 +26,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { SignUp } from '@/lib/actions/auth'
 
 const page = () => {
   const [isLoading, setisLoading] = useState(false);
@@ -40,13 +41,39 @@ const page = () => {
     role:""
     }
   })
-    const onSubmit = async(values : z.infer<typeof signInSchema>)=>{
+    const onSubmit = async(values : z.infer<typeof signUpSchema>)=>{
+      setisLoading(true);
           console.log(values)
-          toast("SuccessFully Signed In" ,{
+          try {
+            const result = await SignUp({
+              fullName: values.name,
+              phone: values.phone,
+              email: values.email,
+              password: values.password,
+             
+            });
+            console.log(result?.userData[0]?.fullName)
+            if(result?.success){
+            toast(`SuccessFully Signed Up ` ,{
               className:"bg-green-1 text-white border-none text-bold",
               duration: 5000,
               icon:<Check width={20} height={20} className='rounded-full object-fill'/>
-          })
+          })}
+          else{
+            toast("Error in Signed In" ,{
+              className:"bg-red-500 text-white border-none text-bold",
+              duration: 5000,
+              icon:<Check width={20} height={20} className='rounded-full object-fill'/>
+          })}
+          setisLoading(false);
+          } catch (error: any) {
+            console.log(error)
+            throw new Error("Error while Sign Up")
+            setisLoading(false);
+          }
+          finally{
+            setisLoading(false);
+          }
       }
   return (
    <div className='auth-form'>
@@ -152,7 +179,12 @@ const page = () => {
                 </FormItem>
               )}
               />
-<Button className='form-btn' type='submit'>Sign Up</Button>
+<Button className='form-btn' type='submit'>{
+  isLoading ? (<>
+  Signing Up  
+              <Loader width={20} height={20} className='animate-spin'/>
+  </>) :'Sign Up'
+  }</Button>
           </form>
         </Form>
         <p className='text-center text-base font-medium cursor-pointer'>
