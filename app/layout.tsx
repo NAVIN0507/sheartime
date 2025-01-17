@@ -39,7 +39,7 @@ export default function RootLayout({
         className={`${fontBebasNeue.className} antialiased`}
       >
         {children}
-        <Toaster />
+        <Toaster position="top-center" />
       </body>
     </html>
   );
