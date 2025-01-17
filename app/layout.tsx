@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono  , Barlow , Inter , Poppins , Bebas_Neue
 } from "next/font/google";
 import "./globals.css";
-
+import { Toaster } from 'sonner';
 const fontPoppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
@@ -39,6 +39,7 @@ export default function RootLayout({
         className={`${fontBebasNeue.className} antialiased`}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );

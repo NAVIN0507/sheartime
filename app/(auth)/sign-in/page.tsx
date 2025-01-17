@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -17,10 +16,13 @@ import {z} from "zod"
 import { signInSchema } from '@/lib/validations/auth.validation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Loader } from 'lucide-react'
+import { Check, Loader } from 'lucide-react'
 import Typewriter from '@/components/fancy/typewriter'
+import { toast } from 'sonner';
 export const page = () => {
-    const [isLoading, setisLoading] = useState(false)
+    const [isLoading, setisLoading] = useState(false);
+
+
     const form = useForm<z.infer<typeof signInSchema>>({
         resolver:zodResolver(signInSchema),
         defaultValues:{
@@ -30,6 +32,11 @@ export const page = () => {
     })
     const onSubmit = async(values : z.infer<typeof signInSchema>)=>{
         console.log(values)
+        toast("SuccessFully Signed In" ,{
+            className:"bg-green-1 text-white border-none text-bold",
+            duration: 5000,
+            icon:<Check width={20} height={20} className='rounded-full object-fill'/>
+        })
     }
     const defaultValues = {
         email:"",
