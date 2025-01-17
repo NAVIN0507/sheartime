@@ -50,8 +50,7 @@ export const page = () => {
             <div className='flex flex-row gap-3'>
                 <Image src="/icons/logo-main.svg" alt='logo' width={37} height={37}  />
                 <h1 className='text-2xl font-semibold hover:text-secondry-1 text-green-1'>SHEARTIME</h1>
-                <div>
-                     </div>
+                
                 </div>
             </div>
             <div className='flex flex-col gap-4'>

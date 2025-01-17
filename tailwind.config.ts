@@ -33,6 +33,7 @@ export default {
 				4:"#808000",
 				5:"#32CD32",
 			},
+			
 
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
