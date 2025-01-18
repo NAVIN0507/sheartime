@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono  , Barlow , Inter , Poppins , Bebas_Neue
 } from "next/font/google";
 import "./globals.css";
+import {SessionProvider} from "next-auth/react"
 import { Toaster } from 'sonner';
+import { auth } from "@/auth";
 const fontPoppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
@@ -28,19 +30,22 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await auth();
   return (
     <html lang="en">
+      <SessionProvider session={session}>
       <body
         className={`${fontBebasNeue.className} antialiased`}
       >
         {children}
         <Toaster position="top-center" />
       </body>
+      </SessionProvider>
     </html>
   );
 }

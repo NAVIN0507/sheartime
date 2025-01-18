@@ -19,8 +19,11 @@ import Link from 'next/link'
 import { Check, Loader } from 'lucide-react'
 import Typewriter from '@/components/fancy/typewriter'
 import { toast } from 'sonner';
-export const page = () => {
+import { signInWithCredentails } from '@/lib/actions/auth'
+import { useRouter } from 'next/navigation'
+export const page =  () => {
     const [isLoading, setisLoading] = useState(false);
+    const router = useRouter();
 
 
     const form = useForm<z.infer<typeof signInSchema>>({
@@ -30,13 +33,40 @@ export const page = () => {
             password:""
         }
     })
+
     const onSubmit = async(values : z.infer<typeof signInSchema>)=>{
-        console.log(values)
-        toast("SuccessFully Signed In" ,{
+      setisLoading(true);
+
+      try {
+        const result = await signInWithCredentails({email :values.email , password:values.password
+        })
+        if(result.success){
+toast("SuccessFully Signed In" ,{
             className:"bg-green-1 text-white border-none text-bold",
             duration: 5000,
             icon:<Check width={20} height={20} className='rounded-full object-fill'/>
         })
+        if(result.userData[0].isAdmins){
+           return router.push('/admin')
+          }
+          //@ts-ignore
+          else{
+         return router.push(`/customers/${result.userData[0].id}`)
+          }
+        }
+        setisLoading(false)
+      } catch (error) {
+        console.log(error)
+        toast("Error In Signing In" ,{
+            className:"bg-red-500 text-white border-none text-bold",
+            duration: 5000,
+            icon:<Check width={20} height={20} className='rounded-full object-fill'/>
+        })
+        setisLoading(false)
+      }
+
+        console.log(values)
+        
     }
     const defaultValues = {
         email:"",
@@ -103,7 +133,7 @@ export const page = () => {
             </FormItem>
           )}
         />
-        <Button type="submit" className='form-btn'>{
+        <Button type="submit" className='form-btn' disabled={isLoading}>{
             isLoading ? (
             <>
             Signing In  

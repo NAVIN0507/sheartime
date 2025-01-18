@@ -5,6 +5,25 @@ import { users } from "@/database/schema"
 
 import { eq } from "drizzle-orm"
 import { hash } from "bcryptjs";
+import { signIn } from "@/auth";
+export const signInWithCredentails =async({password , email} : Pick<AuthCredentials , "email" | "password">)=>{
+   
+    try {
+    const result = await signIn('credentials' , {
+        email,
+        password,
+        redirect:false
+    })
+    if(result?.error){
+        return {success : false , error :"Invalid credentials"}
+    }
+    const userData = await db.select().from(users).where(eq(users.email , email)).limit(1)
+    return{success : true , userData}
+    } catch (error) {
+        console.log(error)
+        return {success : false , error :"Sign in Error"}
+    }
+}
 export const SignUp = async({fullName , password , phone , email , isAdmin}:AuthCredentials)=>{
     const existingUser = await db.select().from(users).where(eq(users.email , email)).limit(1);
     if(existingUser.length >0){
@@ -25,6 +44,7 @@ export const SignUp = async({fullName , password , phone , email , isAdmin}:Auth
     }
     //@ts-ignore
     else{
+        //@ts-ignore
     const result  =  await db.insert(users).values({
             fullName,
             phone,
