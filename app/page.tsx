@@ -1,16 +1,17 @@
 "use client"
 import Footer from "@/components/Footer";
-import Guidecard from "@/components/Guidecard";
+
 import HeroCard from "@/components/HeroCard";
-import Navbar from "@/components/Navbar";
 import Testimonial from "@/components/Testimonial";
+import { motion } from "framer-motion";
+import { LampContainer } from "../components/ui/lamp";
 
 import Image from "next/image";
-
+import { FloatingNavDemo } from "@/components/FloatingNavbar";
 import { developers } from "@/constants";
 import Typewriter from "@/components/fancy/typewriter";
 import { WobbleCard } from "../components/ui/wobble-card";
-
+import { HoverBorderGradient } from "../components/ui/hover-border-gradient";
 export default function Home() {
   
   return (
@@ -18,17 +19,18 @@ export default function Home() {
        
    <section className="flex flex-col">
     <div className="flex flex-col">
-      <Navbar/>
+      
+      <FloatingNavDemo/>
        <div className="line" />
       <div className="flex items-center text-center">
       
         <HeroCard/>
       </div>
-     <div className="line" />
+<div className="line"/>
      <section id="guide">
      <div className="items-center text-center mt-10">
       <Typewriter
-      text={[
+      text={[ 
         "How to use ShearTime?",
         "How to use ShearTime?",
         "How to use ShearTime?",
@@ -47,7 +49,7 @@ export default function Home() {
       </div>
    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full mt-10">
       <WobbleCard
-        containerClassName="col-span-1 lg:col-span-2 h-full bg-pink-800 min-h-[500px] lg:min-h-[300px]"
+        containerClassName="col-span-1 lg:col-span-2 h-full bg-primary-1 min-h-[500px] lg:min-h-[300px]"
         className=""
       >
         <div className="max-w-xs">
@@ -67,7 +69,7 @@ export default function Home() {
           className="absolute -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl"
         />
       </WobbleCard>
-      <WobbleCard containerClassName="col-span-1 min-h-[300px]">
+      <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-primary-1">
         <h2 className="max-w-80  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
           No shirt, no shoes, no weapons.
         </h2>
@@ -75,7 +77,7 @@ export default function Home() {
           If someone yells “stop!”, goes limp, or taps out, the fight is over.
         </p>
       </WobbleCard>
-      <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
+      <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-primary-1 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
         <div className="max-w-sm">
           <h2 className="max-w-sm md:max-w-lg  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
             Signup for blazing-fast cutting-edge state of the art Gippity AI
