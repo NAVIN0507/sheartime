@@ -46,11 +46,13 @@ toast("SuccessFully Signed In" ,{
             duration: 5000,
             icon:<Check width={20} height={20} className='rounded-full object-fill'/>
         })
+        //@ts-ignore
         if(result.userData[0].isAdmins){
            return router.push('/admin')
           }
           //@ts-ignore
           else{
+            //@ts-ignore
          return router.push(`/customers/${result.userData[0].id}`)
           }
         }

@@ -1,0 +1,1 @@
+ALTER TABLE "admin_shops" ADD COLUMN "opened" boolean DEFAULT true NOT NULL;

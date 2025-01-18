@@ -74,6 +74,7 @@ const page = () => {
               duration: 5000,
               icon:<Check width={20} height={20} className='rounded-full object-fill'/>
           })}
+          //@ts-ignore
           if(result.userData[0].isAdmins){
            return router.push('/admin')
           }
@@ -107,7 +108,9 @@ const page = () => {
               duration: 5000,
               icon:<Check width={20} height={20} className='rounded-full object-fill'/>
           })}
+          //@ts-ignore
           if(!result.userData[0].isAdmins){
+            //@ts-ignore
            return router.push(`/customers/${result.userData[0].id}`)
           }
         } catch (error) {
