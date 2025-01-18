@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono  , Barlow , Inter , Poppins , Bebas_Neue
 } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider"
+
 import {SessionProvider} from "next-auth/react"
 import { Toaster } from 'sonner';
 import { auth } from "@/auth";
@@ -42,6 +44,7 @@ export default async function RootLayout({
       <body
         className={`${fontBebasNeue.className} antialiased`}
       >
+        
         {children}
         <Toaster position="top-center" />
       </body>

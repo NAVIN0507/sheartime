@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-
+import { motion } from "framer-motion";
+import { LampContainer } from "../components/ui/lamp";
 const Navbar = () => {
   return (
    <nav className='main-navbar'>
@@ -16,7 +17,7 @@ const Navbar = () => {
     <h1 className='text-white font-bold mt-2 text-3xl ml-4 '>ShearTime</h1>
     </Link>
     <div className='mt-2'>
-        <ul className='flex flex-row text-white gap-[50px]  mt-2 text-[23px]'> 
+        <ul className='flex flex-row text-white gap-[50px]  mt-1 text-[23px]'> 
          <a href="/">   <li className='hover:text-secondry-2 cursor-pointer hover:underline'>Home</li></a>
           <a href="#guide"> <li className='hover:text-secondry-2 cursor-pointer hover:underline'>About</li></a> 
           <a href="#contact">  <li className='hover:text-secondry-2 cursor-pointer hover:underline'>Contact</li></a>

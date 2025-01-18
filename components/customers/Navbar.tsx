@@ -23,11 +23,18 @@ const Navbar = ({session}:{session:Session}) => {
     <h1 className='font-bold mt-2 text-3xl ml-2 text-green-1'>SHEARTIME</h1>
         
         </Link>
-        <ul className='flex flex-row items-center gap-8'>
+        
+        <ul className='flex flex-row items-center gap-8 mt-2'>
+            
             <li>
+            
                 <Link href={`/my-profile/${session?.user?.id}`}>
+                
                 <Avatar>
-                    <AvatarFallback className='bg-amber-50'>{getIntials(session?.user?.name)}</AvatarFallback>
+                    <AvatarFallback className='bg-amber-50'>{
+                    //@ts-ignore
+                    getIntials(session?.user?.name)
+                    }</AvatarFallback>
                 </Avatar>
                 </Link>
             </li>
@@ -35,7 +42,7 @@ const Navbar = ({session}:{session:Session}) => {
             <form action={async()=>{
                 "use server"
                 await signOut();
-            }}><Button>Logout</Button></form>
+            }}><Button className='bg-red-300 text-black'>Logout</Button></form>
             </li>
         </ul>
     </header>
