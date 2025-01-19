@@ -12,23 +12,24 @@ import { developers } from "@/constants";
 import Typewriter from "@/components/fancy/typewriter";
 import { WobbleCard } from "../components/ui/wobble-card";
 import { HoverBorderGradient } from "../components/ui/hover-border-gradient";
+
 export default function Home() {
   
   return (
-    <main>
+    <main className="max-w-7xl mx-auto w-full">
        
    <section className="flex flex-col">
     <div className="flex flex-col">
       
       <FloatingNavDemo/>
-       <div className="line" />
+     
       <div className="flex items-center text-center">
       
         <HeroCard/>
       </div>
-<div className="line"/>
+
      <section id="guide">
-     <div className="items-center text-center mt-10">
+     <div className="items-center text-center mt-[100px]">
       <Typewriter
       text={[ 
         "How to use ShearTime?",
@@ -109,7 +110,7 @@ export default function Home() {
     </div>
       
       </section>
-      <div className="line" />
+  
     
       <div>
         <section id="contact">

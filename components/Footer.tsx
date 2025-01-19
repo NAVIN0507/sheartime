@@ -10,7 +10,7 @@ const links =[
 ]
 const Footer = () => {
   return (
-    <footer className='bg-primary-4 text-white  w-full h-[50px] max-lg:w-[500px] max-lg:h-[110px] max-lg:mt-[60px]'>
+    <footer className=' text-white  w-full h-[50px] max-lg:w-[500px] max-lg:h-[110px] max-lg:mt-[60px]'>
          <div className='container mx-auto flex flex-col items-center justify-between gap-4 px-4 md:flex-row mt-5'>
             <p className='text-center text-sm md:text-left hover:text-secondry-1'>
                  &copy; Nova 2025. All rights reserved

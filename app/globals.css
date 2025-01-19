@@ -123,7 +123,7 @@ body {
     @apply relative flex flex-col-reverse text-white sm:flex-row
   }
   .auth-form{
-    @apply my-auto flex h-full min-h-screen flex-1 items-center   bg-black px-5 py-10
+    @apply my-auto flex h-full min-h-screen flex-1 items-center   bg-primary-1 px-5 py-10
   }
   .auth-box{
     @apply mx-auto flex max-w-xl flex-col gap-6 rounded-lg p-10

@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Herocarousel from './Herocarousel'
 import TextCursorProximity from './fancy/text-cursor-proximity'
 import Typewriter from './fancy/typewriter'
+import { ThreeDCardDemo } from './ThreeDCard'
 
 
 const HeroCard = () => {
@@ -17,9 +18,9 @@ const HeroCard = () => {
     <h1 className='text-white '>Hi There 👋</h1>
      <div className="flex flex-row justify-center uppercase leading-none pt-4 pl-6" ref={containerRef} >
       <TextCursorProximity
-      label='Welcome to ' 
+      label='Join the ' 
 
-      className="leading-none text-1xl will-change-transform sm:text-6xl md:text-6xl lg:text-7xl font-overusedGrotesk"
+      className="leading-none text-[10px] will-change-transform sm:text-3xl md:text-3xl lg:text-6xl font-overusedGrotesk"
        styles={{
               transform: {
                 from: "scale(1)",
@@ -40,7 +41,7 @@ const HeroCard = () => {
             
           ]}
           speed={70}
-          className="text-[70px] text-green-1"
+          className="text-[60px] text-green-1"
           waitTime={1500}
           deleteSpeed={40}
           cursorChar={""}
@@ -59,8 +60,8 @@ const HeroCard = () => {
         </Button>
     </div>
     </div>
-    <div className='video-player mt-[-70px] bg-primary-2 max-lg:hidden '>
-      
+    <div className='video-player mt-[-100px] mb-[100px] max-lg:hidden '>
+      {/* <ThreeDCardDemo/> */}
          <Herocarousel/>
          {/* <HeroCircle/> */}
     </div>
