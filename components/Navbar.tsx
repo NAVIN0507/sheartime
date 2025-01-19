@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import BreathingText from './fancy/breathing-text'
 import Typewriter from './fancy/typewriter'
+import { Button } from './ui/button'
 
 const Navbar = () => {
   return (
@@ -33,7 +34,9 @@ const Navbar = () => {
     <div className='flex flex-row items-end text-end mr-7'>
         <ul className='flex flex-row gap-10 text-[20px]'>
             {NavItems.map((itme)=>(
-                <li key={itme.name}><Link href={itme.route} className='hover:text-secondry-1 hover:underline'>{itme.name}</Link></li>
+                <Button className='border-none bg-none text-[17px] shadow-none  hover:bg-secondry-1 hover:text-primary-1 hover:-translate-y-2' asChild key={itme.name}>
+                <li className='hover:bg-secondry-1 hover:text-primary-1'><Link href={itme.route}>{itme.name}</Link></li>
+                </Button>
             ))}
         </ul>
     </div>
