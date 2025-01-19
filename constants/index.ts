@@ -17,3 +17,26 @@ export const SIGNIN_FIELD_NAMES ={
     email:'Email',
     password:'Password'
 }
+
+export const NavItems = [
+    {
+        name:"Home",
+        route:"/"
+    },
+    {
+        name:"About",
+        route:"#about"
+    },
+    {
+        name:"Contact",
+        route:"/"
+    },
+    {
+        name:"Log in",
+        route:"/sign-in"
+    },
+    {
+        name:"Sign up",
+        route:"/sign-up"
+    },
+]

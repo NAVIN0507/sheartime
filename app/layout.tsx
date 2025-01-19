@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono  , Barlow , Inter , Poppins , Bebas_Neue
-} from "next/font/google";
+import {  Poppins , Bebas_Neue
+ , Ubuntu} from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider"
+
 
 import {SessionProvider} from "next-auth/react"
 import { Toaster } from 'sonner';
@@ -18,10 +18,10 @@ const fontBebasNeue = Bebas_Neue({
   weight:['400']
 })
 
-const fontBarlow = Barlow({
-  variable: "--font-barlow",
+const fontUbuntu = Ubuntu({
+  variable: "--font-ubuntu",
   subsets: ["latin"],
-  weight:['400' , '500' ,'600']
+  weight:['300' , '400' ,'500']
 })
 
 export const metadata: Metadata = {
@@ -42,7 +42,7 @@ export default async function RootLayout({
     <html lang="en">
       <SessionProvider session={session}>
       <body
-        className={`${fontBebasNeue.className} antialiased`}
+        className={`${fontUbuntu.className} antialiased`}
       >
         
         {children}

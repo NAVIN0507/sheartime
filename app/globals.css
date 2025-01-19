@@ -72,51 +72,11 @@ body {
 }
 
 @layer utilities{
-  .main-navbar{
-    @apply bg-black  rounded-full flex flex-row p-4 hidden sm:block  cursor-pointer w-full sticky
-  }
-  .hero-card{ 
-    @apply flex flex-row gap-20  mt-[100px] ml-40  text-[50px] w-full
-  }
-  .main-btn{
-    @apply bg-secondry-3 border-r-0  text-foreground p-6 rounded-md cursor-pointer hover:translate-x-4 hover:transition-all
-  }
-  .video-player{
-    @apply w-[600px] h-[300px] mb-[200px]   ml-[100px]
-  }
+
 }
 /* In your global styles (e.g., styles/globals.css) */
 
-@layer utilities{
-  .guide-container{
-    @apply mt-[50px]
-  }
-  .guide-item{
-    @apply  w-[400px] text-white gap-4 h-[200px] bg-primary-2 items-center justify-center text-center p-4 
 
-    rounded-lg
-  }
-  .guide-title{
-    @apply text-5xl mt-20  text-white  
-  }
-}
-/* In your styles/globals.css or a dedicated CSS file */
-
-
-@layer utilities{
-  .guide-card{
-    @apply bg-primary-2 w-[400px] h-[150px] p-4 rounded-lg hover:translate-x-2 hover:transition-all cursor-pointer max-lg:flex-col max-lg:ml-[-200px] max-lg:justify-start max-lg:items-start 
-  } 
-  .guide-info{
-    @apply mt-20 text-white ml-[300px]
-  }
-  .guide-des{
-    @apply text-2xl  ml-[50px] mt-5
-  }
-}
-.line{
-  @apply w-[500px]  border-2 items-center justify-center ml-[500px] mt-10 border-secondry-1  max-lg:hidden
-}
 /* AUTH STYLING */
 @layer utilities{
   .auth-container{
