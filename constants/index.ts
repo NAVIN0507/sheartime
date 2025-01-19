@@ -1,7 +1,7 @@
 import { FaDiscord, FaGithub, FaTwitch, FaTwitter } from 'react-icons/fa'
 export const mainNavItems = ["Home" ,"About" , "Contact"]
 export const heroImages =[
-    {imageUrl:'/icons/logo-dark.svg' , alt:'hero1'},
+    {imageUrl:'/icons/logo-main.svg' , alt:'hero1'},
    
     {imageUrl:'/icons/logo3.svg' , alt:'hero1'},
 

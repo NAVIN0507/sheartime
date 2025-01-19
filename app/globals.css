@@ -67,7 +67,7 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-black text-foreground;
+    @apply bg-primary-1 text-foreground;
   }
 }
 
