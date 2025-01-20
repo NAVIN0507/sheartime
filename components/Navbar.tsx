@@ -12,7 +12,7 @@ import { cn } from '@/lib/utils'
 const Navbar = () => {
     const pathname = usePathname();
   return (
-   <nav className='w-full p-3 text-center items-center top-0 bg-primary-1 border-b-[1px] border-secondry-1'>
+   <nav className='w-full p-3 text-center items-center top-0 bg-primary-1 shadow-md'>
 <div className='relative flex h-16 items-center justify-between'>
     
     <Link href="/" className='flex flex-row gap-3 text-center'>
