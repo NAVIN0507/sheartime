@@ -29,7 +29,7 @@ export const NavItems = [
     },
     {
         name:"Contact",
-        route:"/"
+        route:"#contact"
     },
     {
         name:"Log in",

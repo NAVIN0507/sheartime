@@ -42,7 +42,7 @@ const Hero = () => {
         </Highlight>
       </motion.h1>
       <div className='mt-10 items-center justify-center flex flex-col'>
-        <Button className='bg-secondry-1 text-primary-1'>
+        <Button className='bg-secondry-1 text-primary-1 w-[200px] h-[40px] text-1xl'>
             <Link href="/sign-in">Book Your First Slot</Link>
         </Button>
         <div className='flex flex-row gap-3 mt-6'>
