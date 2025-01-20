@@ -22,11 +22,11 @@ const links =[
   ];
 const Hero = () => {
   return (
-    <section className='flex flex-col mt-0'>
+    <section className='flex flex-col mt-20' >
 
-        <BackgroundBeamsWithCollision>
+        {/* <BackgroundBeamsWithCollision> */}
       <div className='flex flex-row gap-5'>   
-        <div className='flex flex-col gap-2'>
+        <div className='flex flex-col gap-2 ml-3'>
             
         <HeroHighlight>
        
@@ -46,7 +46,7 @@ const Hero = () => {
         className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-black dark:text-white max-w-4xl leading-relaxed lg:leading-snug mx-auto "
       >
         
-        With <span className='text-secondry-1'>sheartime</span>, you can change your life by reducing your time in waiting {""}
+        With <span className='text-secondry-1 underline'>sheartime</span>, you can change your life by reducing your time in waiting {""}
         <Highlight className="text-black dark:text-white">
           make at time , make your style
         </Highlight>
@@ -72,12 +72,12 @@ const Hero = () => {
               <div className='flex flex-col gap-5 mt-[120px] mr-4'>
         {links.map((link)=>(
           <div key={link.href}>
-            <Button className='rounded-full hover:bg-secondry-1 hover:text-primary-1'>{link.icon}</Button>
+            <Button className='rounded-full hover:bg-secondry-1 hover:text-primary-1 shadow-none'>{link.icon}</Button>
           </div>
 ))}
 </div>
     </div> 
-    </BackgroundBeamsWithCollision>
+    {/* </BackgroundBeamsWithCollision> */}
     </section>
   )
 }

@@ -38,11 +38,10 @@ const Navbar = () => {
     <div className='flex flex-row items-end text-end mr-7 hidden sm:block'>
         <ul className='flex flex-row gap-5  text-[20px]'>
             {NavItems.map((itme)=>{
-                const isActive = pathname === itme.route || pathname.includes(itme.route)
+                const isActive = pathname === itme.route
                 console.log(isActive)
                 return(
-                <Button className={cn( isActive ? 'bg-secondry-1 text-primary-1' : `border-none bg-none text-[17px] cursor-pointer rounded-lg shadow-none  hover:text-secondry-1 
-                hover:underline hover:-translate-y-2 duration-500 ease-in-out`)} asChild key={itme.name}>
+                <Button className={cn( 'border-none bg-none text-[17px] cursor-pointer rounded-lg shadow-none hover:underline hover:-translate-y-2 duration-500 ease-in-out' , {'bg-secondry-1 text-primary-1' : isActive})} asChild key={itme.name}>
                 <li><Link href={itme.route}>{itme.name}</Link></li>
                 </Button>
 )})}

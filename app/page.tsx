@@ -1,3 +1,4 @@
+import GuideSection from '@/components/GuideSection'
 import Hero from '@/components/Hero'
 
 import Navbar from '@/components/Navbar'
@@ -13,7 +14,9 @@ const page = () => {
   <section>
     <Hero/>
   </section>
-
+  <section id='#about'>
+    <GuideSection/>
+  </section>
 </div>
    </main>
   )
