@@ -18,6 +18,7 @@ const page = () => {
     <GuideSection/>
   </section>
 </div>
+<div className='mb-10'></div>
    </main>
   )
 }

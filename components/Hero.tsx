@@ -22,7 +22,7 @@ const links =[
   ];
 const Hero = () => {
   return (
-    <section className='flex flex-col mt-20' >
+    <section className='flex flex-col mt-20 items-center' >
 
         {/* <BackgroundBeamsWithCollision> */}
       <div className='flex flex-row gap-5'>   
