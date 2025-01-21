@@ -52,9 +52,11 @@ const Hero = () => {
         </Highlight>
       </motion.h1>
       <div className='mt-10  ml-[25px] flex flex-col'>
+         <Link href="/sign-in">
         <Button className='bg-secondry-1 text-primary-1 w-[250px] h-[60px] text-1xl'>
-            <Link href="/sign-in">Book Your First Slot</Link>
+           Book Your First Slot
         </Button>
+        </Link>
        
 
       </div>

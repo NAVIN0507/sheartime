@@ -14,7 +14,7 @@ const page = () => {
   <section>
     <Hero/>
   </section>
-  <section id='#about'>
+  <section id='about'>
     <GuideSection/>
   </section>
 </div>
