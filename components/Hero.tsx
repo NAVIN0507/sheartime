@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { HeroHighlight, Highlight } from "./ui/hero-highlight";
 import { Button } from './ui/button';
 import Link from 'next/link';
-import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
+
 import { FaDiscord, FaGithub, FaTwitch, FaTwitter } from 'react-icons/fa'
 import Image from 'next/image';
 const links =[
