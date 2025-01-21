@@ -130,11 +130,11 @@ const page = () => {
       }
   return (
    <div className='auth-form'>
-    <div className='auth-box bg-primary-2 w-[700px]'>
+    <div className='auth-box bg-primary-1 shadow-2xl w-[700px]'>
       <div className='auth-box'>
        <div className='flex flex-row gap-3'>
         <Image 
-        src="/icons/logo-main.svg"
+        src="/icons/logo-white.svg"
         alt='logo'
         width={37} height={37}
         />
@@ -146,15 +146,15 @@ const page = () => {
           "SHEARTIME",
         ]}
         speed={70}
-        className='text-2xl font-semibold text-green-1'
+        className='text-2xl font-semibold text-secondry-1'
         waitTime={1500}
         deleteSpeed={40}
         cursorChar={"#"}
         />
        </div>
        <div className='flex flex-col gap-4'>
-        <h1 className='text-2xl font-semibold text-white'>Welcome to SheartTime</h1>
-        <p className='text-white'>Don't waste your time by sittign in the barber shop</p>
+        <h1 className='text-2xl font-semibold text-black'>Welcome to SheartTime</h1>
+        <p className='text-black'>Don't waste your time by sittign in the barber shop</p>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4 w-full'>
                 <FormField
@@ -218,13 +218,13 @@ const page = () => {
                   <FormLabel className="capitalize">Role</FormLabel>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
-                  <SelectTrigger className='form-input border-none'>
-                    <SelectValue placeholder="Role" />
+                  <SelectTrigger className='form-input border-none text-black'>
+                    <SelectValue placeholder="Role"  className='text-black'/>
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent className='form-select border-none'>
-                  <SelectItem value="Admin">Admin</SelectItem>
-                  <SelectItem value="Customer">Customer</SelectItem>
+                  <SelectItem value="Admin" className='text-black'>Admin</SelectItem>
+                  <SelectItem value="Customer" className='text-black'>Customer</SelectItem>
                   
                 </SelectContent>
               </Select>
