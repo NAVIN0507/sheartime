@@ -1,11 +1,13 @@
 import React from 'react'
-import { FaDiscord, FaGithub, FaTwitch, FaTwitter ,FaUserTag  } from 'react-icons/fa'
+import { FaDiscord, FaGithub, FaTwitch, FaTwitter ,FaUserTag  , FaWpexplorer }  from 'react-icons/fa'
 import {FcBusinessman , FcCollaboration , FcAcceptDatabase , FcOk , FcEngineering } from "react-icons/fc"
 import { VscFeedback } from "react-icons/vsc";
 import { TbDeviceMobileMessage } from "react-icons/tb";
 import { SiRazorpay } from "react-icons/si";
 
 import FeatureCard from './FeatureCard'
+import Link from 'next/link';
+import { Button } from './ui/button';
 export const FeatureItems=[
     {
         title:"Create Account",
@@ -63,7 +65,7 @@ const GuideSection = () => {
   return (
    <section className='flex flex-col flex-wrap gap-2 items-center mt-[70px] w-full'>
     <h1 className='text-center text-5xl font-extrabold max-sm:text-start'>Features</h1>
-    <div className='flex flex-col gap-2 items-start'>
+    <div className='flex flex-col gap-2 items-center'>
     <div className='grid grid-cols-1 sm:grid-cols-4  gap-10 mt-[150px]'>
         {FeatureItems.map((itme)=>{
             console.log(itme.className)
@@ -73,6 +75,7 @@ const GuideSection = () => {
             
         })}
     </div>
+   
      <div className='flex flex-row gap-10 mt-[100px]'>
         {FeatureItems2.map((itme)=>{
             console.log(itme.className)
@@ -82,6 +85,11 @@ const GuideSection = () => {
             
         })}
        </div>
+    </div>
+     <div className='items-center text-center mt-[70px]'>
+        <Link href="/sign-in">
+        <Button className='bg-secondry-4 hover:bg-secondry-1  hover:text-primary-1 w-[250px] h-[70px] text-primary-1 text-1xl duration-300 ease-in-out'>Explore all features with us <FaWpexplorer width={50} height={50} className='animate-spin rounded-full text-2xl'/> </Button>
+        </Link>
     </div>
    </section>
   )
