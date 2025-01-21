@@ -40,3 +40,25 @@ export const NavItems = [
         route:"/sign-up"
     },
 ]
+export const FeatureItems=[
+    {
+        title:"Create Account",
+        description:"Create your account in sheartime",
+        className:"bg-pink-400"
+    },
+       {
+        title:"Create Account",
+        description:"Create your account in sheartime",
+        className:"bg-pink-400"
+    },
+       {
+        title:"Create Account",
+        description:"Create your account in sheartime",
+        className:"bg-pink-400"
+    },
+       {
+        title:"Create Account",
+        description:"Create your account in sheartime",
+        className:"bg-pink-400"
+    }
+]
