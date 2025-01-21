@@ -60,7 +60,7 @@ const Hero = () => {
       </div>
     </HeroHighlight>
     </div>
-    <div className='items-center justify-center text-center mt-6'>
+    <div className='items-center justify-center text-center mt-6 hidden sm:block'>
             <Image
              src="/icons/logo-white.svg"
              alt='logo'

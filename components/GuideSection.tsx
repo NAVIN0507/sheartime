@@ -5,13 +5,15 @@ import { FeatureItems } from '@/constants'
 const GuideSection = () => {
   return (
    <section className='flex flex-col flex-wrap gap-2 items-center mt-[70px] w-full'>
-    <h1 className='text-center text-5xl font-extrabold'>Features</h1>
-    <div className='flex flex-col gap-2'>
-    <div className='flex flex-row gap-10 mt-[100px]'>
+    <h1 className='text-center text-5xl font-extrabold max-sm:text-start'>Features</h1>
+    <div className='flex flex-col gap-2 items-start'>
+    <div className='grid grid-cols-1 sm:grid-cols-4  gap-10 mt-[100px]'>
         {FeatureItems.map((itme)=>{
+            console.log(itme.className)
             return(
-                <FeatureCard className={itme.className} title={itme.title} description={itme.description}/>
+                <FeatureCard key={itme.title} className={itme.className} title={itme.title} description={itme.description}/>
             )
+            
         })}
     </div>
      <div className='flex flex-row gap-10 mt-[100px]'>
