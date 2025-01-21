@@ -76,17 +76,17 @@ toast("SuccessFully Signed In" ,{
     }
   return (
     <div className='auth-form'>
-        <div className='auth-box bg-primary-2'>
+        <div className='auth-box bg-primary-1 shadow-2xl'>
            <div className='auth-box'>
-            <div className='items-center my-auto text-center'>
+            <div className='items-center my-auto text-center text-black'>
             <div className='flex flex-row gap-3'>
-                <Image src="/icons/logo-main.svg" alt='logo' width={37} height={37}  />
-                <h1 className='text-2xl font-semibold hover:text-secondry-1 text-green-1'>SHEARTIME</h1>
+                <Image src="/icons/logo-white.svg" alt='logo' width={37} height={37}  />
+                <h1 className='text-2xl font-semibold hover:text-secondry-1 text-black'>SHEARTIME</h1>
                 
                 </div>
             </div>
             <div className='flex flex-col gap-4'>
-                <h1 className='text-2xl font-semibold text-white'>
+                <h1 className='text-2xl font-semibold text-black'>
                     Welcome back to 
                     <Typewriter
                     text={[
@@ -96,13 +96,13 @@ toast("SuccessFully Signed In" ,{
             "ShearTime"
           ]}
           speed={70}
-          className="text-white ml-2 text-[23px]"
+          className="text-black ml-2 text-[23px]"
           waitTime={1500}
           deleteSpeed={40}
           cursorChar={"#"}
                     />
                 </h1>
-                <p className='text-white'>
+                <p className='text-black'>
                     Sign in to access your account and continue Shearing
                 </p>
                   <Form {...form}>

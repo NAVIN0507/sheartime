@@ -1,22 +1,13 @@
 import type { Metadata } from "next";
-import {  Poppins , Bebas_Neue
- , Ubuntu} from "next/font/google";
+import {  
+ Ubuntu} from "next/font/google";
 import "./globals.css";
 
 
 import {SessionProvider} from "next-auth/react"
 import { Toaster } from 'sonner';
 import { auth } from "@/auth";
-const fontPoppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight:['700']
-})
-const fontBebasNeue = Bebas_Neue({
-  variable: "--font-bebasneue",
-  subsets: ["latin"],
-  weight:['400']
-})
+
 
 const fontUbuntu = Ubuntu({
   variable: "--font-ubuntu",

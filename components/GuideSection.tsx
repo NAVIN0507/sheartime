@@ -1,7 +1,33 @@
 import React from 'react'
-import FeatureCard from './FeatureCard'
-import { FeatureItems } from '@/constants'
+import { FaDiscord, FaGithub, FaTwitch, FaTwitter } from 'react-icons/fa'
 
+import FeatureCard from './FeatureCard'
+export const FeatureItems=[
+    {
+        title:"Create Account",
+        description:"Create your account in sheartime",
+        className:"bg-pink-400",
+        icon:<FaDiscord className='h-[30px] w-[30px] text-white'/>
+    },
+       {
+        title:"Create Accoun",
+        description:"Create your account in sheartime",
+        className:"bg-teal-400",
+        icon:<FaDiscord className='h-[30px] w-[30px] text-white'/>
+    },
+       {
+        title:"Create Accou",
+        description:"Create your account in sheartime",
+        className:"bg-pink-400",
+        icon:<FaDiscord className='h-[30px] w-[30px] text-white'/>
+    },
+       {
+        title:"Create Acco",
+        description:"Create your account in sheartime",
+        className:"bg-pink-400",
+        icon:<FaDiscord className='h-[30px] w-[30px] text-white'/>
+    }
+]
 const GuideSection = () => {
   return (
    <section className='flex flex-col flex-wrap gap-2 items-center mt-[70px] w-full'>
@@ -11,7 +37,7 @@ const GuideSection = () => {
         {FeatureItems.map((itme)=>{
             console.log(itme.className)
             return(
-                <FeatureCard key={itme.title} className={itme.className} title={itme.title} description={itme.description}/>
+                <FeatureCard key={itme.title} className={itme.className} title={itme.title} description={itme.description} icon={itme.icon}/>
             )
             
         })}

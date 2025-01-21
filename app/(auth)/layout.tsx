@@ -11,16 +11,17 @@ const layout = ({children}:{children : ReactNode}) => {
   return (
    <main className={`${fontBarlow.className} antialiased `}>
     <section className='auth-container'>
-    {children}
-     <section className='auth-illustration'>
+           <section className='auth-illustration'>
         <Image
         src="/images/auth.svg"
         alt="auth"
-        width={1000}
+        width={700}
         height={1000}
         className='size-full object-cover'
         />
     </section>
+    {children}
+
     </section>
    
    </main>

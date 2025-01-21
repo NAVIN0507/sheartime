@@ -22,7 +22,7 @@ const links =[
   ];
 const Hero = () => {
   return (
-    <section className='flex flex-col mt-20 items-center' >
+    <section className='flex flex-col mt-[150px] items-center' >
 
         {/* <BackgroundBeamsWithCollision> */}
       <div className='flex flex-row gap-5'>   
@@ -40,7 +40,7 @@ const Hero = () => {
           y: [20, -5, 0],
         }}
         transition={{
-          duration: 0.5,
+          duration: 0.1,
           ease: [0.4, 0.0, 0.2, 1],
         }}
         className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-black dark:text-white max-w-4xl leading-relaxed lg:leading-snug mx-auto "
