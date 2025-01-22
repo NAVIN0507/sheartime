@@ -2,6 +2,7 @@ import GuideSection from '@/components/GuideSection'
 import Hero from '@/components/Hero'
 
 import Navbar from '@/components/Navbar'
+import Testimonils from '@/components/Testimonils'
 import React from 'react'
 
 const page = () => {
@@ -17,6 +18,9 @@ const page = () => {
   <section id='about'>
     <GuideSection/>
   </section>
+</div>
+<div>
+  <Testimonils/>
 </div>
 <div className='mb-10'></div>
    </main>
