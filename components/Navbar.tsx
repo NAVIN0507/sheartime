@@ -39,7 +39,7 @@ const Navbar = () => {
         <ul className='flex flex-row gap-5  text-[20px]'>
             {NavItems.map((itme)=>{
                 const isActive = pathname === itme.route || pathname.includes(itme.route)
-                console.log(isActive)
+                
                 return(
                   <Link href={itme.route} key={itme.name}>
                     

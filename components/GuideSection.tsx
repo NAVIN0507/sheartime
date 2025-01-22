@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaDiscord, FaGithub, FaTwitch, FaTwitter ,FaUserTag  , FaWpexplorer }  from 'react-icons/fa'
-import {FcBusinessman , FcCollaboration , FcAcceptDatabase , FcOk , FcEngineering } from "react-icons/fc"
+import {FcBusinessman , FcCustomerSupport , FcCollaboration , FcAcceptDatabase , FcOk , FcEngineering } from "react-icons/fc"
 import { VscFeedback } from "react-icons/vsc";
 import { TbDeviceMobileMessage } from "react-icons/tb";
 import { SiRazorpay } from "react-icons/si";
@@ -54,10 +54,10 @@ export const FeatureItems=[
         icon:<TbDeviceMobileMessage className='h-[30px] w-[30px] text-white'/>
     },
        {
-        title:"Payment",
-        description:"Keep tabs on your transactions and monitor your payment history effortlessly. Stay on top of your finances!",
+        title:"Customer Support",
+        description:"Reach out to us anytime for assistance. We're here to help you 24/7",
         className:"bg-fuchsia-400 hover:bg-fuchsia-500 text-white font-medium rounded-md p-3 shadow-lg",
-        icon:<SiRazorpay className='h-[30px] w-[30px] text-white'/>
+        icon:<FcCustomerSupport className='h-[30px] w-[30px] text-white'/>
     },
     
 ]
@@ -68,7 +68,7 @@ const GuideSection = () => {
     <div className='flex flex-col gap-2 items-center'>
     <div className='grid grid-cols-1 sm:grid-cols-4  gap-10 mt-[150px]'>
         {FeatureItems.map((itme)=>{
-            console.log(itme.className)
+           
             return(
                 <FeatureCard key={itme.title} className={itme.className} title={itme.title} description={itme.description} icon={itme.icon}/>
             )
@@ -78,7 +78,7 @@ const GuideSection = () => {
    
      <div className='flex flex-row gap-10 mt-[100px]'>
         {FeatureItems2.map((itme)=>{
-            console.log(itme.className)
+            
             return(
                 <FeatureCard key={itme.title} className={itme.className} title={itme.title} description={itme.description} icon={itme.icon}/>
             )

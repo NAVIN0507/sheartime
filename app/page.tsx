@@ -2,6 +2,7 @@ import GuideSection from '@/components/GuideSection'
 import Hero from '@/components/Hero'
 
 import Navbar from '@/components/Navbar'
+import PaymentInfo from '@/components/PaymentInfo'
 import Testimonils from '@/components/Testimonils'
 import React from 'react'
 
@@ -17,6 +18,9 @@ const page = () => {
   </section>
   <section id='about'>
     <GuideSection/>
+    <div className='mt-10 items-center'>
+      <PaymentInfo/>
+    </div>
   </section>
 </div>
 <div>

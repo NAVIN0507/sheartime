@@ -10,7 +10,7 @@ interface Props{
 }
 const FeatureCard = ({title , description  , className , icon}:Props) => {
   return (
-    <div className='w-[350px] h-[300px] bg-primary-5 rounded-xl items-center shadow-xl hover:shadow-2xl'>
+    <div className='w-[350px] h-[300px] bg-primary-5 rounded-xl items-center shadow-md hover:shadow-2xl'>
       
         <div className={cn(' flex  text-2xl w-[100px] h-[100px]  mt-[-50px] ml-10 items-center text-center'  , className)}>
           
