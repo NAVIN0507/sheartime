@@ -3,7 +3,6 @@ import Hero from '@/components/Hero'
 
 import Navbar from '@/components/Navbar'
 import Testimonils from '@/components/Testimonils'
-import WobbleSection from '@/components/WobbleSection'
 import React from 'react'
 
 const page = () => {
@@ -18,7 +17,6 @@ const page = () => {
   </section>
   <section id='about'>
     <GuideSection/>
-    <WobbleSection/>
   </section>
 </div>
 <div>
