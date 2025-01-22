@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer'
 import GuideSection from '@/components/GuideSection'
 import Hero from '@/components/Hero'
 
@@ -26,7 +27,7 @@ const page = () => {
 <div>
   <Testimonils/>
 </div>
-<div className='mb-10'></div>
+<Footer/>
    </main>
   )
 }

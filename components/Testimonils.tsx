@@ -40,7 +40,7 @@ const testimonials = [
 const Testimonils = () => {
   return (
     <section className='w-full mt-[100px] items-center '>  
-        <h1 className='text-center text-5xl font-extrabold max-sm:text-start'>Customer Quotes
+        <h1 className='text-center text-5xl font-extrabold max-sm:text-start'>What our Customers Says
 </h1>
 <div className='w-full items-center flex flex-col gap-2 mt-10'>
 <AnimatedTestimonials testimonials={testimonials} />
