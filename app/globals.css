@@ -104,4 +104,11 @@ body {
   .form-select{
      @apply w-full min-h-14 border-none   placeholder:font-normal text-white focus-visible:ring-0 focus-visible:shadow-none bg-primary-1 !important;
   }
+   .hero-carousel {
+    @apply relative sm:px-10 py-5 sm:pt-20 pb-5 max-w-[60px] h-[700px] w-full bg-primary-1 rounded-[30px] sm:mx-auto;
+  }
+
+  .carousel {
+    @apply flex flex-col-reverse h-[700px];
+  }
 }
