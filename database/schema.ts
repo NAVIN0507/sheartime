@@ -8,6 +8,7 @@ export const users = pgTable("users", {
   phone:varchar("phone_number").notNull(),
   password:text("passowrd").notNull(),
   isAdmins: boolean().default(false).notNull(),
+  onBoarded: boolean().default(false).notNull(),
   createdAt: timestamp('created_at' , {
     withTimezone:true
   }).defaultNow(),
@@ -16,11 +17,11 @@ export const users = pgTable("users", {
 export const shops = pgTable("admin_shops" , {
   id:uuid('id').notNull().primaryKey().defaultRandom().unique(),
   adminId:varchar("admin_id").notNull(),
-  shopName:varchar("shop_name").notNull(),
-  shopAddress:varchar("shop_address").notNull(),
-  shopDescription:text("shop_description"),
-  shopPhone:varchar("shop_phone"),
-  shopEmail:text("shop_email"),
-  shopImageUrl:varchar("shop_image_url"),
+  shopName:varchar("shop_name").notNull().default(""),
+  shopAddress:varchar("shop_address").notNull().default(""),
+  shopDescription:text("shop_description").default(""),
+  shopPhone:varchar("shop_phone").default(""),
+  shopEmail:text("shop_email").default(""),
+  shopImageUrl:varchar("shop_image_url").default(""),
   opened:boolean().default(true).notNull()
 })

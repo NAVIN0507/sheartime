@@ -1,7 +1,6 @@
 "use client"
 import { sidebarLinks } from '@/constants'
 import { cn, getIntials } from '@/lib/utils'
-import { link } from 'fs'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -20,8 +19,8 @@ const Sidebar = ({session}:{session : Session}) => {
     {sidebarLinks.map((link)=>{
       const isActive = pathname === link.route || pathname.includes(link.route)
       return(
-        <Button className={cn('flex flex-row h-[50px] gap-7 items-center p-4 rounded-lg justify-start shadow-none hover:shadow-md' , {'bg-secondry-1 text-primary-1' : isActive})}>
-        <Link href={link.route} key={link.name} className='flex flex-row gap-4'>
+        <Button  key={link.name} className={cn('flex flex-row h-[50px] gap-7 items-center p-4 rounded-lg justify-start shadow-none hover:shadow-md' , {'bg-secondry-1 text-primary-1' : isActive})}>
+        <Link href={link.route}  className='flex flex-row gap-4'>
           <Image
           src={link.img}
           alt={link.name}

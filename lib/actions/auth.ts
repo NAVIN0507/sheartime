@@ -1,7 +1,7 @@
 "use server"
 
 import { db } from "@/database/drizzle"
-import { users } from "@/database/schema"
+import { shops, users } from "@/database/schema"
 
 import { eq } from "drizzle-orm"
 import { hash } from "bcryptjs";
@@ -41,6 +41,8 @@ export const SignUp = async({fullName , password , phone , email , isAdmin}:Auth
             password:hashedPassword,
             isAdmins:true
         })
+       
+
     }
     //@ts-ignore
     else{
@@ -60,4 +62,17 @@ export const SignUp = async({fullName , password , phone , email , isAdmin}:Auth
         return {success : false ,error :"Sign up Error"}
         
     }
+}
+export const SignUpAdmin = async (adminId : string)=>{
+    try {
+        const result = await db.insert(shops).values({
+        adminId
+    })
+    return {success : true}
+    } catch (error) {
+         console.log(error , "Signup ERROR")
+        return {success : false ,error :"Sign up Error"}
+    }
+   
+
 }

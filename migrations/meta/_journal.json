@@ -22,6 +22,20 @@
       "when": 1737186203159,
       "tag": "0002_majestic_the_initiative",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1737645576958,
+      "tag": "0003_cuddly_mimic",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1737646639313,
+      "tag": "0004_lyrical_spyke",
+      "breakpoints": true
     }
   ]
 }

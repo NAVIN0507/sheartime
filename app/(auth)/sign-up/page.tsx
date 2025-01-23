@@ -66,6 +66,7 @@ const page = () => {
           })
           
           //@ts-ignore
+          return router.push("/sign-in")
         }
         
           else{
@@ -79,7 +80,7 @@ const page = () => {
            return router.push('/admin')
           }
           //@ts-ignore
-         return router.push("/sign-in")
+         
         
       }
       else{
@@ -232,7 +233,7 @@ const page = () => {
                 </FormItem>
               )}
               />
-<Button className='form-btn' type='submit'>{
+<Button className='form-btn' type='submit' disabled={isLoading}>{
   isLoading ? (<>
   Signing Up  
               <Loader width={20} height={20} className='animate-spin'/>

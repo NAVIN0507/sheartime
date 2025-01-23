@@ -16,7 +16,7 @@ import {z} from "zod"
 import { signInSchema } from '@/lib/validations/auth.validation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Check, Loader } from 'lucide-react'
+import { Check, Loader , CircleX } from 'lucide-react'
 import Typewriter from '@/components/fancy/typewriter'
 import { toast } from 'sonner';
 import { signInWithCredentails } from '@/lib/actions/auth'
@@ -48,13 +48,21 @@ toast("SuccessFully Signed In" ,{
         })
         //@ts-ignore
         if(result.userData[0].isAdmins){
-           return router.push('/admin')
+          //@ts-ignore
+           return router.push(`/admin/${result.userData[0].id}`)
           }
           //@ts-ignore
           else{
             //@ts-ignore
          return router.push(`/customers/${result.userData[0].id}`)
           }
+        }
+        else if(result.error){
+           toast("Error In Signing In" ,{
+            className:"bg-red-500 text-white border-none text-bold",
+            duration: 5000,
+            icon:<CircleX width={20} height={20} className='rounded-full object-fill'/>
+        })
         }
         setisLoading(false)
       } catch (error) {

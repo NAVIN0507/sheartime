@@ -1,0 +1,1 @@
+ALTER TABLE "users" ADD COLUMN "onBoarded" boolean DEFAULT false NOT NULL;
