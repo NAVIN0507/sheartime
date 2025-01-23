@@ -10,6 +10,7 @@ import React, { useState }  from 'react'
 const page = ({params} :{params:{id:string}}) => {
 const [isLoading, setisLoading] = useState(false);
 const router = useRouter();
+//TODO: Imaplementing routing logic and anther
   const onSubmit = async () => {
   setisLoading(true)
     // TODO: Implement the onboarding logic
