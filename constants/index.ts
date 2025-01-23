@@ -63,3 +63,30 @@ export const FeatureItems=[
         className:"bg-pink-400"
     }
 ]
+export const sidebarLinks =[
+    {
+        name:'Home',
+        img:'/icons/booking.svg',
+        route:'/'
+    },
+     {
+        name:'Shops',
+        img:'/icons/booking.svg',
+        route:'/shops'
+    },
+     {
+        name:'New Booking',
+        img:'/icons/booking.svg',
+        route:'/new-booking'
+    },
+     {
+        name:'Previous Booking',
+        img:'/icons/booking.svg',
+        route:'/previous-booking'
+    },
+    {
+        name:'Payments',
+        img:'/icons/booking.svg',
+        route:'/payments'
+    },
+]
