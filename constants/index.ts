@@ -67,7 +67,7 @@ export const sidebarLinks =[
     {
         name:'Home',
         img:'/icons/booking.svg',
-        route:'/'
+        route:'/customers'
     },
      {
         name:'Shops',

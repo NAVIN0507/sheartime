@@ -91,6 +91,9 @@ body {
 .auth-illustration{
   @apply sticky h-40 w-full pr-10 sm:top-0 sm:min-h-screen sm:flex-1
 }
+.user {
+    @apply mt-2.5 flex flex-row flex-wrap gap-5;
+  }
 }
 
 @layer components{

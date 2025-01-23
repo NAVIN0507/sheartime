@@ -79,7 +79,7 @@ const page = () => {
            return router.push('/admin')
           }
           //@ts-ignore
-         return router.push(`/customers/${result.userData[0].id}`)
+         return router.push("/sign-in")
         
       }
       else{
