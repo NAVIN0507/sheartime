@@ -4,11 +4,12 @@ import { db } from '@/database/drizzle'
 import { users } from '@/database/schema'
 import { getUserById } from '@/lib/actions/user.action'
 import { eq } from 'drizzle-orm'
-import { redirect } from 'next/navigation'
+import { redirect, useRouter } from 'next/navigation'
 import React, { useState }  from 'react'
 
 const page = ({params} :{params:{id:string}}) => {
-const [isLoading, setisLoading] = useState(false)
+const [isLoading, setisLoading] = useState(false);
+const router = useRouter();
   const onSubmit = async () => {
   setisLoading(true)
     // TODO: Implement the onboarding logic
@@ -16,8 +17,8 @@ const [isLoading, setisLoading] = useState(false)
     try {
       const user = await db.update(users).set({onBoarded: true}).where(eq(users.id , params.id));
       const getuser = await getUserById(params.id);
-      if(!getuser?.onBoarded) {
-        return redirect(`/admin/${params.id}`)
+      if(getuser?.onBoarded) {
+        return router.push(`/admin/${params.id}`)
       }
        setisLoading(false)
 
