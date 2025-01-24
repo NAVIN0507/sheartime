@@ -20,10 +20,14 @@ import { shopSchema } from '@/lib/validations/auth.validation'
 import { Textarea } from '@/components/ui/textarea'
 import { UploadButton, UploadDropzone } from '@/lib/utils/uploadthing'
 import Image from 'next/image'
+import { registerShop } from '@/lib/actions/admin.action'
+import { useRouter } from 'next/navigation'
+import { Loader } from 'lucide-react'
 
-const OnboardingForm = () => {
+const OnboardingForm = ({adminid}:{adminid:string}) => {
     const [imageUrl, setimageUrl] = useState<string>("");
     const [isLoading, setisLoading] = useState(false);
+    const router = useRouter();
     const form = useForm<z.infer<typeof shopSchema>>({
     resolver: zodResolver(shopSchema),
     defaultValues: {
@@ -37,9 +41,27 @@ shopImage:"",
   })
  
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof shopSchema>) {
+ async function onSubmit(values: z.infer<typeof shopSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
+    setisLoading(true);
+    try {
+        const result = await registerShop({
+        adminId:adminid,
+        shopName: values.shopName,
+        shopAddress: values.shopAddress,
+        shopPhone: values.shopPhone,
+        shopEmail: values.shopEmail,
+        shopDescription: values.shopDescription,
+        shopImages: imageUrl,
+    })
+    if(result.success){
+        return router.push(`/admin/${adminid}`);
+    }
+    setisLoading(false);
+    } catch (error) {
+        console.log(error);
+    }
     console.log(values , imageUrl)
   }
   return (
@@ -147,7 +169,7 @@ shopImage:"",
                 <div className='mx-auto items-center'>
                     <Image
                     src={imageUrl}
-                    alt="Shop Image"
+                    alt="Shop Image"    
                     width={300}
                     height={300}
                     className='mx-auto'
@@ -159,7 +181,9 @@ shopImage:"",
             </FormItem>
           )}
         />
-        <Button type="submit" className='bg-secondry-1 text-primary-1 w-full'>Submit</Button>
+        <Button type="submit" className='bg-secondry-1 text-primary-1 w-full'>
+            {isLoading ? (<>Registering <Loader className='animate-spin' width={20} height={20}/></>) :'Register'}
+        </Button>
       </form>
     </Form>
     

@@ -35,7 +35,7 @@ const router = useRouter();
     <div className='mx-auto mt-5 flex flex-col gap-2'>
     <h1 className='text-3xl text-secondry-1 text-center'>Fill Up your Shop Details</h1>
     <div className='flex flex-col'>
-<OnboardingForm/>
+<OnboardingForm adminid={params.id}/>
     </div>
     </div>
   </section>

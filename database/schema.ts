@@ -22,6 +22,6 @@ export const shops = pgTable("admin_shops" , {
   shopDescription:text("shop_description").default(""),
   shopPhone:varchar("shop_phone").default(""),
   shopEmail:text("shop_email").default(""),
-  shopImageUrl:varchar("shop_image_url").default(""),
+  shopImages:varchar("shop_image_url").default(""),
   opened:boolean().default(true).notNull()
 })
