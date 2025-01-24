@@ -12,3 +12,12 @@ export const signUpSchema = z.object({
   password:z.string().min(8),
   role:z.string()
 })
+export const shopSchema = z.object({
+  shopName: z.string().min(3 , {message:"Shop name should be atleast 3 charcters"}).max(50),
+  shopAddress: z.string().min(10 , {message:"Shop address should be atleast 10 charcters"}).max(200),
+  shopPhone: z.coerce.number(),
+  shopEmail: z.string().email(),
+  shopDescription: z.string().min(10 , {message:"Shop description should be atleast 10 charcters"}).max(500),
+  shopImage: z.string()
+
+})

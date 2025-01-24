@@ -3,11 +3,11 @@ import { Button } from '@/components/ui/button'
 import { db } from '@/database/drizzle'
 import { users } from '@/database/schema'
 import { getUserById } from '@/lib/actions/user.action'
-import { UploadButton , UploadDropzone } from '@/lib/utils/uploadthing'
 import { eq } from 'drizzle-orm'
 import { redirect, useRouter } from 'next/navigation'
 import React, { useState }  from 'react'
 import Image from 'next/image'
+import OnboardingForm from '@/components/admin/forms/OnboardingForm'
 const page = ({params} :{params:{id:string}}) => {
 const [isLoading, setisLoading] = useState(false);
 const [imageUrl, setimageUrl] = useState<string>('')
@@ -31,28 +31,14 @@ const router = useRouter();
     }
   }
   return (
-    <div className='mx-auto items-center justify-center'>Onboarding Page
-<UploadButton
-endpoint="imageUploader"
-onClientUploadComplete={(res)=>{
-  console.log('Files: ' , res);
-  setimageUrl(res[0].url)
-}}
-onUploadError={(error :Error)=>{
-  alert(`Error! ${error.message}`)
-}}
-className='bg-secondry-1 text-primary-1'
-/>
-{imageUrl.length ? (<>
-<div>
-  <Image src={imageUrl} alt='img'  width={500} height={300} />
-</div>
-</>) :''}
-
-      <Button onClick={onSubmit}>
-       {isLoading ? "Updating..." :"Click Me"}
-         </Button>
+  <section className='flex mx-auto items-center w-full'>
+    <div className='mx-auto mt-5 flex flex-col gap-2'>
+    <h1 className='text-3xl text-secondry-1 text-center'>Fill Up your Shop Details</h1>
+    <div className='flex flex-col'>
+<OnboardingForm/>
     </div>
+    </div>
+  </section>
   )
 }
 
