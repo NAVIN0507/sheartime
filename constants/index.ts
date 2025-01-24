@@ -64,15 +64,11 @@ export const FeatureItems=[
     }
 ]
 export const sidebarLinks =[
-    {
-        name:'Home',
-        img:'/icons/booking.svg',
-        route:'/customers'
-    },
+   
      {
         name:'Shops',
         img:'/icons/booking.svg',
-        route:'/shops'
+        route:'/customers/shops'
     },
      {
         name:'New Booking',

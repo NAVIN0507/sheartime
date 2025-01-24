@@ -181,7 +181,7 @@ shopImage:"",
             </FormItem>
           )}
         />
-        <Button type="submit" className='bg-secondry-1 text-primary-1 w-full'>
+        <Button type="submit" className='bg-secondry-1 text-primary-1 w-full' disabled={isLoading}>
             {isLoading ? (<>Registering <Loader className='animate-spin' width={20} height={20}/></>) :'Register'}
         </Button>
       </form>

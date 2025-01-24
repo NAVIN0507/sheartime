@@ -14,10 +14,10 @@ const Sidebar = ({session}:{session : Session}) => {
   if(!session) return null;
   const pathname = usePathname();
   return (
-<section className='sticky left-0 top-0 flex h-screen w-fit flex-col justify-between bg-primary-1 shadow-lg p-6 pt-20 text-black max-sm:hidden lg:w-[284px] '>
+<section className='sticky left-0 top-0 flex h-screen w-fit flex-col justify-between bg-primary-1 shadow-lg p-6 pt-24 text-black max-sm:hidden lg:w-[284px] '>
   <div className='flex flex-1 flex-col gap-6'>
     {sidebarLinks.map((link)=>{
-      const isActive = pathname === link.route || pathname.includes(link.route)
+      const isActive = pathname === link.route
       return(
         <Button  key={link.name} className={cn('flex flex-row h-[50px] gap-7 items-center p-4 rounded-lg justify-start shadow-none hover:shadow-md' , {'bg-secondry-1 text-primary-1' : isActive})}>
         <Link href={link.route}  className='flex flex-row gap-4'>
@@ -35,7 +35,7 @@ const Sidebar = ({session}:{session : Session}) => {
         </Button>
       )
     })}
-    <div className='mt-40 mx-auto'>
+    <div className='mt-64 mx-auto'>
 <div className='flex flex-row gap-2 w-[270px] h-[60px] border-2 rounded-full items-start  justify-start  -ml-4 cursor-pointer   hover:shadow-md'>
   <div className='mt-2 flex flex-row gap-4 text-lg ml-2'>
   <Avatar>
