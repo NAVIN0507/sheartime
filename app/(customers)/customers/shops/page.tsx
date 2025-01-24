@@ -1,3 +1,4 @@
+import ShopCard from '@/components/customers/ShopCard';
 import { getAllShops } from '@/lib/actions/user.action'
 import Image from 'next/image';
 import React from 'react'
@@ -8,19 +9,17 @@ const page = async() => {
   return (
     <div className='flex flex-row gap-2'>
         {reuslt?.map((shop)=>(
-            <div className='flex flex-row gap-2' key={shop.id}>
-            <div className='flex flex-row gap-2' key={shop.id}>
-            <h1 key={shop.id}>{shop.shopName}</h1>
-            <div>
-                <Image
-                src={shop.shopImages!}
-                alt={shop.shopName}
-                width={104}
-                height={104}
-                className='rounded-full object-contain'
+            <div className='grid grid-cols-4 gap-11' key={shop.id}>
+                <ShopCard
+                shopName={shop.shopName}
+                shopImage={shop.shopImages!}
+                shopId={shop.id}
+                shopAdress={shop.shopAddress}
+                shopEmail={shop.shopEmail!}
+                shopPhone={shop.shopPhone!}
+                shopDescription={shop.shopDescription!}
+                adminId={shop.adminId}
                 />
-            </div>
-            </div>
             </div>
         ))}
     </div>

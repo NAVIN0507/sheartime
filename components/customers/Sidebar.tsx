@@ -35,7 +35,7 @@ const Sidebar = ({session}:{session : Session}) => {
         </Button>
       )
     })}
-    <div className='mt-64 mx-auto'>
+    <div className='mt-72 mx-auto'>
 <div className='flex flex-row gap-2 w-[270px] h-[60px] border-2 rounded-full items-start  justify-start  -ml-4 cursor-pointer   hover:shadow-md'>
   <div className='mt-2 flex flex-row gap-4 text-lg ml-2'>
   <Avatar>
