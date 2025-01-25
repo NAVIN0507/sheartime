@@ -6,6 +6,10 @@ import { shops, users } from "@/database/schema"
 import { eq } from "drizzle-orm"
 import { hash } from "bcryptjs";
 import { signIn } from "@/auth";
+import { messaging, sendSMS } from "../appwrite/appwrite.config";
+import { ID } from "node-appwrite";
+import { parseStringify } from "../utils";
+import { sendSMSToUser } from "../twillio/sms";
 export const signInWithCredentails =async({password , email} : Pick<AuthCredentials , "email" | "password">)=>{
    
     try {
@@ -56,6 +60,9 @@ export const SignUp = async({fullName , password , phone , email , isAdmin}:Auth
     })
 }
        const userData = await db.select().from(users).where(eq(users.email , email)).limit(1)
+
+       const smsMessage = `Hi 👋 ${userData[0].fullName} welcome to Sheartime. Create your first Booking now at your faviorate shop.Don't stand in queue make in time and make your style`;
+await sendSMSToUser(userData[0].phone , smsMessage);
         return {success : true , userData}
     } catch (error) {
          console.log(error , "Signup ERROR")

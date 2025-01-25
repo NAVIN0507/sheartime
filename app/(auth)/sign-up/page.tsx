@@ -36,7 +36,7 @@ const page = () => {
     resolver:zodResolver(signUpSchema),
     defaultValues:{
     name:"",
-    phone:0,
+    phone:"",
     email:"",
     password:"",
     role:""

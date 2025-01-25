@@ -1,6 +1,6 @@
 interface AuthCredentials{
     fullName:string;
-    phone:number;
+    phone:string;
     email:string;
     password: string;
     isAdmin?:boolean;
