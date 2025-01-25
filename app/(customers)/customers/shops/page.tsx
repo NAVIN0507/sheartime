@@ -9,7 +9,7 @@ const page = async() => {
   return (
     <div className='flex flex-row gap-2'>
         {reuslt?.map((shop)=>(
-            <div className='grid grid-cols-4 gap-11' key={shop.id}>
+            <div className='flex flex-row ml-10' key={shop.id}>
                 <ShopCard
                 shopName={shop.shopName}
                 shopImage={shop.shopImages!}
