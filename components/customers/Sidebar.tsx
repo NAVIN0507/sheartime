@@ -13,14 +13,35 @@ import { Session } from 'next-auth'
 const Sidebar = ({session}:{session : Session}) => {
   if(!session) return null;
   const pathname = usePathname();
+  
   return (
-<section className='sticky left-0 top-0 flex h-screen w-fit flex-col justify-between bg-primary-1 shadow-lg p-6 pt-24 text-black max-sm:hidden lg:w-[284px] '>
+<section className='sticky left-0 top-0 flex h-screen w-fit flex-col justify-between bg-primary-1 shadow-lg p-6 pt-32 text-black max-sm:hidden lg:w-[314px] '>
   <div className='flex flex-1 flex-col gap-6'>
+
+    <Link href={`/customers/${session.user?.id}`}  className='flex flex-row gap-4' >
+        <Button className={cn('flex flex-row h-[50px] gap-7 items-center w-full p-4 rounded-lg justify-start  hover:shadow-md hover:bg-secondry-1 hover:text-primary-1')}>
+       
+          <Image
+          src="/icons/booking.svg"
+          alt="Booking"
+          width={24}
+          height={24}
+         
+          />
+          <p className='text-[20px] font-light max-lg:hidden'>
+           Dashboard
+          </p>
+        
+        </Button>
+        </Link>
     {sidebarLinks.map((link)=>{
       const isActive = pathname === link.route
-      return(
-        <Button  key={link.name} className={cn('flex flex-row h-[50px] gap-7 items-center p-4 rounded-lg justify-start shadow-none hover:shadow-md' , {'bg-secondry-1 text-primary-1' : isActive})}>
-        <Link href={link.route}  className='flex flex-row gap-4'>
+      return( 
+         <Link href={link.route}  className='flex flex-row gap-4 mt-4' key={link.name}>
+        <Button  key={link.name
+          
+        } className={cn('flex flex-row h-[50px] gap-7 items-center w-full p-4 rounded-lg justify-start hover:shadow-md hover:bg-secondry-1 hover:text-primary-1' , {'bg-secondry-1 text-primary-1' : isActive})}>
+       
           <Image
           src={link.img}
           alt={link.name}
@@ -28,11 +49,12 @@ const Sidebar = ({session}:{session : Session}) => {
           height={24}
           className={`${isActive ? 'brightness-200 invert' :'' }object-contain`} 
           />
-          <p className='text-base font-light max-lg:hidden'>
+          <p className='text-[20px] font-light max-lg:hidden'>
             {link.name}
           </p>
-        </Link>
+        
         </Button>
+        </Link>
       )
     })}
     <div className='mt-72 mx-auto bottom-4 fixed'>

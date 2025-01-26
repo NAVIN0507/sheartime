@@ -3,7 +3,7 @@ import Navbar from '@/components/customers/Navbar'
 import React, { ReactNode } from 'react'
 import localFont from "next/font/local"
 import { Toaster } from "@/components/ui/toaster"
-import { Inter } from 'next/font/google'
+import { Inter , Raleway , Aclonica} from 'next/font/google'
 import { redirect } from 'next/navigation'
 import Sidebar from '@/components/customers/Sidebar'
 
@@ -13,11 +13,12 @@ const fontInter = Inter({
     weight: ["300", "500", "600", "700"]
   
 })
+
 const layout = async ({children} :{children: ReactNode}) => {
     const session = await auth();
     if(!session) return redirect("/sign-in");
   return (
-  <main className={`relative ${fontInter.className}`}>
+  <main className={`relative ${fontInter.className} antialiased`}>
     <Navbar session={session}/>
     <div className='flex'>
         <Sidebar session={session}/>

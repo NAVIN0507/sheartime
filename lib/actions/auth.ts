@@ -61,7 +61,7 @@ export const SignUp = async({fullName , password , phone , email , isAdmin}:Auth
 }
        const userData = await db.select().from(users).where(eq(users.email , email)).limit(1)
 
-       const smsMessage = `Hi 👋 ${userData[0].fullName} welcome to Sheartime. Create your first Booking now at your faviorate shop.Don't stand in queue make in time and make your style`;
+       const smsMessage = isAdmin? `Hi 👨‍💻 ${userData[0].fullName} welcome to Sheartime. Manage your cutomers shedule their bookings or cancel their bookings.Go on Admin` : `Hi 👋 ${userData[0].fullName} welcome to Sheartime. Create your first Booking now at your faviorate shop.Don't stand in queue make in time and make your style` ;
 await sendSMSToUser(userData[0].phone , smsMessage);
         return {success : true , userData}
     } catch (error) {

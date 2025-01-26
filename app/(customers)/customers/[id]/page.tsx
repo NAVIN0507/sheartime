@@ -12,7 +12,7 @@ const page = async({params} :{params :{id : string}}) => {
   const sesssion = await auth();
   if(!sesssion) return redirect("/sign-in")
   return (
-<div></div>
+<div>Page</div>
   )
 }
 
