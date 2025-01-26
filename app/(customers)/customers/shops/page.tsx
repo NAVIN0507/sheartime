@@ -9,7 +9,7 @@ const page = async() => {
   return (
     <section className='flex flex-col gap-1'>
       <h1 className='text-5xl'>Shops</h1>
-    <div className='flex flex-row gap-2'>
+    <div className='grid grid-cols-4 gap-2'>
         {reuslt?.map((shop)=>(
             <div className='flex flex-row ml-10 mt-20' key={shop.id}>
                 <ShopCard
