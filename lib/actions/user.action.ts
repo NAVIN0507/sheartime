@@ -14,7 +14,7 @@ export const getUserById = async(userId: string)=>{
 }
 export const getAllShops = async()=>{
     try {
-        const allshops = await db.select().from(shops);
+        const allshops = await db.select().from(shops).orderBy(shops.opened)
         return allshops
     } catch (error) {
         console.log(error)

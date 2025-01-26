@@ -82,7 +82,7 @@ shopImage:"",
           name="shopName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Shop Name</FormLabel>
+              <FormLabel className='text-1xl'>Shop Name</FormLabel>
               <FormControl>
                 <Input placeholder="Enter Your Shop Name" className='form-input' required  type='text'{...field} />
               </FormControl>
@@ -97,7 +97,7 @@ shopImage:"",
           name="shopAddress"
           render={({ field }) => (
             <FormItem className='w-full'>
-              <FormLabel>Shop Address</FormLabel>
+              <FormLabel className='text-1xl'>Shop Address</FormLabel>
               <FormControl>
                 <Textarea rows={5} className='form-input' placeholder="Enter Your Shop Adress"  required{...field} />
               </FormControl>
@@ -111,7 +111,7 @@ shopImage:"",
           name="shopDescription"
           render={({ field }) => (
             <FormItem className='w-full'>
-              <FormLabel>Description</FormLabel>
+              <FormLabel className='text-1xl'>Description</FormLabel>
               <FormControl>
                 <Textarea rows={5} className='form-input' placeholder="Enter Your Shop Description" {...field} />
               </FormControl>
@@ -127,7 +127,7 @@ shopImage:"",
           name="shopPhone"
           render={({ field }) => (
             <FormItem className='w-full'>
-              <FormLabel>Phone Number</FormLabel>
+              <FormLabel className='text-1xl'>Phone Number (Add +91)</FormLabel>
               <FormControl>
                 <Input placeholder="Enter Your Shop Name" className='form-input' type='tel' {...field} />
               </FormControl>
@@ -141,7 +141,7 @@ shopImage:"",
           name="shopEmail"
           render={({ field }) => (
             <FormItem className='w-full'>
-              <FormLabel>Email</FormLabel>
+              <FormLabel className='text-1xl'>Email</FormLabel>
               <FormControl>
                 <Input placeholder="Enter Your Shop Email" type='email' {...field} className='form-input'/>
               </FormControl>
@@ -157,7 +157,7 @@ shopImage:"",
           name="shopImage"
           render={({ field }) => (
             <FormItem className='hover:cursor-grab w-full'>
-              <FormLabel>Shop Image</FormLabel>
+              <FormLabel className='text-1xl'>Shop Image</FormLabel>
               <FormControl>
                 <UploadDropzone 
                 appearance={{
