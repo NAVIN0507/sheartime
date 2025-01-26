@@ -20,3 +20,12 @@ export const registerShop = async({adminId, shopName , shopAddress , shopPhone ,
         return {success:false , error:"Error While ONBoardingCredentials"}
     }
 }
+
+export const getShopById = async(userId: string)=>{
+    try {
+        const shop = await db.select().from(shops).where(eq(shops.adminId , userId)).limit(1)
+        return shop[0]
+    } catch (error) {
+        console.log(error)
+    }
+}

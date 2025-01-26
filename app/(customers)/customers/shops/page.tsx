@@ -7,9 +7,11 @@ const page = async() => {
     const reuslt = await getAllShops();
 
   return (
+    <section className='flex flex-col gap-1'>
+      <h1 className='text-5xl'>Shops</h1>
     <div className='flex flex-row gap-2'>
         {reuslt?.map((shop)=>(
-            <div className='flex flex-row ml-10' key={shop.id}>
+            <div className='flex flex-row ml-10 mt-20' key={shop.id}>
                 <ShopCard
                 shopName={shop.shopName}
                 shopImage={shop.shopImages!}
@@ -19,10 +21,12 @@ const page = async() => {
                 shopPhone={shop.shopPhone!}
                 shopDescription={shop.shopDescription!}
                 adminId={shop.adminId}
+                isOpened={shop.opened}
                 />
             </div>
         ))}
     </div>
+    </section>
   )
 }
 
