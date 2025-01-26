@@ -58,9 +58,9 @@ isOpened
             />
             <div className='w-[370px] mx-auto rounded-xl border-2  h-[250px] mt-7'>
             <h1 className=' ml-6 text-2xl mt-10'>{shopName}</h1>
-            <p className='ml-6 mt-5'>{shopAdress}</p>
+            <p className='ml-6 mt-5 truncate'>{shopAdress}</p>
             <div className='flex flex-row gap-8'>
-              <div className='flex flex-row gap-2'>
+              <div className='flex flex-row gap-2 mt-2'>
             <Button className='mt-10 ml-6 w-[200px] h-11 text-[20px] text-start justify-start rounded-lg bg-secondry-1 text-primary-1'>Book Now <CircleArrowOutUpRight width={50} height={50} className='ml-1 text-[20px]' /></Button>
             <Button className='mt-10 h-11 bg-secondry-1 text-white ml-3' onClick={()=>{ navigator.clipboard.writeText(shopPhone);
                 toast("Copied PhoneNumber" ,{

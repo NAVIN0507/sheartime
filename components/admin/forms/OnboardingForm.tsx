@@ -23,6 +23,7 @@ import Image from 'next/image'
 import { registerShop } from '@/lib/actions/admin.action'
 import { useRouter } from 'next/navigation'
 import { Loader } from 'lucide-react'
+import Link from 'next/link'
 
 const OnboardingForm = ({adminid}:{adminid:string}) => {
     const [imageUrl, setimageUrl] = useState<string>("");
@@ -65,11 +66,17 @@ shopImage:"",
     console.log(values , imageUrl)
   }
   return (
-    <section className='mt-2 mx-auto'>
-        <div className='auth-form'>
-            <div className='auth-box bg-primary-1 shadow-xl w-[700px]'>
+    <section className=' mx-auto'>
+        <div className='auth-form '>
+            <div className='mx-auto flex bg-primary-1 shadow-2xl flex-col gap-6 rounded-lg p-10 w-[1200px] '>
+                <div className='mx-auto'>
+                      <Link href="/" className='flex flex-row gap-2'>
+                      <Image src="/icons/logo-white.svg" alt='logo' width={67} height={37}  />
+                                     <h1 className='text-3xl font-semibold hover:text-secondry-1 text-black mt-2'>SHEARTIME</h1>
+                      </Link>
+                    </div>
                 <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 text-base">
         <FormField
           control={form.control}
           name="shopName"
@@ -77,35 +84,52 @@ shopImage:"",
             <FormItem>
               <FormLabel>Shop Name</FormLabel>
               <FormControl>
-                <Input placeholder="Enter Your Shop Name" required  type='text'{...field} />
+                <Input placeholder="Enter Your Shop Name" className='form-input' required  type='text'{...field} />
               </FormControl>
               
               <FormMessage />
             </FormItem>
           )}
         />
+        <div className='flex flex-row gap-8'>
          <FormField
           control={form.control}
           name="shopAddress"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className='w-full'>
               <FormLabel>Shop Address</FormLabel>
               <FormControl>
-                <Textarea rows={5} placeholder="Enter Your Shop Adress"  required{...field} />
+                <Textarea rows={5} className='form-input' placeholder="Enter Your Shop Adress"  required{...field} />
               </FormControl>
               
               <FormMessage />
             </FormItem>
           )}
         />
+          <FormField
+          control={form.control}
+          name="shopDescription"
+          render={({ field }) => (
+            <FormItem className='w-full'>
+              <FormLabel>Description</FormLabel>
+              <FormControl>
+                <Textarea rows={5} className='form-input' placeholder="Enter Your Shop Description" {...field} />
+              </FormControl>
+              
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        </div>
+        <div className='flex flex-row gap-8'>
          <FormField
           control={form.control}
           name="shopPhone"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className='w-full'>
               <FormLabel>Phone Number</FormLabel>
               <FormControl>
-                <Input placeholder="Enter Your Shop Name" type='tel' {...field} />
+                <Input placeholder="Enter Your Shop Name" className='form-input' type='tel' {...field} />
               </FormControl>
               
               <FormMessage />
@@ -116,45 +140,32 @@ shopImage:"",
           control={form.control}
           name="shopEmail"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className='w-full'>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="Enter Your Shop Email" type='email' {...field} />
+                <Input placeholder="Enter Your Shop Email" type='email' {...field} className='form-input'/>
               </FormControl>
               
               <FormMessage />
             </FormItem>
           )}
         />
-         <FormField
-          control={form.control}
-          name="shopDescription"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Description</FormLabel>
-              <FormControl>
-                <Textarea rows={5} placeholder="Enter Your Shop Description" {...field} />
-              </FormControl>
-              
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        
+       </div>
+        <div className='flex flex-row gap-8'>
          <FormField
           control={form.control}
           name="shopImage"
           render={({ field }) => (
-            <FormItem className='hover:cursor-grab'>
+            <FormItem className='hover:cursor-grab w-full'>
               <FormLabel>Shop Image</FormLabel>
               <FormControl>
-                <UploadButton 
+                <UploadDropzone 
                 appearance={{
     button:
       "ut-ready:bg-green-500 ut-uploading:cursor-not-allowed rounded-r-none bg-red-500 bg-none after:bg-orange-400 w-full mt-4 hover:cursor-grab",
     container: "w-full flex-row rounded-md border-2 mt-2 bg-primary-1",
     allowedContent:
-      "flex h-8 flex-col items-center justify-center px-2 text-white",
+      "flex h-8 flex-col items-center justify-center px-2 text-black",
   }}
                 className='border-2  rounded-sm w-full'
                 endpoint="imageUploader"
@@ -164,24 +175,26 @@ shopImage:"",
                 }}
                 />
               </FormControl>
-              <FormDescription>
-                {imageUrl.length ? (<>
-                <div className='mx-auto items-center'>
-                    <Image
-                    src={imageUrl}
-                    alt="Shop Image"    
-                    width={300}
-                    height={300}
-                    className='mx-auto'
-                    />
-                </div>
-                </>) :''}
-              </FormDescription>
+             
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit" className='bg-secondry-1 text-primary-1 w-full' disabled={isLoading}>
+        <div className='w-full mx-auto mt-7'>
+           {imageUrl.length ? (<>
+                <div className=''>
+                    <Image
+                    src={imageUrl}
+                    alt="Shop Image"    
+                    width={500}
+                    height={500}
+                    className='mx-auto'
+                    />
+                </div>
+                </>) :''}
+                </div>
+        </div>
+        <Button type="submit" className='bg-secondry-1 text-primary-1 w-full h-16' disabled={isLoading}>
             {isLoading ? (<>Registering <Loader className='animate-spin' width={20} height={20}/></>) :'Register'}
         </Button>
       </form>

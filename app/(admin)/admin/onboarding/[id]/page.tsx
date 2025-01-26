@@ -8,6 +8,7 @@ import { redirect, useRouter } from 'next/navigation'
 import React, { useState }  from 'react'
 import Image from 'next/image'
 import OnboardingForm from '@/components/admin/forms/OnboardingForm'
+import Link from 'next/link'
 const page = ({params} :{params:{id:string}}) => {
 const [isLoading, setisLoading] = useState(false);
 const [imageUrl, setimageUrl] = useState<string>('')
@@ -32,8 +33,9 @@ const router = useRouter();
   }
   return (
   <section className='flex mx-auto items-center w-full'>
-    <div className='mx-auto mt-5 flex flex-col gap-2'>
-    <h1 className='text-3xl text-secondry-1 text-center'>Fill Up your Shop Details</h1>
+    <div className='mx-auto  flex flex-col gap-2'>
+    
+   
     <div className='flex flex-col'>
 <OnboardingForm adminid={params.id}/>
     </div>
