@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { getShopById } from '@/lib/actions/user.action'
-import { Mail, Phone, Star } from 'lucide-react';
+import { Mail, MapPinHouse, Phone, Star } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react'
 
@@ -10,8 +10,13 @@ const page = async({params} : {params :{id : string}}) => {
     <section className='flex flex-col gap-2 '>
       <h1 className='text-5xl'>Shop Details</h1>
       <div className='flex flex-row gap-10 mt-20 mx-auto'>
-        <div className='w-[700px] h-[600px] shadow-2xl rounded-2xl'>
+       
+        <div className='w-[700px] h-[650px] shadow-2xl rounded-2xl'>
+          <div className=' ml-[550px]'> 
+             <Button className='w-[100px] h-[100px] -mt-12 ml-[550px] rounded-full bg-green-400 mx-auto text-7xl'> <MapPinHouse size={48} strokeWidth={3} /></Button>
+             </div>
           <div className='ml-7 mt-10'>
+          
           <h1 className='text-4xl'>{shop?.shopName}</h1>
           <h3 className='text-2xl mt-8 text-slate-500'>Address</h3>
           <p className='mt-2 text-2xl'>{shop?.shopAddress}</p>
@@ -46,6 +51,10 @@ const page = async({params} : {params :{id : string}}) => {
         className='rounded-xl'
         />
       </div>
+      </div>
+      <div className='mt-[100px] w-full ml-10'>
+        <h1 className='text-3xl'>Description</h1>
+        <p className='mt-10 text-[20px]' >{shop?.shopDescription}</p>
       </div>
       
     </section>
