@@ -1,3 +1,4 @@
+"use server"
 import { db } from "@/database/drizzle"
 import { bookings, shops, users } from "@/database/schema"
 import { eq } from "drizzle-orm"
