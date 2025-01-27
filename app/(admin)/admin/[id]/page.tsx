@@ -17,6 +17,7 @@ const page = async({params}:{params:{id:string}}) => {
     const shopIDS = await getShopId(params.id);
     const bookings = await getBookingByShopId(shopIDS!)
   return (
+    //@ts-ignore
     <div>{formatDateTime(bookings[0].bookingDate!).dateTime}</div>
   )
 }
