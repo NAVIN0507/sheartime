@@ -36,7 +36,7 @@ const page = async() => {
     <div className='grid grid-cols-4 gap-2'>
         {reuslt?.map((shop)=>(
             <div className='flex flex-row ml-10 mt-20' key={shop.id}>
-              <Link href={`/customers/shops/shop-review/${reuslt[0].id}`}>
+              
                 <ShopCard
                 shopName={shop.shopName}
                 shopImage={shop.shopImages!}
@@ -48,7 +48,7 @@ const page = async() => {
                 adminId={shop.adminId}
                 isOpened={shop.opened}
                 />
-                </Link>
+               
             </div>
         ))}
     </div>

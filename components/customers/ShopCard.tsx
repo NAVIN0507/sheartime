@@ -11,6 +11,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { toast } from 'sonner';
+import Link from 'next/link';
 interface Props{
     shopId: string
     shopName:string;
@@ -37,6 +38,7 @@ isOpened
 
 
   return (
+    <Link href={`/customers/shops/shop-review/${shopId}`}>
     <div className='w-[400px] h-[500px] bg-primary-5 shadow-2xl rounded-xl'>
       {isOpened ? <>
       <span className="relative flex size-6"> 
@@ -98,6 +100,7 @@ isOpened
         </div>
     
     </div>
+    </Link>
   )
 }
 
