@@ -11,7 +11,7 @@ const page = async({params} : {params :{id : string}}) => {
       <h1 className='text-5xl'>Shop Details</h1>
       <div className='flex flex-row gap-10 mt-20 mx-auto'>
        
-        <div className='w-[700px] h-[650px] shadow-2xl rounded-2xl'>
+        <div className='w-[700px] h-[670px] shadow-2xl rounded-2xl'>
           <div className=' ml-[550px]'> 
              <Button className='w-[100px] h-[100px] -mt-12 ml-[550px] rounded-full bg-blue-400 mx-auto text-7xl'> <MapPinHouse size={48} strokeWidth={3} /></Button>
              </div>
@@ -49,8 +49,8 @@ const page = async({params} : {params :{id : string}}) => {
         <Image
         src={shop?.shopImages!}
         alt={shop?.shopName!}
-        width={1050}
-        height={1050}
+        width={1100}
+        height={1200}
         className='rounded-xl'
         />
       </div>

@@ -1,6 +1,7 @@
 
 import {  text,  pgTable, uuid  , varchar, pgEnum,  boolean  ,timestamp} from "drizzle-orm/pg-core";
-
+export const STATUS_ENUM = pgEnum('booking_status' , ['PENDING' , 'BOOKED' , 'CANCLED']);
+export const AMOUNT_STATUS = pgEnum('amount_status' , ['PAID' , 'NOT_PAID'])
 export const users = pgTable("users", {
   id: uuid('id').notNull().primaryKey().defaultRandom().unique(),
   fullName: varchar("full_name" , {length:255}).notNull(),
@@ -24,4 +25,15 @@ export const shops = pgTable("admin_shops" , {
   shopEmail:text("shop_email").default(""),
   shopImages:varchar("shop_image_url").default(""),
   opened:boolean().default(true).notNull()
+})
+
+export const bookings = pgTable('bookings' , {
+  id:uuid('id').notNull().primaryKey().defaultRandom().unique(),
+  userId : varchar("user_id").notNull(),
+  shopId: varchar("shop_id").notNull(),
+  bookingDate: timestamp('booking_date' , {
+    withTimezone:true
+  }).defaultNow(),
+  bookingStatus:STATUS_ENUM('booking_status').default('PENDING'),
+  amountStatus:AMOUNT_STATUS('amount_status').default('NOT_PAID')
 })
