@@ -43,6 +43,13 @@
       "when": 1737968422308,
       "tag": "0005_grey_callisto",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1737994838668,
+      "tag": "0006_early_kitty_pryde",
+      "breakpoints": true
     }
   ]
 }

@@ -31,9 +31,7 @@ export const bookings = pgTable('bookings' , {
   id:uuid('id').notNull().primaryKey().defaultRandom().unique(),
   userId : varchar("user_id").notNull(),
   shopId: varchar("shop_id").notNull(),
-  bookingDate: timestamp('booking_date' , {
-    withTimezone:true
-  }).defaultNow(),
+  bookingDate: varchar('booking_date').notNull(),
   bookingStatus:STATUS_ENUM('booking_status').default('PENDING'),
   amountStatus:AMOUNT_STATUS('amount_status').default('NOT_PAID')
 })
