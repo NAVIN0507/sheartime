@@ -20,3 +20,10 @@ export const getAllShops = async()=>{
         console.log(error)
     }
 }
+export const getShopById = async(shopId : string)=>{
+    try {
+        const shop = await db.select().from(shops).where(eq(shops.id , shopId))
+    } catch (error) {
+        
+    }
+}
