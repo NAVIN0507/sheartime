@@ -27,7 +27,7 @@ const page = async({params} : {params :{id : string}}) => {
 <div className='mt-7'>
           {shop?.opened ? (<>    <span className="relative flex size-6"> 
          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-1 opacity-75"></span>  
-         <span className="relative inline-flex size-6 rounded-full bg-green-1"></span></span> <Button className='w-[300px] h-[50px] bg-green-1 rounded-full text-white text-1xl -mt-5'>Closed </Button>
+         <span className="relative inline-flex size-6 rounded-full bg-green-1"></span></span> <Button className='w-[300px] h-[50px] bg-green-1 rounded-full text-white text-1xl -mt-5'>Opened </Button>
        
           </>) :(<>    <span className="relative flex size-6"> 
          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>  
@@ -41,8 +41,8 @@ const page = async({params} : {params :{id : string}}) => {
         <Image
         src={shop?.shopImages!}
         alt={shop?.shopName!}
-        width={1000}
-        height={1200}
+        width={1050}
+        height={1050}
         className='rounded-xl'
         />
       </div>

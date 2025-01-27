@@ -18,7 +18,7 @@ const layout = async ({children} :{children: ReactNode}) => {
     const session = await auth();
     if(!session) return redirect("/sign-in");
   return (
-  <main className={`relative ${fontInter.className} antialiased`}>
+  <main className={`relative  antialiased`}>
     <Navbar session={session}/>
     <div className='flex'>
         <Sidebar session={session}/>

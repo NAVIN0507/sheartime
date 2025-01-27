@@ -11,7 +11,7 @@ import { redirect } from 'next/navigation'
 const Navbar = ({session}:{session:Session}) => {
     if(!session) return redirect("/sign-in")
   return (
-    <header className='z-10 w-full p-3 top-0 bg-primary-1 shadow-md '>
+    <header className='z-10 fixed w-full p-3 top-0 bg-primary-1 shadow-md '>
         <div className='flex flex-row justify-between'>
             <div className='flex flex-col gap-1'>
         <Link href="/" className='flex flex-row gap-1'>
