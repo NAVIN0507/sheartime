@@ -1,9 +1,20 @@
 import { Button } from '@/components/ui/button';
 import { getShopById } from '@/lib/actions/user.action'
-import { Mail, MapPinHouse, Phone, Star } from 'lucide-react';
+import { Calendar, Mail, MapPinHouse, Phone, Star } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react'
-
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import DateTime from '@/components/customers/DateTime';
 const page = async({params} : {params :{id : string}}) => {
   const shop = await getShopById(params.id);
   return (
@@ -34,7 +45,20 @@ const page = async({params} : {params :{id : string}}) => {
          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-1 opacity-75"></span>  
          <span className="relative inline-flex size-6 rounded-full bg-green-1"></span></span> <Button className='w-[300px] h-[50px] bg-green-1 rounded-full text-white text-1xl -mt-5'>Opened </Button>
            
-        <Button className='w-[250px] h-[50px] bg-secondry-1 ml-20 text-primary-1 text-2xl rounded-full -mt-4'>Book Now</Button>
+        <Dialog>
+      <DialogTrigger asChild>
+        <Button className='w-[250px] h-[50px] bg-secondry-1 ml-20 text-primary-1 text-2xl rounded-full -mt-4'>Book Now</Button> 
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[505px] h-[300px]">
+        <DialogHeader>
+          <DialogTitle><Calendar size={48} strokeWidth={1.5} /></DialogTitle>
+          <DialogDescription className='text-2xl text-black'>
+            Pick your Date and Time
+          </DialogDescription>
+        </DialogHeader>
+      <DateTime/>
+      </DialogContent>
+    </Dialog>
   
           </>) :(<>    <span className="relative flex size-6"> 
          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>  
