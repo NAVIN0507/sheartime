@@ -1,7 +1,7 @@
 "use server"
 
 import { db } from "@/database/drizzle"
-import { shops, users } from "@/database/schema"
+import { bookings, shops, users } from "@/database/schema"
 import { eq } from "drizzle-orm"
 
 export const getUserById = async(userId: string)=>{
@@ -27,4 +27,18 @@ export const getShopById = async(shopId : string)=>{
     } catch (error) {
         console.log(error);
     }
+}
+export const addBooking = async({userId , shopId , dateTime}:BookingCredentials)=>{
+    try {
+        const addBooking = await db.insert(bookings).values({
+            userId,
+            shopId,
+            bookingDate: dateTime
+        })
+        return {success : true}
+    } catch (error) {
+        console.log(error);
+        return {success : false}        
+    }
+
 }

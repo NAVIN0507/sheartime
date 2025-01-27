@@ -39,7 +39,7 @@ isOpened
 
   return (
     <Link href={`/customers/shops/shop-review/${shopId}`}>
-    <div className='w-[400px] h-[500px] bg-primary-5 shadow-2xl rounded-xl'>
+    <div className='w-[415px] h-[510px] bg-primary-5 shadow-2xl rounded-xl'>
       {isOpened ? <>
       <span className="relative flex size-6"> 
          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-1 opacity-75"></span>  
@@ -58,7 +58,7 @@ isOpened
             height={300}
             className='mx-auto items-center rounded-xl object-fill'
             />
-            <div className='w-[370px] mx-auto rounded-xl border-2  h-[250px] mt-7'>
+            <div className='w-[380px] mx-auto rounded-xl border-2  h-[250px] mt-7'>
             <h1 className=' ml-6 text-2xl mt-10'>{shopName}</h1>
             <p className='ml-6 mt-5 truncate'>{shopAdress}</p>
             <div className='flex flex-row gap-8'>

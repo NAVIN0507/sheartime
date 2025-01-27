@@ -161,7 +161,7 @@ body {
 .react-datepicker__input-container input {
   background-color: #ffffff !important; /* Clean white input field */
   color: black !important; /* Dark blue text */
-  border: 2px solid #d4e1f4 !important; /* Soft blue-gray border */
+  border: 2px solid black !important; /* Soft blue-gray border */
   padding: 0.8rem 1rem !important; /* Larger padding for a spacious input */
   border-radius: 8px !important; /* Smooth rounded corners */
   font-size: 1.1rem !important; /* Slightly larger text */
@@ -190,7 +190,7 @@ body {
 }
 
 .react-datepicker__time-container {
-  border-left: 2px solid #d4e1f4 !important; /* Stylish divider */
+  border-left: 2px solid black !important; /* Stylish divider */
 }
 
 .react-datepicker__time-list-item {

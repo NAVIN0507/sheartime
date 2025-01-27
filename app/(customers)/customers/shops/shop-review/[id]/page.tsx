@@ -12,11 +12,15 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+
 import DateTime from '@/components/customers/DateTime';
+import { auth } from '@/auth';
+import { redirect } from 'next/navigation';
+
 const page = async({params} : {params :{id : string}}) => {
   const shop = await getShopById(params.id);
+  const session = await auth();
+  if(!session) return redirect("/sign--in")
   return (
     <section className='flex flex-col gap-2 '>
       <h1 className='text-5xl'>Shop Details</h1>
@@ -50,13 +54,13 @@ const page = async({params} : {params :{id : string}}) => {
         <Button className='w-[250px] h-[50px] bg-secondry-1 ml-20 text-primary-1 text-2xl rounded-full -mt-4'>Book Now</Button> 
       </DialogTrigger>
       <DialogContent className="sm:max-w-[505px] h-[300px]">
-        <DialogHeader>
+        <DialogHeader className='flex flex-row gap-2'>
           <DialogTitle><Calendar size={48} strokeWidth={1.5} /></DialogTitle>
           <DialogDescription className='text-2xl text-black'>
             Pick your Date and Time
           </DialogDescription>
         </DialogHeader>
-      <DateTime/>
+      <DateTime shopId = {params.id} userId = {session.user?.id || ''}/>
       </DialogContent>
     </Dialog>
   

@@ -14,3 +14,8 @@ interface OnBoardingCredentials{
     shopDescription:string;
     shopImages:string;
 }
+interface BookingCredentials{
+    userId:string;
+    shopId:string;
+    dateTime:Date;
+}
