@@ -13,7 +13,7 @@ const page = async({params} : {params :{id : string}}) => {
        
         <div className='w-[700px] h-[650px] shadow-2xl rounded-2xl'>
           <div className=' ml-[550px]'> 
-             <Button className='w-[100px] h-[100px] -mt-12 ml-[550px] rounded-full bg-green-400 mx-auto text-7xl'> <MapPinHouse size={48} strokeWidth={3} /></Button>
+             <Button className='w-[100px] h-[100px] -mt-12 ml-[550px] rounded-full bg-blue-400 mx-auto text-7xl'> <MapPinHouse size={48} strokeWidth={3} /></Button>
              </div>
           <div className='ml-7 mt-10'>
           
@@ -33,12 +33,15 @@ const page = async({params} : {params :{id : string}}) => {
           {shop?.opened ? (<>    <span className="relative flex size-6"> 
          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-1 opacity-75"></span>  
          <span className="relative inline-flex size-6 rounded-full bg-green-1"></span></span> <Button className='w-[300px] h-[50px] bg-green-1 rounded-full text-white text-1xl -mt-5'>Opened </Button>
-       
+           
+        <Button className='w-[250px] h-[50px] bg-secondry-1 ml-20 text-primary-1 text-2xl rounded-full -mt-4'>Book Now</Button>
+  
           </>) :(<>    <span className="relative flex size-6"> 
          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>  
          <span className="relative inline-flex size-6 rounded-full bg-red-500"></span></span> <Button className='w-[300px] h-[50px] bg-red-400 rounded-full text-white text-1xl -mt-5'>Closed </Button>
        
           </>)}
+       
           </div>
           </div>
         </div>
@@ -56,7 +59,7 @@ const page = async({params} : {params :{id : string}}) => {
         <h1 className='text-3xl'>Description</h1>
         <p className='mt-10 text-[20px]' >{shop?.shopDescription}</p>
       </div>
-      
+   
     </section>
   )
 }
