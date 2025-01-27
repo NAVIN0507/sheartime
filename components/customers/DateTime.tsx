@@ -24,7 +24,7 @@ import {
 import { formatDateTime } from "@/lib/utils";
 import { addBooking } from "@/lib/actions/user.action";
 import { toast } from "sonner";
-import { Check, CircleX } from "lucide-react";
+import { Check, CircleX, Loader } from "lucide-react";
 import { useRouter } from "next/navigation"
 const dateSchema = z.object({
 dateTime:z.coerce.date()
@@ -36,7 +36,7 @@ interface Props{
 const DateTime = ({userId , shopId}:Props) => {
   const router = useRouter();
   const [startDate, setStartDate] = useState(new Date());
-  const [isLoading, setisLoading] = useState(true)
+  const [isLoading, setisLoading] = useState(false)
        const form = useForm<z.infer<typeof dateSchema>>({
     resolver: zodResolver(dateSchema),
     defaultValues: {
@@ -97,7 +97,10 @@ const DateTime = ({userId , shopId}:Props) => {
           )}
         />
     
-        <Button type="submit" className="bg-secondry-1 text-primary-1 w-full">Book Now</Button>
+        <Button type="submit" className="bg-secondry-1 text-primary-1 w-full" disabled={isLoading}>{isLoading ? (<>
+        Booking
+        <Loader className="animate-spin"/>
+        </>) : 'Book Now'}</Button>
       </form>
     </Form>
   </section>
