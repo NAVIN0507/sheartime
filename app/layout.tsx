@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import {  
- Ubuntu} from "next/font/google";
+
 import "./globals.css";
 
 
@@ -8,12 +7,21 @@ import {SessionProvider} from "next-auth/react"
 import { Toaster } from 'sonner';
 import { auth } from "@/auth";
 
+import localFont from "next/font/local";
 
-const fontUbuntu = Ubuntu({
-  variable: "--font-ubuntu",
-  subsets: ["latin"],
-  weight:['300' , '400' ,'500']
+const ubuntu = localFont({
+  src:[
+    {path:'/fonts/Ubuntu/Ubuntu-Bold.ttf' , weight:'700'},
+   
+  
+    {path:'/fonts/Ubuntu/Ubuntu-Light.ttf' , weight:'500'},
+    {path:'/fonts/Ubuntu/Ubuntu-Medium.ttf' , weight:'400'},
+
+    {path:'/fonts/Ubuntu/Ubuntu-Regular.ttf' , weight:'300'},
+  ]
 })
+
+
 
 export const metadata: Metadata = {
   title: "ShearTime",
@@ -33,7 +41,7 @@ export default async function RootLayout({
     <html lang="en">
       <SessionProvider session={session}>
       <body
-        className={`${fontUbuntu.className} antialiased`}
+        className={`${ubuntu.className} antialiased`}
       >
         
         {children}
