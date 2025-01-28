@@ -1,31 +1,25 @@
 import { auth } from '@/auth'
 
-import { getBookingByUserId, getShopsByShopId } from '@/lib/actions/user.action';
+import { deleteBookingById, getBookingByUserId, getShopsByShopId } from '@/lib/actions/user.action';
 import { formatDateTime } from '@/lib/utils';
 import React from 'react'
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
 import { Button } from '@/components/ui/button';
-import { Loader2 } from 'lucide-react';
+import { Loader2, Trash } from 'lucide-react';
+import DeleteButton from '@/components/customers/DeleteButton';
 
 const page = async() => {
     const session = await auth();
     const result = await getBookingByUserId(session?.user?.id || '');
     //@ts-ignore
     if (!result) return <h1>No bookings found</h1>
+    const handleDelete  = async()=>{}
   return (
     <section className='flex flex-col gap-1'>
         <h1 className='text-4xl'>Pending Bookings</h1>
         <div className='mt-20 flex flex-col gap-5'>
             {result.map(async(bookings)=>{
                 const shop = await getShopsByShopId(bookings.shopId)
+                if(!shop) return null; //
 
                 return(
                         <div className='flex flex-row gap-10 w-full h-[80px] bg-primary-1 border-2 rounded-xl text-center  items-center'>
@@ -43,6 +37,7 @@ const page = async() => {
                                 <Button className='w-[150px] h-[50px] bg-red-400 text-1xl rounded-full border-none shadow-none'>Not Paid</Button>
                                 </>)}
                             </h1>
+                           <DeleteButton id={bookings.id}/>
                         </div>
                 )
             })}

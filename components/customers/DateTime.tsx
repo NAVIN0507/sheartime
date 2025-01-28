@@ -59,7 +59,7 @@ const DateTime = ({userId , shopId}:Props) => {
             icon:<Check width={20} height={20} className='rounded-full object-fill'/>,
             position:"top-center"
         })
-     router.back()
+     router.push('/customers/pending-booking')
     }
     else{
       toast("Error In Booking" ,{

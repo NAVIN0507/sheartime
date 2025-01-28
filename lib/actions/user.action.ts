@@ -59,3 +59,11 @@ export const getBookingByUserId = async(userId: string)=>{
     }
 }
 
+export const deleteBookingById = async(bookingId : string)=>{
+    try {
+        const deleteBooking = await db.delete(bookings).where(eq(bookings.id , bookingId))
+        return {success : true}
+    } catch (error) {
+     console.log(error)   
+    }
+}
