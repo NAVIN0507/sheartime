@@ -6,6 +6,8 @@ import React from 'react'
 import { Button } from '@/components/ui/button';
 import { Loader2, Trash } from 'lucide-react';
 import DeleteButton from '@/components/customers/DeleteButton';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import Image from 'next/image';
 
 const page = async() => {
     const session = await auth();
@@ -23,8 +25,10 @@ const page = async() => {
 
                 return(
                         <div className='flex flex-row gap-10 w-full h-[80px] bg-primary-1 border-2 rounded-xl text-center  items-center'>
-                            
-                          <h1 className='w-full text-2xl'>{shop[0].shopName}</h1>
+                           
+                          <h1 className='w-full text-2xl flex flex-row gap-2 ml-5'>
+                           
+                            {shop[0].shopName}</h1>
                             <h1 className='w-full text-2xl'>{formatDateTime(bookings.bookingDate).dateTime}</h1>
                             <h1 className='w-full'>
                                 <Button className='w-[150px] h-[50px] bg-blue-400 text-1xl rounded-full border-none shadow-none'>{bookings.bookingStatus}  <Loader2 className='animate-spin'/></Button>
