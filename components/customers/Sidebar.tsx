@@ -27,31 +27,16 @@ const Sidebar = ({session}:{session : Session}) => {
             </div>
 </div>
 </div>
-  <div className='flex flex-1 flex-col gap-6 mt-36'>
+  <div className='flex flex-1 flex-col gap-6 mt-40'>
 
-    <Link href={`/customers/${session.user?.id}`}  className='flex flex-row gap-4' >
-        <Button className={cn('flex flex-row h-[50px] gap-7 items-center w-full p-4 shadow-none  border-2 rounded-lg justify-start  hover:shadow-md hover:bg-secondry-1 hover:text-primary-1')}> 
-       
-          <Image
-          src="/icons/booking.svg"
-          alt="Booking"
-          width={24}
-          height={24}
-         
-          />
-          <p className='text-[20px] font-light max-lg:hidden'>
-           Dashboard
-          </p>
-        
-        </Button>
-        </Link>
+
     {sidebarLinks.map((link)=>{
       const isActive = pathname === link.route || pathname.includes(link.route)
       return( 
          <Link href={link.route}  className='flex flex-row gap-4 mt-4' key={link.name}>
         <Button  key={link.name
           
-        } className={cn('flex flex-row h-[50px] gap-7 items-center w-full  shadow-none p-4 border-2 rounded-lg justify-start hover:shadow-md hover:bg-secondry-1 hover:text-primary-1' , {'bg-secondry-1 text-primary-1' : isActive})}>
+        } className={cn('flex flex-row h-[50px] gap-7 items-center w-full  shadow-none p-4 border-b-2 rounded-lg justify-start hover:shadow-md hover:bg-secondry-1 hover:text-primary-1' , {'bg-secondry-1 text-primary-1' : isActive})}>
        
           <Image
           src={link.img}

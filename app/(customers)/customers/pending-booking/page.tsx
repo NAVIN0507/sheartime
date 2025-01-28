@@ -4,7 +4,7 @@ import { deleteBookingById, getBookingByUserId, getShopsByShopId } from '@/lib/a
 import { formatDateTime } from '@/lib/utils';
 import React from 'react'
 import { Button } from '@/components/ui/button';
-import { Loader2, Trash } from 'lucide-react';
+import { Loader2, Trash, TriangleAlert } from 'lucide-react';
 import DeleteButton from '@/components/customers/DeleteButton';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import Image from 'next/image';
@@ -24,7 +24,7 @@ const page = async() => {
                 if(!shop) return null; //
 
                 return(
-                        <div className='flex flex-row gap-10 w-full h-[80px] bg-primary-1 border-2 rounded-xl text-center  items-center'>
+                        <div className='flex flex-row gap-10 w-full h-[80px] bg-primary-1 border-b-2 rounded-xl text-center  items-center'>
                            
                           <h1 className='w-full text-2xl flex flex-row gap-2 ml-5'>
                            
@@ -38,7 +38,7 @@ const page = async() => {
                                 {bookings.amountStatus === 'PAID' ? (<>
                                 <Button className='w-[150px] h-[50px] bg-green-400 text-1xl rounded-full border-none shadow-none'>Paid</Button>
                                 </>) :(<>
-                                <Button className='w-[150px] h-[50px] bg-red-400 text-1xl rounded-full border-none shadow-none'>Not Paid</Button>
+                                <Button className='w-[150px] h-[50px] bg-red-400 text-1xl rounded-full border-none shadow-none'><TriangleAlert /> Not Paid</Button>
                                 </>)}
                             </h1>
                            <DeleteButton id={bookings.id}/>
