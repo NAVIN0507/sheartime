@@ -73,7 +73,7 @@ export const sidebarLinks =[
      {
         name:'Pending Bookings',
         img:'/icons/booking.svg',
-        route:'/pending-booking'
+        route:'/customers/pending-booking'
     },
      {
         name:'Previous Booking',

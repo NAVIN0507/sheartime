@@ -2,7 +2,7 @@
 
 import { db } from "@/database/drizzle"
 import { bookings, shops, users } from "@/database/schema"
-import { eq } from "drizzle-orm"
+import { and, eq } from "drizzle-orm"
 
 export const getUserById = async(userId: string)=>{
     try {
@@ -20,10 +20,18 @@ export const getAllShops = async()=>{
         console.log(error)
     }
 }
-export const getShopById = async(shopId : string)=>{
+export const getShopByShopId = async(shopId : string)=>{
     try {
-        const shop = await db.select().from(shops).where(eq(shops.id , shopId)).limit(1)
-        return shop[0]
+        const result = await db.select().from(shops).where(eq(shops.id , shopId))
+        return result[0]
+    } catch (error) {
+        console.log(error);
+    }
+}
+export const getShopsByShopId = async(shopId : string)=>{
+    try {
+        const result = await db.select().from(shops).where(eq(shops.id , shopId))
+        return result
     } catch (error) {
         console.log(error);
     }
@@ -42,3 +50,12 @@ export const addBooking = async({userId , shopId , dateTime}:BookingCredentials)
     }
 
 }
+export const getBookingByUserId = async(userId: string)=>{
+    try {
+        const result = await db.select().from(bookings).where(and(eq(bookings.userId , userId) , eq(bookings.bookingStatus , 'PENDING')));
+        return result
+    } catch (error) {
+        console.log(error)
+    }
+}
+

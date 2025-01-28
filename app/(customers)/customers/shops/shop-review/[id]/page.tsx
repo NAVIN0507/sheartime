@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { getShopById } from '@/lib/actions/user.action'
+import { getShopById } from '@/lib/actions/admin.action'
 import { Calendar, Mail, MapPinHouse, Phone, Star } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react'
@@ -16,9 +16,12 @@ import {
 import DateTime from '@/components/customers/DateTime';
 import { auth } from '@/auth';
 import { redirect } from 'next/navigation';
+import { getShopByShopId } from '@/lib/actions/user.action';
 
 const page = async({params} : {params :{id : string}}) => {
-  const shop = await getShopById(params.id);
+  console.log(params.id)
+  const shop = await getShopByShopId(params.id);
+  console.log(shop?.shopName)
   const session = await auth();
   if(!session) return redirect("/sign--in")
   return (
