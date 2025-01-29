@@ -19,9 +19,9 @@ const page = async({params}:{params:{id:string}}) => {
   return (
     //@ts-ignore
     <div>
-{bookings?.map((booking)=>(
+{/* {bookings?.map((booking)=>(
   <p key={booking.id}>{formatDateTime(booking.bookingDate).dateTime}</p>
-))}
+))} */}
 
     </div>
   )

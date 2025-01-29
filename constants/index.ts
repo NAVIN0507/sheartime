@@ -92,3 +92,25 @@ export const AdminNavItems=[
         icon:''
     }
 ]
+export const AdminSideBar =[
+    {
+        name:'Todays Bookings',
+        route:'/admin/todays-bookings',
+        icon:'/icons/booking.svg'
+    },
+      {
+        name:'Previous Bookings',
+        route:'/admin/todays-bookings',
+        icon:'/icons/booking.svg'
+    },
+      {
+        name:'Feedbacks',
+        route:'/admin/todays-bookings',
+        icon:'/icons/booking.svg'
+    },
+      {
+        name:'Payments',
+        route:'/admin/todays-bookings',
+        icon:'/icons/booking.svg'
+    },
+]
