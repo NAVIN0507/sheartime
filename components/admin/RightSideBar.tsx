@@ -29,7 +29,7 @@ const RightSideBar = ({session}:{session : Session}) => {
     </Link>
   </div>
   
-  <div className='flex flex-1 flex-col gap-6 mx-auto mt-20'>
+  <div className='flex flex-1 flex-col gap-6 mx-auto mt-10'>
 
 
     {AdminSideBar.map((link)=>{
@@ -55,7 +55,7 @@ const RightSideBar = ({session}:{session : Session}) => {
         </Link>
       )
     })}
-    <div className=' mx-auto  mt-10'>
+    <div className=' mx-auto mt-44'>
       <ShopDetails id={session.user?.id || ''}/>
     </div>
   </div>

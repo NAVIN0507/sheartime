@@ -11,7 +11,7 @@ const page = async({params}:{params:{id:string}}) => {
     if(!session) return redirect('/sign-in');
     const result = await getUserById(params.id);
     if(!result?.onBoarded){
-    return  redirect(`/admin/onboarding/${session.user?.id}`)
+    return  redirect(`/users/onboarding/${session.user?.id}`)
     
     }
     const shopIDS = await getShopId(params.id);
@@ -19,7 +19,7 @@ const page = async({params}:{params:{id:string}}) => {
   return (
     //@ts-ignore
     <div>
-{/* {bookings?.map((booking)=>(
+{/* {booroute.refresh();s?.map((booking)=>(
   <p key={booking.id}>{formatDateTime(booking.bookingDate).dateTime}</p>
 ))} */}
 

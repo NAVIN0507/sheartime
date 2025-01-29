@@ -55,7 +55,7 @@ isOpened
             src={shopImage}
             alt={shopName}
             width={300}
-            height={300}
+            height={200}
             className='mx-auto items-center rounded-xl object-fill'
             />
             <div className='w-[380px] mx-auto rounded-xl border-2  h-[250px] mt-7'>

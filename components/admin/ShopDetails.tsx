@@ -10,18 +10,10 @@ const ShopDetails = async({id}:{id:string}) => {
     if(!shop) return ;
     
   return (
-   <section className='mx-auto mt-20'>
+   <section className='mx-auto'>
     <div className='w-[370px] h-[400px] '>
-        <div className='mt-5'>
-            <Image
-            src={shop?.shopImages!}
-            alt='your shop image'
-            width={370}
-            height={350}
-            className='rounded-xl'
-            />
-        </div>
-        <div className='  mt-4 h-[150px] mx-auto '>
+      
+        <div className='  mt-4 h-[150px] mx-auto  bottom-4'>
            
             {shop?.opened? (<>
             <Openaing type='CLOSE' id={shop.adminId}/>
