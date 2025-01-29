@@ -128,14 +128,16 @@ body {
 .react-datepicker__day,
 .react-datepicker-time__header {
   background-color: #ffffff !important; /* Bright white background */
-  border-color: #d4e1f4 !important; /* Soft blue-gray border */
+  border-color: black !important; /* Soft blue-gray border */
   color: black !important; /* Elegant dark blue for text */
-  font-size: 1.1rem !important; /* Larger text for readability */
+  font-size: 1.1rem !important; 
+  
+  /* Larger text for readability */
 }
 
 .react-datepicker__header {
   padding: 1.2rem !important; /* Add spacing for a clean header look */
-  border-bottom: 2px solid #d4e1f4 !important; /* Stylish border under the header */
+  border-bottom: 2px solid black !important; /* Stylish border under the header */
 }
 
 .react-datepicker__current-month,
@@ -147,7 +149,7 @@ body {
 }
 
 .react-datepicker__triangle {
-  fill: #ffffff !important;
+  fill: black !important;
   stroke: #d4e1f4 !important; /* Soft blue-gray border for triangle */
 }
 
@@ -166,7 +168,7 @@ body {
   border-radius: 8px !important; /* Smooth rounded corners */
   font-size: 1.1rem !important; /* Slightly larger text */
   outline: none;
-  width: 100%;
+  width: 400px;
   transition: border-color 0.2s ease-in-out;
 }
 
@@ -178,7 +180,7 @@ body {
 .react-datepicker__day--selected {
   background-color: black !important; /* Bright blue for selected day */
   color: #ffffff !important; /* White text */
-  border-radius: 50%; /* Make the selected day circular */
+  border-radius: 100px; /* Make the selected day circular */
   font-weight: 700 !important; /* Bold text for visibility */
 }
 
@@ -190,14 +192,15 @@ body {
 }
 
 .react-datepicker__time-container {
-  border-left: 2px solid black !important; /* Stylish divider */
+  border-left: 2px solid black !important; 
+ /* Stylish divider */
 }
 
 .react-datepicker__time-list-item {
   display: flex !important;
   align-items: center !important;
   justify-content: center;
-  padding: 0.8rem !important; /* Larger padding for time list */
+  padding: 1rem !important; /* Larger padding for time list */
   font-size: 1.1rem !important; /* Larger text for visibility */
   color: black !important; /* Elegant blue text */
 }

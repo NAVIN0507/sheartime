@@ -86,3 +86,9 @@ export const sidebarLinks =[
         route:'/payments'
     },
 ]
+export const AdminNavItems=[
+    {
+        name:'H',
+        icon:''
+    }
+]

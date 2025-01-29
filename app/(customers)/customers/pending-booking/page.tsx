@@ -4,7 +4,7 @@ import { deleteBookingById, getBookingByUserId, getShopsByShopId } from '@/lib/a
 import { formatDateTime } from '@/lib/utils';
 import React from 'react'
 import { Button } from '@/components/ui/button';
-import { Loader2, Trash, TriangleAlert } from 'lucide-react';
+import { BadgeCheck, Loader2, Trash, TriangleAlert } from 'lucide-react';
 import DeleteButton from '@/components/customers/DeleteButton';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import Image from 'next/image';
@@ -36,7 +36,7 @@ const page = async() => {
                             </h1>
                             <h1 className='w-full'>
                                 {bookings.amountStatus === 'PAID' ? (<>
-                                <Button className='w-[150px] h-[50px] bg-green-400 text-1xl rounded-full border-none shadow-none'>Paid</Button>
+                                <Button className='w-[150px] h-[50px] bg-green-400 text-1xl rounded-full border-none shadow-none'><BadgeCheck /> Paid</Button>
                                 </>) :(<>
                                 <Button className='w-[150px] h-[50px] bg-red-400 text-1xl rounded-full border-none shadow-none'><TriangleAlert /> Not Paid</Button>
                                 </>)}

@@ -87,6 +87,7 @@ const DateTime = ({userId , shopId}:Props) => {
     <DatePicker selected={startDate} onChange={(date) => setStartDate(date!)} 
     dateFormat="MM/dd/yyyy - h:mm aa"
     showTimeSelect  
+    minDate={new Date()}
     timeInputLabel='Time:' 
     wrapperClassName='date-picker'
                 />                
