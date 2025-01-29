@@ -11,41 +11,7 @@ import { redirect } from 'next/navigation'
 const NavBar = ({session}:{session:Session}) => {
     if(!session) return redirect("/sign-in")
   return (
-   <header className='fixed rounded-md flex flex-col gap-1 w-full bg-primary-1 shadow-xl h-28'>
-    <nav className='flex flex-row gap-2 items-center my-auto'>
-        <Link href="/" className='flex flex-row gap-2'>
-        <Image
-        src="/icons/logo-white.svg"
-        alt='logo'
-        width={150}
-        height={150}
-        />
-        <h1 className='my-auto text-5xl'>ShearTime</h1>
-        </Link>
-        <div className=' hidden sm:ml-[1400px] sm:block sm:my-auto'>
-            <ul className='flex flex-row gap-2'>
-           
-                  <div className='flex flex-row gap-2 w-[370px] h-[60px] rounded-full items-start  justify-start  -ml-4 cursor-pointer'>
-  <div className='flex flex-row gap-4 text-lg ml-2'>
-        
- <Button className='w-[60px] h-[60px] bg-cyan-400 -ml-7'>
- <h1 className='text-3xl'> {getIntials(session.user?.name || '')} </h1>
- </Button>
-   <div className='flex flex-col max-md:hidden'>
-                <p className='font-light text-2xl text-dark-200'>{session?.user?.name}</p>
-                <p className='text-1xl text-light-500'>{session?.user?.email}</p>
-            </div>
-</div>
-</div>
- <li className='my-auto'> 
-            <form action={async()=>{
-                "use server"
-                await signOut();
-            }}><Button className='bg-secondry-1 text-primary-1 shadow-none h-14 text-1xl'><LogOut />Logout</Button></form>
-            </li>
-            </ul>
-        </div>
-    </nav>
+   <header className='top-0 fixed rounded-md flex flex-col gap-1 min-w-full   shadow-xl h-28'>
    </header>
   )
 }
