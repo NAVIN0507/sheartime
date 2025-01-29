@@ -6,8 +6,10 @@ import { getIntials } from '@/lib/utils'
 import { Session } from 'next-auth'
 import { LogOut } from 'lucide-react'
 import { signOut } from '@/auth'
+import { redirect } from 'next/navigation'
 
 const NavBar = ({session}:{session:Session}) => {
+    if(!session) return redirect("/sign-in")
   return (
    <header className='fixed rounded-md flex flex-col gap-1 w-full bg-primary-1 shadow-xl h-28'>
     <nav className='flex flex-row gap-2 items-center my-auto'>
@@ -25,9 +27,7 @@ const NavBar = ({session}:{session:Session}) => {
            
                   <div className='flex flex-row gap-2 w-[370px] h-[60px] rounded-full items-start  justify-start  -ml-4 cursor-pointer'>
   <div className='flex flex-row gap-4 text-lg ml-2'>
-          <span className="relative flex size-5"> 
-         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-1 opacity-75 -mt-2"></span>  
-         <span className="relative inline-flex size-5 rounded-full bg-green-1 -mt-2"></span></span>
+        
  <Button className='w-[60px] h-[60px] bg-cyan-400 -ml-7'>
  <h1 className='text-3xl'> {getIntials(session.user?.name || '')} </h1>
  </Button>
