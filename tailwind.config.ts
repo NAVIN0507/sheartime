@@ -17,7 +17,8 @@ export default {
 				4:"#FFFAF0",
 				5:"#F5F5F5",
 				6:'#0A0A0A',
-				7:'#333333'
+				7:'#333333',
+				8:'#F5F5F5'
 			},
 			secondry:{
 			1:"#000080",
@@ -26,7 +27,7 @@ export default {
 			4:"#002366",
 			5:"#003153",
 			6:'#6A0DAD',
-			7:'#5A57FF'
+			7:'#3A3F44'
 			},
 			green:{
 				1:"#50C878",
@@ -37,9 +38,6 @@ export default {
 			},
 			graphite:{
 				1:'#2F353B'
-			},
-			emeraldgreen:{
-				1:'#50C878'
 			},
 			
 

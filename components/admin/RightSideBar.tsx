@@ -1,50 +1,51 @@
-"use client"
+
 import { AdminSideBar, sidebarLinks } from '@/constants'
 import { cn, getIntials } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+
 import React from 'react'
 import { Button } from '../ui/button'
 import { Avatar } from '../ui/avatar'
 import { AvatarFallback } from '@radix-ui/react-avatar'
 import { Session } from 'next-auth'
+import ShopDetails from './ShopDetails'
 
 const RightSideBar = ({session}:{session : Session}) => {
   if(!session) return null;
-  const pathname = usePathname();
+
   
   return (
-<section className='sticky left-0 top-0 flex h-screen w-fit flex-col justify-between bg-secondry-7 text-white shadow-lg p-6 pt-32 text-3xl max-sm:hidden lg:w-[400px] '>
+<section className='sticky left-0 top-0 flex h-screen w-fit flex-col justify-between bg-secondry-7 text-white shadow-lg p-6 pt-32 text-3xl max-sm:hidden lg:w-[420px] '>
+  <div className='-mt-28'>
+    <Link href="/" className='flex flex-col'>
+    <Image
+    src="/icons/logo-admin1.svg"
+    alt='logo'
+    width={250}
+    height={250}
+    className='mx-auto'
+    />
+    </Link>
+  </div>
   
-  <div className='flex flex-row gap-2 w-[370px] h-[60px] rounded-full items-start  justify-start  -ml-4 cursor-pointer mt-10  '>
-  <div className='mt-2 flex flex-col gap-4 text-lg ml-2'>
- <Button className='w-[100px] h-[100px] bg-violet-400'>
- <h1 className='text-3xl'> {getIntials(session.user?.name || '')} </h1>
- </Button>
-   <div className='flex flex-col max-md:hidden  mt-5'>
-                <p className='font-light text-2xl text-dark-200'>{session?.user?.name}</p>
-                <p className='text-1xl text-light-500'>{session?.user?.email}</p>
-            </div>
-</div>
-</div>
-  <div className='flex flex-1 flex-col gap-6 mt-52'>
+  <div className='flex flex-1 flex-col gap-6 mx-auto mt-20'>
 
 
     {AdminSideBar.map((link)=>{
-      const isActive = pathname === link.route || pathname.includes(link.route)
+     
       return( 
-         <Link href={link.route}  className='flex flex-row gap-4 mt-4' key={link.name}>
+         <Link href={link.route}  className='flex flex-row gap-4 mt-4 w-full' key={link.name}>
         <Button  key={link.name
           
-        } className={cn('flex flex-row h-[50px] gap-7 items-center w-full  shadow-none p-4 border-b-2 rounded-lg justify-start hover:shadow-md hover:bg-secondry-1 hover:text-primary-1' , {'bg-secondry-1 text-primary-1' : isActive})}>
+        } className={cn('flex flex-row h-[60px] gap-7 items-center w-full text-primary-8  shadow-none p-4 rounded-lg justify-start hover:shadow-md hover:bg-graphite-1 hover:text-primary-1' , {'bg-graphite-1 text-primary-1' :''})}>
        
           <Image
           src={link.icon}
           alt={link.name}
           width={24}
           height={24}
-          className={`${isActive ? 'brightness-200 invert' :'' }object-contain`} 
+          
           />
           <p className='text-[20px] font-light max-lg:hidden'>
             {link.name}
@@ -54,10 +55,11 @@ const RightSideBar = ({session}:{session : Session}) => {
         </Link>
       )
     })}
-    <div className='mt-72 mx-auto bottom-4 fixed'>
-
+    <div className=' mx-auto  mt-10'>
+      <ShopDetails id={session.user?.id || ''}/>
     </div>
   </div>
+  
 </section>
   )
 }

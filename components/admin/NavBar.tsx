@@ -16,7 +16,7 @@ const NavBar = ({session}:{session:Session}) => {
         {/* <div className='w-[80px] h-[80px] border-2  rounded-xl shadow-lg my-auto ml-4'>
             <h1 className='text-2xl text-center items-center mt-5'>{getIntials(session.user?.name || '')}</h1>
         </div> */}
-        <h1 className='text-3xl ml-5'>Welcome {session.user?.name}</h1>
+        <h1 className='text-3xl ml-5 text-white'>Welcome {session.user?.name}</h1>
 
     </div>
    </header>
