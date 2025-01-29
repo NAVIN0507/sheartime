@@ -16,7 +16,7 @@ const RightSideBar = ({session}:{session : Session}) => {
 
   
   return (
-<section className='sticky left-0 top-0 flex h-screen w-fit flex-col justify-between bg-secondry-7 text-white shadow-lg p-6 pt-32 text-3xl max-sm:hidden lg:w-[420px] '>
+<section className='sticky left-0 top-0  flex min-h-screen w-fit flex-col justify-between bg-secondry-7 text-white shadow-lg p-6 pt-32 text-3xl max-sm:hidden lg:w-[420px] '>
   <div className='-mt-28'>
     <Link href="/" className='flex flex-col'>
     <Image

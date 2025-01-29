@@ -13,7 +13,7 @@ const ShopDetails = async({id}:{id:string}) => {
    <section className='mx-auto'>
     <div className='w-[370px] h-[400px] '>
       
-        <div className='  mt-4 h-[150px] mx-auto  bottom-4'>
+        <div className='  mt-4 h-[150px] mx-auto '>
            
             {shop?.opened? (<>
             <Openaing type='CLOSE' id={shop.adminId}/>

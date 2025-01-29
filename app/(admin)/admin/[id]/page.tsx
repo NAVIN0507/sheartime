@@ -1,8 +1,10 @@
 
 import { auth } from '@/auth';
-import { getBookingByShopId, getShopId } from '@/lib/actions/admin.action';
+import StateCard from '@/components/admin/StateCard';
+import { cancelledBooking, confirmedBooking, getBookingByShopId, getShopId, pendingBooking } from '@/lib/actions/admin.action';
 import { getUserById } from '@/lib/actions/user.action'
-import { formatDateTime } from '@/lib/utils';
+import { CalendarCheck2, Check, Hourglass, Loader, TriangleAlert } from 'lucide-react';
+
 import { redirect} from 'next/navigation';
 import React from 'react'
 
@@ -16,14 +18,23 @@ const page = async({params}:{params:{id:string}}) => {
     }
     const shopIDS = await getShopId(params.id);
     const bookings = await getBookingByShopId(shopIDS!)
+    const pendings = await pendingBooking(shopIDS!);
+    const booked = await confirmedBooking(shopIDS!);
+    const canclled = await cancelledBooking(shopIDS!)
   return (
     //@ts-ignore
-    <div>
+    <section>
 {/* {booroute.refresh();s?.map((booking)=>(
   <p key={booking.id}>{formatDateTime(booking.bookingDate).dateTime}</p>
 ))} */}
-
-    </div>
+<div className='mt-10 ml-12'>
+  <div className='grid grid-cols-3 gap-5'>
+<StateCard title="Pending Bookings" num ={pendings} icon={<Hourglass color="#2fd098"  width={50} height={50} />}/>
+<StateCard title="Confirmed Bookings" num ={booked} icon={<CalendarCheck2 color='#ffff80' width={50} height={50}/>}/>
+<StateCard title="Cancelled Bookings" num ={canclled} icon={<TriangleAlert color='#ff8080' width={50} height={50}/>}/>
+</div>
+</div>
+    </section>
   )
 }
 
