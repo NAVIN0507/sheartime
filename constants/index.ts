@@ -88,11 +88,7 @@ export const sidebarLinks =[
 ]
 
 export const AdminSideBar =[
-    {
-        name:'Todays Bookings',
-        route:'/admin/todays-bookings',
-        icon:'/icons/booking.svg'
-    },
+  
       {
         name:'Previous Bookings',
         route:'/admin/todays-bookings',
@@ -108,4 +104,10 @@ export const AdminSideBar =[
         route:'/admin/todays-bookings',
         icon:'/icons/booking.svg'
     },
+     {
+        name:'My Shop',
+        route:'/admin/todays-bookings',
+        icon:'/icons/booking.svg'
+    },
+
 ]

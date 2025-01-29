@@ -25,9 +25,9 @@ const Openaing = ({type , id} :{type:'CLOSE' | 'OPEN' ; id:string}) => {
   return (
     <div>
         {type === 'CLOSE' ? (
-            <Button className='bg-red-400 text-white w-full mx-auto h-[60px] text-[20px] mr-2' onClick={()=>handleClosing(id)}>{isLoading ? (<>Closing <Loader2Icon className='animate-spin'/></>) : 'Close Bookings'}</Button>
+            <Button className='bg-red-400 text-white w-[300px] mx-auto h-[60px] text-[20px] mr-2' onClick={()=>handleClosing(id)}>{isLoading ? (<>Closing <Loader2Icon className='animate-spin'/></>) : 'Close Bookings'}</Button>
         ) :(
-             <Button className='bg-green-400 text-white w-full mx-auto h-[60px] text-[20px] mr-2' onClick={()=>handleOpenings(id)}>{isLoading ? (<>Opening <Loader2Icon className='animate-spin'/></>) : 'Open Bookings'}</Button>
+             <Button className='bg-green-400 text-white w-[300px] mx-auto h-[60px] text-[20px] mr-2' onClick={()=>handleOpenings(id)}>{isLoading ? (<>Opening <Loader2Icon className='animate-spin'/></>) : 'Open Bookings'}</Button>
         )}
     </div>
   )
