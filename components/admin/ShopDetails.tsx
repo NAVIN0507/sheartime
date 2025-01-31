@@ -15,18 +15,19 @@ const ShopDetails = async({id}:{id:string}) => {
    <section className='mx-auto'>
     <div className='w-[370px] '>
       
-        <div className='  mt-4 h-[150px] mx-auto  flex flex-row gap-3'>
-           <form action={async()=>{
-                           "use server"
-                           await signOut();
-                       }}><Button className='bg-green-3 text-black h-[60px] shadow-none'><LogOut className='rotate-180'/></Button></form>
+        <div className='  mt-4 h-[150px] mx-auto '>
+          
             {shop?.opened? (<>
             <Openaing type='CLOSE' id={shop.adminId}/>
             </>) :(<>
             <Openaing type='OPEN' id={shop.adminId} />
             </>)}
-            
+             <form action={async()=>{
+                           "use server"
+                           await signOut();
+                       }}><Button className='bg-green-3 mt-3 w-full text-black h-[60px]  shadow-none'><LogOut className='rotate-180'/>Logout </Button></form> 
         </div>
+        
     </div>
    </section>
   )
