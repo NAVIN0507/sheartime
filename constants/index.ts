@@ -83,7 +83,7 @@ export const sidebarLinks =[
     {
         name:'Payments',
         img:'/icons/booking.svg',
-        route:'/payments'
+        route:'/customers/payments'
     },
 ]
 
