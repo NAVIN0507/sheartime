@@ -55,6 +55,7 @@ const PaymentPage = ()=>{
       <div className="p-6 bg-white rounded-lg shadow-md ">
         <h1 className="text-2xl font-bold mb-4">Payment page</h1>
         <p className="mb-4">Amount to pay : {AMOUNT} INR</p>
+        
         <button onClick={handlePayment} disabled={isProcesing} className="px-4 py-2 bg-blue-500 text-white rounded">{isProcesing ? "Processing..." :"PayNow"}</button>
       </div>
     </div>
