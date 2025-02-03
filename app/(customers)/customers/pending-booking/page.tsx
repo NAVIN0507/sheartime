@@ -22,13 +22,13 @@ const page = async() => {
             {result.map(async(bookings)=>{
                 const shop = await getShopsByShopId(bookings.shopId)
                 if(!shop) return null; //
+                console.log(shop[0].shopName)
 
                 return(
                         <div className='flex flex-row gap-10 w-full h-[80px] bg-primary-1 border-b-2 rounded-xl text-center  items-center'>
                            
                           <h1 className='w-full text-2xl flex flex-row gap-2 ml-5'>
-                           
-                            {shop[0].shopName}</h1>
+                           {shop[0].shopName}</h1>
                             <h1 className='w-full text-2xl'>{formatDateTime(bookings.bookingDate).dateTime}</h1>
                             <h1 className='w-full'>
                                 <Button className='w-[150px] h-[50px] bg-blue-400 text-1xl rounded-full border-none shadow-none'>{bookings.bookingStatus}  <Loader2 className='animate-spin'/></Button>

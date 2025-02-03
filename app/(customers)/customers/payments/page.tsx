@@ -1,6 +1,7 @@
 "use client";
 import React , {useState} from "react";
 import Script from "next/script";
+import { Payments } from "@/components/customers/Payments";
 declare global{
   interface Window{
     Razorpay:any;
@@ -47,8 +48,9 @@ const PaymentPage = ()=>{
       setisProcesing(false);
     }
   }
+
   return(
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <Script src="https://checkout.razorpay.com/v1/checkout.js"/>
       <div className="p-6 bg-white rounded-lg shadow-md ">
         <h1 className="text-2xl font-bold mb-4">Payment page</h1>
