@@ -9,6 +9,7 @@ import { formatDateTime } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { BadgeCheck, Loader2, TriangleAlert } from "lucide-react";
 import PaymentButton from "@/components/customers/PaymentButton";
+import DeleteButton from "@/components/customers/DeleteButton";
 declare global{
   interface Window{
     Razorpay:any;
@@ -88,7 +89,10 @@ const PaymentPage = async()=>{
                                 </>)}
                             </h1>
                               <h1 className='w-full'>
-                            <PaymentButton userName={user.fullName} userEmail={user.email} userMobile={user.phone} id={session.user?.id!}/>
+                                {booking.amountStatus === 'PAID' ? (<>
+                                <DeleteButton id={session.user?.id!}/>
+                                 </>) :(<><PaymentButton userName={user.fullName} userEmail={user.email} userMobile={user.phone} id={session.user?.id!}/></>)}
+                           
                                
                             </h1>
                           
