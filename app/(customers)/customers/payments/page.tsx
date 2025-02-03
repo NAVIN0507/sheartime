@@ -1,17 +1,28 @@
-"use client";
-import React , {useState} from "react";
+
+import React from "react";
 import Script from "next/script";
 import { Payments } from "@/components/customers/Payments";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import { getBookingByUserId, getShopsByShopId } from "@/lib/actions/user.action";
+import { formatDateTime } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { BadgeCheck, Loader2, TriangleAlert } from "lucide-react";
+import PaymentButton from "@/components/customers/PaymentButton";
 declare global{
   interface Window{
     Razorpay:any;
   }
 }
-const PaymentPage = ()=>{
+const PaymentPage = async()=>{
+   const session = await auth();
+    if(!session) return redirect("/sign-in");
+    const bookings = await getBookingByUserId(session.user?.id!);
+    if(!bookings) return null;
   const AMOUNT = 100;
-  const [isProcesing, setisProcesing] = useState(false);
+  
   const handlePayment = async()=>{
-    setisProcesing(true);
+    
     try {
       const response  = await fetch("/api/create-order" , {method:"POST"});
       const data = await response.json(); 
@@ -26,7 +37,7 @@ const PaymentPage = ()=>{
         order_id: data.orderId,
         handler:function(response:any){
           console.log(response);
-          setisProcesing(false);
+          
 
         },
         prefill:{
@@ -45,19 +56,40 @@ const PaymentPage = ()=>{
       console.log(error);
     }
     finally{
-      setisProcesing(false);
+    
     }
   }
 
   return(
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div >
       <Script src="https://checkout.razorpay.com/v1/checkout.js"/>
-      <div className="p-6 bg-white rounded-lg shadow-md ">
-        <h1 className="text-2xl font-bold mb-4">Payment page</h1>
-        <p className="mb-4">Amount to pay : {AMOUNT} INR</p>
-        
-        <button onClick={handlePayment} disabled={isProcesing} className="px-4 py-2 bg-blue-500 text-white rounded">{isProcesing ? "Processing..." :"PayNow"}</button>
-      </div>
+      
+         <h1 className='text-4xl'>Payments</h1>
+        <div className='mt-20 flex flex-col gap-5'>
+            {bookings.map(async(booking)=>{
+                const shop = await getShopsByShopId(booking.shopId)
+                if(!shop) return null; //
+                console.log(shop[0].shopName)
+
+                return(
+                        <div className='flex flex-row gap-10 w-full h-[80px] bg-primary-1 border-b-2 rounded-xl text-center  items-center'>
+                           
+                          <h1 className='w-full text-2xl flex flex-row gap-2 ml-5'>
+                           {shop[0].shopName}</h1>
+                            <h1 className='w-full text-2xl'>{formatDateTime(booking.bookingDate).dateTime}</h1>
+                            <h1 className='w-full'>
+                                <Button className='w-[150px] h-[50px] bg-blue-400 text-1xl rounded-full border-none shadow-none'>{booking.bookingStatus}  <Loader2 className='animate-spin'/></Button>
+                               
+                            </h1>
+                            <h1 className='w-full'>
+                                <PaymentButton/>
+                            </h1>
+                          
+                        </div>
+                )
+            })}
+        </div>
+    
     </div>
   )
 }
