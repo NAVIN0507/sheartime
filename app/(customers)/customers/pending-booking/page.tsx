@@ -20,7 +20,7 @@ const page = async() => {
         <h1 className='text-4xl'>Pending Bookings</h1>
         <div className='mt-20 flex flex-col gap-5'>
             {result.map(async(bookings)=>{
-                const shop = await getShopsByShopId(bookings.shopId)
+                const shop = await getShopsByShopId(bookings.shopId);
                 if(!shop) return null; //
                 console.log(shop[0].shopName)
 

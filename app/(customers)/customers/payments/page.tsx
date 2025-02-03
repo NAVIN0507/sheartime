@@ -4,7 +4,7 @@ import Script from "next/script";
 import { Payments } from "@/components/customers/Payments";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
-import { getBookingByUserId, getShopsByShopId } from "@/lib/actions/user.action";
+import { getBookingByUserId, getShopsByShopId, getUserById } from "@/lib/actions/user.action";
 import { formatDateTime } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { BadgeCheck, Loader2, TriangleAlert } from "lucide-react";
@@ -69,6 +69,8 @@ const PaymentPage = async()=>{
             {bookings.map(async(booking)=>{
                 const shop = await getShopsByShopId(booking.shopId)
                 if(!shop) return null; //
+                const user = await getUserById(booking.userId);
+                if(!user) return null;
                 console.log(shop[0].shopName)
 
                 return(
@@ -77,12 +79,17 @@ const PaymentPage = async()=>{
                           <h1 className='w-full text-2xl flex flex-row gap-2 ml-5'>
                            {shop[0].shopName}</h1>
                             <h1 className='w-full text-2xl'>{formatDateTime(booking.bookingDate).dateTime}</h1>
+                          
                             <h1 className='w-full'>
-                                <Button className='w-[150px] h-[50px] bg-blue-400 text-1xl rounded-full border-none shadow-none'>{booking.bookingStatus}  <Loader2 className='animate-spin'/></Button>
-                               
+                                {booking.amountStatus === 'PAID' ? (<>
+                                <Button className='w-[150px] h-[50px] bg-green-400 text-1xl rounded-full border-none shadow-none'><BadgeCheck /> Paid</Button>
+                                </>) :(<>
+                                <Button className='w-[150px] h-[50px] bg-red-400 text-1xl rounded-full border-none shadow-none'><TriangleAlert />Not Paid</Button>
+                                </>)}
                             </h1>
-                            <h1 className='w-full'>
-                                <PaymentButton/>
+                              <h1 className='w-full'>
+                            <PaymentButton userName={user.fullName} userEmail={user.email} userMobile={user.phone} id={session.user?.id!}/>
+                               
                             </h1>
                           
                         </div>

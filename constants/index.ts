@@ -78,7 +78,7 @@ export const sidebarLinks =[
      {
         name:'Previous Booking',
         img:'/icons/booking.svg',
-        route:'/previous-booking'
+        route:'/customers/previous-booking'
     },
     {
         name:'Payments',
