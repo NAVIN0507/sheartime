@@ -38,6 +38,7 @@ export const getShopsByShopId = async(shopId : string)=>{
 }
 export const addBooking = async({userId , shopId , dateTime}:BookingCredentials)=>{
     try {
+        //@ts-ignore
         const addBooking = await db.insert(bookings).values({
             userId,
             shopId,
