@@ -15,7 +15,7 @@ const Sidebar = ({session}:{session : Session}) => {
   const pathname = usePathname();
   
   return (
-<section className='sticky left-0 top-0 flex h-screen w-fit flex-col justify-between bg-primary-1 shadow-lg p-6 pt-32 text-black max-sm:hidden lg:w-[400px] '>
+<section className='sticky left-0 top-0 flex h-screen w-fit flex-col justify-between bg-primary-1 shadow-lg p-6 pt-32 text-black max-sm:hidden lg:w-[380px] '>
   <div className='flex flex-row gap-2 w-[370px] h-[60px] rounded-full items-start  justify-start  -ml-4 cursor-pointer mt-10  '>
   <div className='mt-2 flex flex-row gap-4 text-lg ml-2'>
  <Button className='w-[100px] h-[100px] bg-violet-400'>

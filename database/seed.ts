@@ -9,9 +9,17 @@ const seed = async()=>{
   try {
       console.log("Seeding....")
     for(const shop of dummyshops){
+        const {admin_id , shop_name , shop_email , shop_address , shop_description , shop_image_url , shop_phone} = shop
         //@ts-ignore
         await db.insert(shops).values({
-            ...shop
+            
+            adminId:admin_id,
+            shopName:shop_name,
+            shopEmail:shop_email,
+            shopAddress:shop_address,
+            shopDescription:shop_description,
+            shopImages:shop_image_url,
+            shopPhone:shop_phone
         })
         console.log("Seeding Completed")
     }

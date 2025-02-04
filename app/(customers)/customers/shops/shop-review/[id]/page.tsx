@@ -47,14 +47,14 @@ const page = async({params} : {params :{id : string}}) => {
            <h3 className='flex flex-row gap-1 mt-7'>
            <Button className=' w-[ 50px] h-[50px] shadow-xl'><Star color="#FFD700" /></Button> <h2 className='mt-3 ml-2 text-2xl'> 5 </h2>
           </h3>
-<div className='mt-7'>
+<div className='mt-7 '>
           {shop?.opened ? (<>    <span className="relative flex size-6"> 
          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-1 opacity-75"></span>  
          <span className="relative inline-flex size-6 rounded-full bg-green-1"></span></span> <Button className='w-[300px] h-[50px] bg-green-1 rounded-full text-white text-1xl -mt-5'>Opened </Button>
            
         <Dialog>
-      <DialogTrigger asChild>
-        <Button className='w-[250px] h-[50px] bg-secondry-1 ml-20 text-primary-1 text-2xl rounded-full -mt-4'>Book Now</Button> 
+      <DialogTrigger asChild className='items-end justify-end ml-10'>
+        <Button className='w-[250px] h-[50px] bg-secondry-1 items-end  text-primary-1 text-[20px] rounded-full -mt-4'>Book Now</Button> 
       </DialogTrigger>
       <DialogContent className="sm:max-w-[505px] h-[300px]">
         <DialogHeader className='flex flex-row gap-2'>

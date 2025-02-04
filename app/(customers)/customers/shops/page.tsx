@@ -33,9 +33,9 @@ const page = async() => {
         <SearComponent/>
       </div>
       </div>
-    <div className="flex flex-row gap-4">
+    <div className="grid grid-cols-3 gap-[400px] min-sm:grid-cols-4 sm:gap-4">
         {reuslt?.map((shop)=>(
-          <div className='grid grid-cols-1 gap-2'>
+          
             <div className='flex flex-row ml-10 mt-20' key={shop.id}>
               
                 <ShopCard
@@ -50,7 +50,6 @@ const page = async() => {
                 isOpened={shop.opened}
                 />
                
-            </div>
             </div>
         ))}
     </div>
