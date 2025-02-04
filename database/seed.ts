@@ -19,3 +19,5 @@ const seed = async()=>{
     console.log(error);
   }
 }
+
+seed();

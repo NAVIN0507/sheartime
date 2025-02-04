@@ -1,0 +1,1 @@
+ALTER TABLE "admin_shops" ALTER COLUMN "admin_id" DROP DEFAULT;

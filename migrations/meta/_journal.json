@@ -50,6 +50,20 @@
       "when": 1737994838668,
       "tag": "0006_early_kitty_pryde",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1738644501978,
+      "tag": "0007_nosy_william_stryker",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1738644681202,
+      "tag": "0008_melodic_wendell_vaughn",
+      "breakpoints": true
     }
   ]
 }
