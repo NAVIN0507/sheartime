@@ -1,0 +1,1 @@
+ALTER TABLE "bookings" ADD COLUMN "created_at" timestamp with time zone DEFAULT now();

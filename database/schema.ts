@@ -33,5 +33,8 @@ export const bookings = pgTable('bookings' , {
   shopId: varchar("shop_id").notNull(),
   bookingDate: varchar('booking_date').notNull(),
   bookingStatus:STATUS_ENUM('booking_status').default('PENDING'),
-  amountStatus:AMOUNT_STATUS('amount_status').default('NOT_PAID')
+  amountStatus:AMOUNT_STATUS('amount_status').default('NOT_PAID'),
+  createdAt: timestamp('created_at' , {
+    withTimezone:true
+  }).defaultNow(),
 })

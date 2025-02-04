@@ -77,9 +77,9 @@ const PaymentPage = async()=>{
                 return(
                         <div className='flex flex-row gap-10 w-full h-[80px] bg-primary-1 border-b-2 rounded-xl text-center  items-center'>
                            
-                          <h1 className='w-full text-2xl flex flex-row gap-2 ml-5'>
+                          <h1 className='w-full text-2xl font-extralight flex flex-row gap-2 ml-5'>
                            {shop[0].shopName}</h1>
-                            <h1 className='w-full text-2xl'>{formatDateTime(booking.bookingDate).dateTime}</h1>
+                            <h1 className='w-full text-2xl font-extralight'>{formatDateTime(booking.bookingDate).dateTime}</h1>
                           
                             <h1 className='w-full'>
                                 {booking.amountStatus === 'PAID' ? (<>

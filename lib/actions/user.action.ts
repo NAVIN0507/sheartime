@@ -2,7 +2,7 @@
 
 import { db } from "@/database/drizzle"
 import { bookings, shops, users } from "@/database/schema"
-import { and, eq } from "drizzle-orm"
+import { and, asc, desc, eq } from "drizzle-orm"
 
 export const getUserById = async(userId: string)=>{
     try {
@@ -52,7 +52,7 @@ export const addBooking = async({userId , shopId , dateTime}:BookingCredentials)
 }
 export const getBookingByUserId = async(userId: string)=>{
     try {
-        const result = await db.select().from(bookings).where(and(eq(bookings.userId , userId) , eq(bookings.bookingStatus , 'PENDING')));
+        const result = await db.select().from(bookings).where(and(eq(bookings.userId , userId) , eq(bookings.bookingStatus , 'PENDING'))).orderBy(desc(bookings.createdAt));
         return result
     } catch (error) {
         console.log(error)
