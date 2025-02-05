@@ -15,18 +15,8 @@ const Sidebar = ({session}:{session : Session}) => {
   const pathname = usePathname();
   
   return (
-<section className='sticky left-0 top-0 flex h-screen w-fit flex-col justify-between bg-primary-1 shadow-lg p-6 pt-32 text-black max-sm:hidden lg:w-[380px] '>
-  <div className='flex flex-row gap-2 w-[370px] h-[60px] rounded-full items-start  justify-start  -ml-4 cursor-pointer mt-10  '>
-  <div className='mt-2 flex flex-row gap-4 text-lg ml-2'>
- <Button className='w-[100px] h-[100px] bg-violet-400'>
- <h1 className='text-3xl'> {getIntials(session.user?.name || '')} </h1>
- </Button>
-   <div className='flex flex-col max-md:hidden  mt-5'>
-                <p className='font-light text-2xl text-dark-200'>{session?.user?.name}</p>
-                <p className='text-1xl text-light-500'>{session?.user?.email}</p>
-            </div>
-</div>
-</div>
+<section className='sticky left-0 top-0 flex h-screen w-fit flex-col justify-between bg-primary-1 shadow-lg p-6 pt-32 text-black max-sm:hidden lg:w-[300px] '>
+
   <div className='flex flex-1 flex-col gap-6 mt-40'>
 
 

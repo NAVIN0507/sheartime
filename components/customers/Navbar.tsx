@@ -31,14 +31,19 @@ const Navbar = ({session}:{session:Session}) => {
             
             <li>
             
-                <Link href={`/my-profile/${session?.user?.id}`}>
+                <Link href={`/my-profile/${session?.user?.id}`} className='flex flex-row gap-3 my-auto'>
                 
-                <Avatar className=''>
-                    <AvatarFallback className='bg-cyan-400'>{
+                <Avatar className='my-auto'>
+                    <AvatarFallback className='bg-gray-300'>{
                     //@ts-ignore
                     getIntials(session?.user?.name)
                     }</AvatarFallback>
+                    
                 </Avatar>
+                 <div className='flex flex-col max-md:hidden'>
+                <p className='font-light text-2xl text-dark-200'>{session?.user?.name}</p>
+         
+            </div>
                 </Link>
             </li>
             <li className='mr-15'> 
