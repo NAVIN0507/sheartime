@@ -54,7 +54,7 @@ toast("SuccessFully Signed In" ,{
           //@ts-ignore
           else{
             //@ts-ignore
-         return router.push(`/customers/${result.userData[0].id}`)
+         return router.push(`/customers/shops`)
           }
         }
         else if(result.error){

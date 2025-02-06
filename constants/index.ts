@@ -41,28 +41,7 @@ export const NavItems = [
         route:"/sign-up"
     },
 ]
-export const FeatureItems=[
-    {
-        title:"Create Account",
-        description:"Create your account in sheartime",
-        className:"bg-pink-400",
-    },
-       {
-        title:"Create Accoun",
-        description:"Create your account in sheartime",
-        className:"bg-teal-400"
-    },
-       {
-        title:"Create Accou",
-        description:"Create your account in sheartime",
-        className:"bg-pink-400"
-    },
-       {
-        title:"Create Acco",
-        description:"Create your account in sheartime",
-        className:"bg-pink-400"
-    }
-]
+
 export const sidebarLinks =[
    
      {

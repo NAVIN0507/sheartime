@@ -41,7 +41,7 @@ const Navbar = ({session}:{session:Session}) => {
                     
                 </Avatar>
                  <div className='flex flex-col max-md:hidden'>
-                <p className='font-light text-2xl text-dark-200'>{session?.user?.name}</p>
+                <p className='font-light text-2xl text-dark-200 my-auto'>{session?.user?.name}</p>
          
             </div>
                 </Link>

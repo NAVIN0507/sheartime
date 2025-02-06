@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { Inter , Raleway , Aclonica} from 'next/font/google'
 import { redirect } from 'next/navigation'
 import Sidebar from '@/components/customers/Sidebar'
+import NavBar2 from '@/components/customers/NavBar2'
 
 const fontInter = Inter({
     variable: "--font-inter",
@@ -20,8 +21,9 @@ const layout = async ({children} :{children: ReactNode}) => {
   return (
   <main className={`relative  antialiased`}>
     <Navbar session={session}/>
+    <NavBar2/>
     <div className='flex'>
-        <Sidebar session={session}/>
+
         <section className='flex min-h-screen flex-1 flex-col px-6 pb-6 pt-28 max-md:pb-14 sm:px-14'>
             <div className='w-full'>
                 {children}

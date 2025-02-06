@@ -62,7 +62,7 @@ const PaymentPage = async()=>{
   }
 
   return(
-    <div >
+    <div className="-mt-14" >
       <Script src="https://checkout.razorpay.com/v1/checkout.js"/>
       
          <h1 className='text-4xl'>Payments</h1>
