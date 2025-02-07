@@ -25,6 +25,7 @@ const Navbar = ({session}:{session:Session}) => {
     <h1 className='font-bold mt-2 text-3xl ml-2 text-black'>SHEARTIME</h1>
         
         </Link>
+        
         </div>
         <div className='flex flex-col items-end justify-end my-auto'>
         <ul className='flex flex-row items-center gap-8 mt-2'>

@@ -64,7 +64,7 @@ const PaymentButton = ({userName , userEmail , userMobile , id}:Props) => {
     }
   }
   return (
-   <Button className='w-[150px] h-[50px] text-1xl bg-blue-400 rounded-full' onClick={handlePayment}>{isPaying?'Processing...' :'Pay Now'}</Button>
+   <Button className='w-[150px] h-[50px] text-1xl bg-secondry-1 text-white rounded-full' onClick={handlePayment}>{isPaying?'Processing...' :'Pay Now'}</Button>
   )
 }
 

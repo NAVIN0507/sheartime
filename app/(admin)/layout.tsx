@@ -10,7 +10,6 @@ const layout = async({children}:{children:ReactNode}) => {
   return (
     <main className='relative antialiased bg-graphite-1'>
         
-        
         <div className='flex' >
             <RightSideBar session ={session}/>
             <section className='flex min-h-screen flex-1 flex-col px-6  pt-28  sm:px-0.5'>

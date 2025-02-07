@@ -13,25 +13,25 @@ export const FeatureItems=[
     {
         title:"Create Account",
         description:"New to ShearTime? Create an account and join our growing community. Enjoy seamless access and exciting features!",
-        className:"bg-black hover:bg-pink-500 text-white font-medium rounded-md p-3 shadow-lg ",
+        className:"bg-secondry-2 hover:bg-pink-500 text-white font-medium rounded-md p-3 shadow-lg ",
         icon:<FcCollaboration width={100} height={100} className='rounded-full object-fill'/>
     },
        {
         title:"Select Role",
         description:"Are you a customer or a barber? Choose your role to unlock tailored features—customer for pampering, or barber as admin to manage the magic. Sign up now and let’s get started!",
-        className:"bg-black hover:bg-blue-500 text-white font-medium rounded-md p-3 shadow-lg",
+        className:"bg-secondry-2 hover:bg-blue-500 text-white font-medium rounded-md p-3 shadow-lg",
         icon:<FaUserTag width={100} height={100} className='rounded-full object-fill'/>
     },
        {
         title:"Shop Register",
         description:"Are you an admin? Register your shop details to showcase your services and attract customers. Start building your customer base today!",
-        className:"bg-black hover:bg-green-500 text-white font-medium rounded-md p-3 shadow-lg",
+        className:"bg-secondry-2 hover:bg-green-500 text-white font-medium rounded-md p-3 shadow-lg",
         icon:<FcAcceptDatabase className='h-[30px] w-[30px] text-white'/>
     },
        {
         title:"First Booking",
         description:"Find your favorite shop and secure your first booking with ease. Don’t wait—reserve your spot now and experience the difference!",
-        className:"bg-black hover:bg-indigo-500 text-white font-medium rounded-md p-3 shadow-lg",
+        className:"bg-secondry-2 hover:bg-indigo-500 text-white font-medium rounded-md p-3 shadow-lg",
         icon:<FcOk className='h-[30px] w-[30px] text-white'/>
     }
 ]
@@ -39,25 +39,25 @@ export const FeatureItems=[
     {
         title:"Manage Customers",
         description:"Effortlessly manage customer bookings and streamline your appointments. Keep everything organized and provide the best service!",
-        className:"bg-black hover:bg-lime-500 text-white font-medium rounded-md p-3 shadow-lg",
+        className:"bg-secondry-2 hover:bg-lime-500 text-white font-medium rounded-md p-3 shadow-lg",
         icon:<Settings  width={50} height={50} className='rounded-full object-fill'/>
     },
        {
         title:"Feedback",
         description:"Share your thoughts about your experience. Your feedback helps us improve and serve you better!",
-        className:"bg-black hover:bg-cyan-500 text-white font-medium rounded-md p-3 shadow-lg",
+        className:"bg-secondry-2 hover:bg-cyan-500 text-white font-medium rounded-md p-3 shadow-lg",
         icon:<VscFeedback width={100} height={100} className='rounded-full object-fill'/>
     },
        {
         title:"Notified",
         description:"Stay updated with instant notifications whenever the admin schedules your booking. Never miss an update!",
-        className:"bg-black hover:bg-purple-500 text-white font-medium rounded-md p-3 shadow-lg",
+        className:"bg-secondry-2 hover:bg-purple-500 text-white font-medium rounded-md p-3 shadow-lg",
         icon:<TbDeviceMobileMessage className='h-[30px] w-[30px] text-white'/>
     },
        {
         title:"Customer Support",
         description:"Reach out to us anytime for assistance. We're here to help you 24/7",
-        className:"bg-black hover:bg-fuchsia-500 text-white font-medium rounded-md p-3 shadow-lg",
+        className:"bg-secondry-2 hover:bg-fuchsia-500 text-white font-medium rounded-md p-3 shadow-lg",
         icon:<FcCustomerSupport className='h-[30px] w-[30px] text-white'/>
     },
     

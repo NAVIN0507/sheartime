@@ -1,7 +1,6 @@
 
 import React from "react";
 import Script from "next/script";
-import { Payments } from "@/components/customers/Payments";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { getBookingByUserId, getShopsByShopId, getUserById } from "@/lib/actions/user.action";
@@ -62,10 +61,10 @@ const PaymentPage = async()=>{
   }
 
   return(
-    <div className="-mt-14" >
+    <div className="-mt-16" >
       <Script src="https://checkout.razorpay.com/v1/checkout.js"/>
       
-         <h1 className='text-4xl'>Payments</h1>
+         
         <div className='mt-20 flex flex-col gap-5'>
             {bookings.map(async(booking)=>{
                 const shop = await getShopsByShopId(booking.shopId)
@@ -83,9 +82,9 @@ const PaymentPage = async()=>{
                           
                             <h1 className='w-full'>
                                 {booking.amountStatus === 'PAID' ? (<>
-                                <Button className='w-[150px] h-[50px] bg-green-400 text-1xl rounded-full border-none shadow-none'><BadgeCheck /> Paid</Button>
+                                <Button className='w-[150px] h-[50px] bg-gray-300 text-1xl rounded-full border-none shadow-none' disabled><BadgeCheck /> Paid</Button>
                                 </>) :(<>
-                                <Button className='w-[150px] h-[50px] bg-red-400 text-1xl rounded-full border-none shadow-none'><TriangleAlert />Not Paid</Button>
+                                <Button className='w-[150px] h-[50px] bg-red-500 text-1xl rounded-full border-none shadow-none'><TriangleAlert />Not Paid</Button>
                                 </>)}
                             </h1>
                               <h1 className='w-full'>

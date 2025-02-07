@@ -1,11 +1,10 @@
 import Image from 'next/image'
-import Link from 'next/link'
+
 import React from 'react'
 import { Button } from '../ui/button'
 import { getIntials } from '@/lib/utils'
 import { Session } from 'next-auth'
-import { LogOut } from 'lucide-react'
-import { signOut } from '@/auth'
+
 import { redirect } from 'next/navigation'
 
 const NavBar = ({session}:{session:Session}) => {

@@ -1,5 +1,6 @@
 
 import { auth } from '@/auth';
+import ListBooking from '@/components/admin/ListBooking';
 import StateCard from '@/components/admin/StateCard';
 import { cancelledBooking, confirmedBooking, getBookingByShopId, getShopId, pendingBooking } from '@/lib/actions/admin.action';
 import { getUserById } from '@/lib/actions/user.action'
@@ -32,6 +33,9 @@ const page = async({params}:{params:{id:string}}) => {
 <StateCard title="Pending Bookings" num ={pendings} icon={<Hourglass color="#2fd098"  width={50} height={50} />}/>
 <StateCard title="Confirmed Bookings" num ={booked} icon={<CalendarCheck2 color='#ffff80' width={50} height={50}/>}/>
 <StateCard title="Cancelled Bookings" num ={canclled} icon={<TriangleAlert color='#ff8080' width={50} height={50}/>}/>
+<div className='mx-auto'>
+  <ListBooking id={params.id}/>
+</div>
 </div>
 </div>
     </section>

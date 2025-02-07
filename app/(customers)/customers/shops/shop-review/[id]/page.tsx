@@ -28,7 +28,15 @@ const page = async({params} : {params :{id : string}}) => {
     <section className='flex flex-col gap-2 '>
       <h1 className='text-5xl'>Shop Details</h1>
       <div className='flex flex-row gap-10 mt-20 mx-auto'>
-       
+         <div className=''>
+        <Image
+        src={shop?.shopImages!}
+        alt={shop?.shopName!}
+        width={1100}
+        height={1200}
+        className='rounded-xl'
+        />
+      </div>
         <div className='w-[700px] h-[670px] shadow-2xl rounded-2xl'>
           <div className=' ml-[550px]'> 
              <Button className='w-[100px] h-[100px] -mt-12 ml-[550px] rounded-full bg-blue-400 mx-auto text-7xl'> <MapPinHouse size={48} strokeWidth={3} /></Button>
@@ -76,15 +84,7 @@ const page = async({params} : {params :{id : string}}) => {
           </div>
           </div>
         </div>
-        <div className=''>
-        <Image
-        src={shop?.shopImages!}
-        alt={shop?.shopName!}
-        width={1100}
-        height={1200}
-        className='rounded-xl'
-        />
-      </div>
+      
       </div>
       <div className='mt-[100px] w-full ml-10'>
         <h1 className='text-3xl'>Description</h1>

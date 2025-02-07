@@ -16,8 +16,8 @@ const page = async() => {
     if (!result) return <h1>No bookings found</h1>
     const handleDelete  = async()=>{}
   return (
-    <section className='flex flex-col gap-1'>
-        <h1 className='text-4xl'>Previous Bookings</h1>
+    <section className='flex flex-col gap-1 -mt-16'>
+      
         <div className='mt-20 flex flex-col gap-5'>
             {result.map(async(bookings)=>{
                 const shop = await getShopsByShopId(bookings.shopId);
@@ -31,14 +31,14 @@ const page = async() => {
                            {shop[0].shopName}</h1>
                             <h1 className='w-full text-2xl font-light'>{formatDateTime(bookings.bookingDate).dateTime}</h1>
                             <h1 className='w-full'>
-                                <Button className='w-[150px] h-[50px] bg-blue-400 text-1xl rounded-full border-none shadow-none'>{bookings.bookingStatus}  <Loader2 className='animate-spin'/></Button>
+                                <Button className='w-[150px] h-[50px] bg-gray-300 font-bold  text-1xl rounded-full border-none shadow-none' disabled>{bookings.bookingStatus}  <Loader2 className='animate-spin'/></Button>
                                
                             </h1>
                             <h1 className='w-full'>
                                 {bookings.amountStatus === 'PAID' ? (<>
-                                <Button className='w-[150px] h-[50px] bg-green-400 text-1xl rounded-full border-none shadow-none'><BadgeCheck /> Paid</Button>
+                                <Button className='w-[150px] h-[50px] bg-secondry-4 text-white text-1xl rounded-full border-none shadow-none' disabled><BadgeCheck /> Paid</Button>
                                 </>) :(<>
-                                <Button className='w-[150px] h-[50px] bg-red-400 text-1xl rounded-full border-none shadow-none'><TriangleAlert /> Not Paid</Button>
+                                <Button className='w-[150px] h-[50px] bg-red-500 text-1xl rounded-full border-none shadow-none'><TriangleAlert /> Not Paid</Button>
                                 </>)}
                             </h1>
                            <DeleteButton id={bookings.id}/>
