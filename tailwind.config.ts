@@ -38,7 +38,7 @@ export default {
 				5:"#32CD32",
 			},
 			graphite:{
-				1:'#2F353B'
+				1:'#18181b'
 			},
 			
 
