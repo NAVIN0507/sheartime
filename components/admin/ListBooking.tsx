@@ -1,6 +1,8 @@
 import { getBookingByShopId, getShopId } from '@/lib/actions/admin.action'
 import { getUserById } from '@/lib/actions/user.action';
+import { formatDateTime } from '@/lib/utils';
 import React from 'react'
+import Bookings from './Bookings';
 
 const ListBooking = async({id}:{id:string}) => {
     const shopId = await getShopId(id);
@@ -9,18 +11,18 @@ const ListBooking = async({id}:{id:string}) => {
     if(!bookings) return <h1>No Bookings</h1>
     
   return (
-    <div className='mt-16 mx-auto ml-2'>
-        <div className='flex flex-col gap-14 mx-auto'>
+    <div className='mt-10 mx-auto ml-2 right-5'>
+        <h1 className='text-3xl ml-7 underline'>Today's Bookings</h1>
+        <div className='flex flex-col gap-14  mt-10'>
             {bookings.map(async(booking)=>{
                 const user = await getUserById(booking.userId);
                 return(
-                    <div className='w-[1400px] h-[70px] shadow-2xl mx-auto'>
-                        <div className='flex flex-row my-auto mt-5 ml-5'>
-                            <div className=''>
-                            <h1 className='text-primary-4 text-2xl'>{user?.fullName}</h1>
-                            </div>
-                        </div>
-                    </div>
+                  
+                        <Bookings
+                         fullName={user?.fullName!}
+                         bookingDate={booking.bookingDate}
+                         />
+                   
                 )
             })}
         </div>

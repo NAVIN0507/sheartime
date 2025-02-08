@@ -15,7 +15,7 @@ const ShopDetails = async({id}:{id:string}) => {
    <section className='mx-auto'>
     <div className='w-[370px] '>
       
-        <div className='  mt-4 h-[150px] mx-auto '>
+        <div className='  -mt-4 h-[150px] mx-auto '>
           
             {shop?.opened? (<>
             <Openaing type='CLOSE' id={shop.adminId}/>
@@ -25,7 +25,7 @@ const ShopDetails = async({id}:{id:string}) => {
              <form action={async()=>{
                            "use server"
                            await signOut();
-                       }}><Button className='bg-green-3 mt-3 w-full text-black h-[60px]  shadow-none'><LogOut className='rotate-180'/>Logout </Button></form> 
+                       }}><Button className='bg-secondry-8 mt-3 w-[250px] text-white  h-[60px]  shadow-none'><LogOut className='rotate-180'/>Logout </Button></form> 
         </div>
         
     </div>

@@ -70,12 +70,12 @@ export const AdminSideBar =[
   
       {
         name:'Previous Bookings',
-        route:'/admin/todays-bookings',
+        route:'/admin/previous-bookings',
         icon:'/icons/booking.svg'
     },
       {
         name:'Feedbacks',
-        route:'/admin/todays-bookings',
+        route:'/admin/previous-bookings',
         icon:'/icons/booking.svg'
     },
       {
