@@ -28,8 +28,8 @@ const Bookings = ({fullName , bookingDate , bookingStatus}:{fullName:string;book
                         
                         <div className='flex flex-col my-auto mt-5'>
                             <div className='flex flex-row mt-7 ml-7'>
-                            <h1 className='text-2xl text-white truncate'>{fullName}</h1>
-                            <h1 className='text-2xl text-white ml-14'>{formatDateTime(bookingDate).dateTime}</h1>
+                            <h1 className='text-2xl text-black truncate'>{fullName}</h1>
+                            <h1 className='text-2xl text-black ml-14'>{formatDateTime(bookingDate).dateTime}</h1>
                             <h1 className='ml-14'>{StatusButton(bookingStatus)}</h1>
                             </div>
                         </div>

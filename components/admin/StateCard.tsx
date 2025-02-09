@@ -6,7 +6,7 @@ interface Props{
 }
 const StateCard = ({title , num , icon}:Props) => {
   return (
-    <div className='w-[450px] h-[200px]  rounded-2xl shadow-xl bg-secondry-7'>
+    <div className='w-[450px] h-[200px]  rounded-2xl shadow-xl bg-secondry-8'>
         <div className='flex flex-row gap-4 ml-10 mt-10'>
             <h1 className='text-white text-xl'>{icon}</h1>
             <h1 className='text-white text-5xl ml-1 my-auto'>{num}</h1>

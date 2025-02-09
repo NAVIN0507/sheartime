@@ -16,8 +16,8 @@ const RightSideBar = ({session}:{session : Session}) => {
 
   
   return (
-<section className=' left-0 top-0  flex min-h-screen w-fit flex-col justify-between bg-secondry-7 text-black shadow-2xl p-6 pt-32 text-3xl max-sm:hidden lg:w-[350px] '>
-<div className='-mt-20 flex flex-row gap-1'>
+<section className=' left-0 top-0  flex min-h-screen w-fit flex-col justify-between bg-secondry-8 text-black shadow-2xl p-6 pt-32 text-3xl max-sm:hidden lg:w-[350px] '>
+<div className='-mt-20 flex flex-row gap-1 fixed'>
   <Button className='w-20 h-20 bg-fuchsia-400'>
     <h1 className='my-auto text-2xl text-white'>{getIntials(session.user?.name!)}</h1>
   </Button>
@@ -56,9 +56,9 @@ const RightSideBar = ({session}:{session : Session}) => {
     })}
 
   </div>
-      <div className=' mx-auto bottom-0 fixed'>
+      {/* <div className=' mx-auto bottom-0 fixed'>
       <ShopDetails id={session.user?.id || ''}/>
-    </div>
+    </div> */}
 </section>
   )
 }
