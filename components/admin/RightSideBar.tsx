@@ -16,18 +16,17 @@ const RightSideBar = ({session}:{session : Session}) => {
 
   
   return (
-<section className=' left-0 top-0  flex min-h-screen w-fit flex-col justify-between bg-secondry-7 text-black shadow-2xl p-6 pt-32 text-3xl max-sm:hidden lg:w-[300px] '>
-  <div className='-mt-28'>
-    <Link href="/" className='flex flex-col fixed'>
-    <Image
-    src="/icons/logo-admin1.svg"
-    alt='logo'
-    width={250}
-    height={250}
-    className='mx-auto'
-    />
-    </Link>
+<section className=' left-0 top-0  flex min-h-screen w-fit flex-col justify-between bg-secondry-7 text-black shadow-2xl p-6 pt-32 text-3xl max-sm:hidden lg:w-[350px] '>
+<div className='-mt-20 flex flex-row gap-1'>
+  <Button className='w-20 h-20 bg-fuchsia-400'>
+    <h1 className='my-auto text-2xl text-white'>{getIntials(session.user?.name!)}</h1>
+  </Button>
+  <div className='flex flex-col gap-1 my-auto ml-4'>
+     <p className='text-2xl text-white'>Welcome 👋</p>
+    <p className='text-2xl text-white'>{session.user?.name}</p>
+    
   </div>
+</div>
   
   <div className='flex flex-1 flex-col gap-6 mx-auto fixed mt-[150px]'>
 
