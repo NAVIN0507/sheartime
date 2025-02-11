@@ -1,19 +1,5 @@
-import { FaDiscord, FaGithub, FaTwitch, FaTwitter } from 'react-icons/fa'
-export const mainNavItems = ["Home" ,"About" , "Contact"]
+import { icons } from "lucide-react"
 
-export const heroImages =[
-    {imageUrl:'/icons/logo-main.svg' , alt:'hero1'},
-   
-    {imageUrl:'/icons/logo3.svg' , alt:'hero1'},
-
-    
-]
-export const developers = [
-    {name: 'Navin N', image: '/sample/sasuke.jpg' , role:"Backend" },
-    {name: 'Godson Flinto', image: '/sample/jinwo.jpg' , role:"DataBase"},
-    {name: 'Mahendrean', image: '/sample/gogo.jpg' , role:"Frontend"},
-    {name: 'Vijay Barathi', image: '/sample/killu.jpg' , role:"UI/UX"},
-]
 export const SIGNIN_FIELD_NAMES ={
     email:'Email',
     password:'Password'
@@ -66,27 +52,35 @@ export const sidebarLinks =[
     },
 ]
 
-export const AdminSideBar =[
-  
-      {
-        name:'Previous Bookings',
-        route:'/admin/previous-bookings',
-        icon:'/icons/booking.svg'
+export const AdminSideBar = [
+    {
+        name:"Previous Bookings",
+        img:'/icons/booking.svg',
+        route:'/admin/previous-bookings'
     },
-      {
-        name:'Feedbacks',
-        route:'/admin/previous-bookings',
-        icon:'/icons/booking.svg'
+    {
+        name:"Your Customers",
+        img:'/icons/booking.svg',
+        route:'/admin/previous-bookings'
     },
-      {
-        name:'Payments',
-        route:'/admin/todays-bookings',
-        icon:'/icons/booking.svg'
+    {
+        name:"FeedBacks",
+        img:'/icons/booking.svg',
+        route:'/admin/previous-bookings'
     },
-     {
-        name:'My Shop',
-        route:'/admin/todays-bookings',
-        icon:'/icons/booking.svg'
+    {
+        name:"Payments",
+        img:'/icons/booking.svg',
+        route:'/admin/previous-bookings'
     },
-
+    {
+        name:"Kanban",
+        img:'/icons/booking.svg',
+        route:'/admin/previous-bookings'
+    },
+    {
+        name:"Your Shop",
+        img:'/icons/booking.svg',
+        route:'/admin/previous-bookings'
+    },
 ]
