@@ -1,4 +1,5 @@
 import { auth } from '@/auth';
+import LeftSideBar from '@/components/admin/LeftSideBar';
 import NavBar from '@/components/admin/NavBar'
 import RightSideBar from '@/components/admin/RightSideBar';
 import { redirect } from 'next/navigation';
@@ -11,7 +12,7 @@ const layout = async({children}:{children:ReactNode}) => {
     <main className='relative antialiased bg-primary-1'>
         
         <div className='flex' >
-            <RightSideBar session ={session}/>
+            <LeftSideBar/>
             <section className='flex min-h-screen flex-1 flex-col px-6  pt-28  sm:px-0.5'>
                
                 <div className='w-full'>
