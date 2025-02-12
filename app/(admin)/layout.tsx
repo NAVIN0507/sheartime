@@ -11,12 +11,12 @@ const layout = async({children}:{children:ReactNode}) => {
   return (
     <main className='relative antialiased bg-gray-200'>
         
-        <div className='flex' >
+        <div className='flex flex-col' >
             <div className='flex flex-row'>
             <LeftSideBar/>
             <NavBar session={session}/>
             </div>
-            <section className='flex min-h-screen flex-1 flex-col px-16 ml-[300px]  pt-48   sm:px-0.5'>
+            <section className='flex min-h-screen flex-1 flex-col px-16 ml-[300px]  pt-32   sm:px-0.5'>
                
                 <div className='w-full'>
                     {children}

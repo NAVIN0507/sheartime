@@ -28,7 +28,7 @@ const page = async({params}:{params:{id:string}}) => {
 {/* {booroute.refresh();s?.map((booking)=>(
   <p key={booking.id}>{formatDateTime(booking.bookingDate).dateTime}</p>
 ))} */}
-<div className='-mt-10 ml-12'>
+<div className='-mt-16 ml-12'>
   <div className='grid grid-cols-3 gap-5'>
 <StateCard title="Pending Bookings" num ={pendings} icon={<Hourglass color="#2fd098"  width={50} height={50} />}/>
 <StateCard title="Confirmed Bookings" num ={booked} icon={<CalendarCheck2 color='#ffff80' width={50} height={50}/>}/>
