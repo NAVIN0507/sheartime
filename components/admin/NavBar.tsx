@@ -10,28 +10,9 @@ import { redirect } from 'next/navigation'
 const NavBar = ({session}:{session:Session}) => {
     if(!session) return redirect("/sign-in")
   return (
-   <header className='top-0 -mt-[110px] rounded-md flex flex-col gap-1 w-full  shadow-xl h-28'>
-    <div className='flex flex-row gap-1 my-auto  '>
-        {/* <div className='w-[80px] h-[80px] border-2  rounded-xl shadow-lg my-auto ml-4'>
-            <h1 className='text-2xl text-center items-center mt-5'>{getIntials(session.user?.name || '')}</h1>
-        </div> */}
-        <h1 className='text-3xl ml-5 '>Welcome {session.user?.name}</h1>
-        <div className='right-4 hidden fixed -mt-6 my-auto'>
-            
-              <div className=' flex flex-row gap-4 text-lg ml-2'>
-            
-               <div className='flex flex-col max-md:hidden mt-2'>
-                            <p className='font-light text-2xl text-primary-1 text-end'>{session?.user?.name}</p>
-                            <p className='text-1xl text-primary-1'>{session?.user?.email}</p>
-                        </div>
-                         <Button className='w-[80px] h-[80px] bg-violet-400'>
-             <h1 className='text-3xl'> {getIntials(session.user?.name || '')} </h1>
-             </Button>
-            </div>
-            </div>
-        </div>
+<header className='w-[1500px] top-3 fixed h-[110px] ml-[350px] bg-primary-1 rounded-2xl'>
     
-   </header>
+</header>
   )
 }
 

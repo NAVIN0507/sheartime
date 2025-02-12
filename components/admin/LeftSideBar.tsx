@@ -6,7 +6,7 @@ import { Button } from '../ui/button'
 
 const LeftSideBar = () => {
   return (
-    <section className='min-h-screen w-[320px] bg-primary-1'>
+    <section className='min-h-screen w-[320px] bg-primary-1 top-0 fixed'>
         <div className='flex flex-col'>
             <Link href={"/"} className='flex flex-row gap-2 mt-5 border-b-2'>
             <Image
