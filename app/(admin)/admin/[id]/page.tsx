@@ -23,7 +23,7 @@ const page = async({params}:{params:{id:string}}) => {
     const pendings = await pendingBooking(shopIDS!);
     const booked = await confirmedBooking(shopIDS!);
     const canclled = await cancelledBooking(shopIDS!)
-    const shop = await getShopById(shopIDS!);
+    const shop = await getShopById(params.id);
   return (
     //@ts-ignore
     <section>
@@ -37,15 +37,22 @@ const page = async({params}:{params:{id:string}}) => {
     <div className='flex flex-col ml-10 mt-10 gap-1'>
       <h1 className='text-3xl'>Welcome</h1>
       <h1 className='text-3xl'>{session.user?.name!}</h1>
+      <p className='mt-1 font-light'>Manage Your Customers by sheduling their bookings</p>
     </div>
 <div>
 <Image
 src={shop?.shopImages!}
 alt=""
-width={100}
-height={100}
+width={300}
+height={300}
+className='mt-4 rounded-2xl mr-3'
 />
 </div>
+  </div>
+  <div className=' ml-4 grid grid-cols-3 gap-4'>
+ <StateCard title="Pending Bookings" num ={pendings} icon={<Hourglass color="#2fd098"  width={50} height={50} />}/>
+<StateCard title="Confirmed Bookings" num ={booked} icon={<CalendarCheck2 color='#ffff80' width={50} height={50}/>}/>
+<StateCard title="Cancelled Bookings" num ={canclled} icon={<TriangleAlert color='#ff8080' width={50} height={50}/>}/>
   </div>
   </div>
 <div className='mx-auto mt-7 mr-10'>

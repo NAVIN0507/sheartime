@@ -112,7 +112,7 @@ const page = () => {
           //@ts-ignore
           if(!result.userData[0].isAdmins){
             //@ts-ignore
-           return router.push(`/customers/${result.userData[0].id}`)
+           return router.push("/sign-in")
           }
         } catch (error) {
           console.log(error)
