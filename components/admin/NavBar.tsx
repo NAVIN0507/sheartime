@@ -17,7 +17,7 @@ const NavBar = ({session}:{session:Session}) => {
     <div className='flex flex-row gap-5 my-auto'>
         <Button className= 'text-2xl my-auto w-[50px] h-[50px] rounded-full bg-secondry-1'><Search
         color='#fff'
-        /></Button>
+        /></Button> 
         <Input className='w-[400px] h-[50px] border-none shadow-none' placeholder='Type Here to Search'/>
     </div>
 <div className='flex flex-row gap-8 w-[200px] mt-1'> 
@@ -26,7 +26,7 @@ const NavBar = ({session}:{session:Session}) => {
      <Bell size={35} className='my-auto mx-auto mt-1'/>
 </div>
 <div className='w-[50px] h-[50px] bg-secondry-1 ml-5 -mt-1 rounded-full text-center'>
-     <h1 className='text-2xl mt-2 my-auto mx-auto text-center text-white'>{getIntials(session.user?.name!)}</h1>
+     <h1 className='text-1xl mt-3 my-auto mx-auto text-center text-white'>{getIntials(session.user?.name!)}</h1>
 </div>
 </div>
 </div>

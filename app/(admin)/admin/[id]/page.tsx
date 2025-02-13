@@ -2,9 +2,10 @@
 import { auth } from '@/auth';
 import ListBooking from '@/components/admin/ListBooking';
 import StateCard from '@/components/admin/StateCard';
-import { cancelledBooking, confirmedBooking, getBookingByShopId, getShopId, pendingBooking } from '@/lib/actions/admin.action';
+import { cancelledBooking, confirmedBooking, getBookingByShopId, getShopById, getShopId, pendingBooking } from '@/lib/actions/admin.action';
 import { getUserById } from '@/lib/actions/user.action'
 import { CalendarCheck2, Check, Hourglass, Loader, TriangleAlert } from 'lucide-react';
+import Image from 'next/image';
 
 import { redirect} from 'next/navigation';
 import React from 'react'
@@ -22,6 +23,7 @@ const page = async({params}:{params:{id:string}}) => {
     const pendings = await pendingBooking(shopIDS!);
     const booked = await confirmedBooking(shopIDS!);
     const canclled = await cancelledBooking(shopIDS!)
+    const shop = await getShopById(shopIDS!);
   return (
     //@ts-ignore
     <section>
@@ -29,14 +31,27 @@ const page = async({params}:{params:{id:string}}) => {
   <p key={booking.id}>{formatDateTime(booking.bookingDate).dateTime}</p>
 ))} */}
 <div className='-mt-16 ml-12'>
-  <div className='grid grid-cols-3 gap-5'>
-<StateCard title="Pending Bookings" num ={pendings} icon={<Hourglass color="#2fd098"  width={50} height={50} />}/>
-<StateCard title="Confirmed Bookings" num ={booked} icon={<CalendarCheck2 color='#ffff80' width={50} height={50}/>}/>
-<StateCard title="Cancelled Bookings" num ={canclled} icon={<TriangleAlert color='#ff8080' width={50} height={50}/>}/>
+  <div className='flex flex-row '>
+  <div className=' w-[900px] h-[200px]  bg-primary-1 shadow-xl rounded-xl flex flex-row justify-between'>
+
+    <div className='flex flex-col ml-10 mt-10 gap-1'>
+      <h1 className='text-3xl'>Welcome</h1>
+      <h1 className='text-3xl'>{session.user?.name!}</h1>
+    </div>
+<div>
+<Image
+src={shop?.shopImages!}
+alt=""
+width={100}
+height={100}
+/>
+</div>
+  </div>
+  </div>
 <div className='mx-auto mt-7 mr-10'>
   <ListBooking id={params.id}/>
 </div>
-</div>
+
 </div>
     </section>
   )
