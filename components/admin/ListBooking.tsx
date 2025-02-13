@@ -11,9 +11,10 @@ const ListBooking = async({id}:{id:string}) => {
     if(!bookings) return <h1>No Bookings</h1>
     
   return (
-    <div className='mt-10 mx-auto ml-2 right-5'>
-        <h1 className='text-3xl ml-7  mx-auto text-center underline'>Today's Bookings</h1>
-        <div className='flex flex-col gap-14  mt-14'>
+    <div className='mt-10 mx-auto ml-2 right-5 bg-primary-1 min-h-screen rounded-2xl'>
+    
+        <div className='flex flex-col gap-14 mt-20'>
+          <div className='mt-14'>
             {bookings.map(async(booking)=>{
                 const user = await getUserById(booking.userId);
                 return(
@@ -23,9 +24,11 @@ const ListBooking = async({id}:{id:string}) => {
                          bookingDate={booking.bookingDate}
                          bookingStatus = {booking.bookingStatus!}
                          />
+                         
                    
                 )
             })}
+            </div>
         </div>
     </div>
   )
