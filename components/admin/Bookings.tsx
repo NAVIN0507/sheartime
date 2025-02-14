@@ -24,7 +24,7 @@ const Bookings = ({fullName , bookingDate , bookingStatus}:{fullName:string;book
     }
   }
   return (
-    <div className='w-[1420px] h-[120px] border-b-2 -mt-1 mx-auto rounded-xl  flex flex-row justify-between'>
+    <div className='w-[1480px] h-[120px] border-b-2 -mt-1 mx-auto rounded-xl  flex flex-row justify-between'>
                         
                         <div className='flex flex-col my-auto mt-5'>
                             <div className='flex flex-row mt-7 ml-7'>

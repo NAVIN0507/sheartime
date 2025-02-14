@@ -11,7 +11,7 @@ const ListBooking = async({id}:{id:string}) => {
     if(!bookings) return <h1>No Bookings</h1>
     
   return (
-    <div className='mt-10 mx-auto ml-2 right-5 bg-primary-1 min-h-screen rounded-2xl'>
+    <div className='mt-10 mx-auto ml-2 right-5 bg-primary-1 w-full min-h-screen rounded-2xl'>
     
         <div className='flex flex-col gap-14 mt-20'>
           <div className='mt-14'>
