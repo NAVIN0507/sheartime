@@ -23,6 +23,7 @@ const ListBooking = async({id}:{id:string}) => {
                          fullName={user?.fullName!}
                          bookingDate={booking.bookingDate}
                          bookingStatus = {booking.bookingStatus!}
+                         userPhone = {user?.phone!}
                          />
                          
                    

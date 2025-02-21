@@ -40,7 +40,7 @@ export const getShopId = async (adminId: string)=>{
 }
 export const getBookingByShopId = async(shopId : string)=>{
     try {
-        const booking = await db.select().from(bookings).where(eq(bookings.shopId , shopId));
+        const booking = await db.select().from(bookings).where(eq(bookings.shopId , shopId)).orderBy(bookings.bookingStatus );
         return booking
     } catch (error) {
         console.log(error)
