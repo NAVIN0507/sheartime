@@ -3,9 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { Button } from '../ui/button'
+import { auth, signOut } from '@/auth';
 import { BookmarkX, CalendarCheck, CalendarCog, CalendarSync, CircleDotDashed, CircleUserRound, CircleX, ExternalLink, IndianRupee, LogOut, MessageSquareText, Store, UserPen, UsersRound } from 'lucide-react'
+import { redirect } from 'next/navigation'
 
-const LeftSideBar = () => {
+const LeftSideBar = async() => {
+  const session = await auth();
+  if(!session) redirect("/sign-in")
   return (
     <section className='min-h-screen w-[300px] bg-primary-1 top-0 fixed rounded-xl'>
         <div className='flex flex-col'>
@@ -53,7 +57,13 @@ const LeftSideBar = () => {
               </div>
             </div>
             <div className='mt-10 mx-auto items-center justify-center ml-3'>
-              <Button className='w-[250px] h-[50px] mx-auto bg-secondry-1 text-primary-1 text-1xl'><LogOut />Log out</Button>
+            <form action={async()=>{
+              "use server";
+              await signOut();
+            }}
+            >
+                <Button className='w-[250px] h-[50px] mx-auto bg-secondry-1 text-primary-1 text-1xl'><LogOut />Log out</Button>
+            </form>
             </div>
             </div>
         </div>

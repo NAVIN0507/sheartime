@@ -24,6 +24,7 @@ const ListBooking = async({id}:{id:string}) => {
                          bookingDate={booking.bookingDate}
                          bookingStatus = {booking.bookingStatus!}
                          userPhone = {user?.phone!}
+                         bookingId = {booking.id}
                          />
                          
                    

@@ -1,3 +1,4 @@
+"use client"
 import { formatDateTime } from '@/lib/utils';
 import React from 'react'
 import { Button } from '../ui/button';
@@ -12,7 +13,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-const Bookings = ({fullName , bookingDate , bookingStatus , userPhone}:{fullName:string;bookingDate:string; bookingStatus:string; userPhone:string}) => {
+import { sheduleBookings } from '@/lib/actions/admin.action';
+import { toast } from 'sonner';
+import { useRouter } from 'next/navigation';
+const Bookings = ({fullName , bookingDate , bookingStatus , userPhone , bookingId}:{fullName:string;bookingDate:string; bookingStatus:string; userPhone:string; bookingId:string}) => {
   const StatusButton = (Status : string)=>{
     switch (Status) {
       case 'PENDING':
@@ -32,7 +36,9 @@ const Bookings = ({fullName , bookingDate , bookingStatus , userPhone}:{fullName
         break;
     }
   }
+  const router = useRouter();
   return (
+
     <div className='w-[1480px] h-[120px] border-b-2 -mt-1 mx-auto rounded-xl  flex flex-row justify-between'>
                         
                         <div className='flex flex-col my-auto mt-5'>
@@ -51,7 +57,16 @@ const Bookings = ({fullName , bookingDate , bookingStatus , userPhone}:{fullName
 </Table>
                         </div>
                         <div className='flex flex-row  mt-[50px] ml-7 gap-5'>
-                          <Button className='w-[50px] h-[50px] border-2 border-green-500 -mt-2 font-bold text-1xl rounded-full shadow-none'><Check size={30}/></Button>
+                          
+                          <Button className='w-[50px] h-[50px] border-2 border-green-500 -mt-2 font-bold text-1xl rounded-full shadow-none'
+                          onClick={async()=>{
+                           const res =  await sheduleBookings(bookingId)
+                            if(res){
+                              toast("Scheduled SuccessFully" , {position:'top-right'})
+                            router.refresh();
+                            }
+                          }}
+                          ><Check size={30}/></Button>
                           <Button className='w-[50px] h-[50px] border-2 border-red-500 -mt-2 font-bold text-1xl rounded-full  shadow-none'><X /></Button>
                         </div>
                     </div>

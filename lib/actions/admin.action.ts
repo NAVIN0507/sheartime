@@ -97,3 +97,12 @@ export const cancelledBooking = async (shopid: string) => {
     }
 
 }
+export const sheduleBookings  = async(bookingId : string)=>{
+try {
+    const result = await db.update(bookings).set({bookingStatus:'BOOKED'}).where(eq(bookings.id , bookingId));
+    return {success :true}
+} catch (error) {
+console.log(error);
+return    {success : false}
+}
+}
