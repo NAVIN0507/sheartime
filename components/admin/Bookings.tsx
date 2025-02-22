@@ -13,7 +13,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { sheduleBookings } from '@/lib/actions/admin.action';
+import { cancelBooking, sheduleBookings } from '@/lib/actions/admin.action';
 import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
 const Bookings = ({fullName , bookingDate , bookingStatus , userPhone , bookingId}:{fullName:string;bookingDate:string; bookingStatus:string; userPhone:string; bookingId:string}) => {
@@ -48,7 +48,7 @@ const Bookings = ({fullName , bookingDate , bookingStatus , userPhone , bookingI
   <TableBody>
     <TableRow className='flex flex-row gap-14'>
       <TableCell className="font-medium text-1xl">{fullName}</TableCell>
-      <TableCell>{formatDateTime(bookingDate).dateTime}</TableCell>
+      <TableCell className='truncate'>{formatDateTime(bookingDate).dateTime}</TableCell>
       <TableCell>{userPhone}</TableCell>
       <TableCell>{StatusButton(bookingStatus)}</TableCell>
       
@@ -58,16 +58,31 @@ const Bookings = ({fullName , bookingDate , bookingStatus , userPhone , bookingI
                         </div>
                         <div className='flex flex-row  mt-[50px] ml-7 gap-5'>
                           
-                          <Button className='w-[50px] h-[50px] border-2 border-green-500 -mt-2 font-bold text-1xl rounded-full shadow-none'
+                          <Button className='w-[150px] h-[50px] border-2 border-green-500 -mt-2 font-bold text-1xl rounded-full shadow-none'
                           onClick={async()=>{
                            const res =  await sheduleBookings(bookingId)
-                            if(res){
-                              toast("Scheduled SuccessFully" , {position:'top-right'})
+                            if(res.success){
+                              toast("Scheduled SuccessFully" ,  {position:'top-right' ,
+                                className:'bg-green-1 text-white'
+                              })
+                            router.refresh();
+                            }
+                            else{
+
+                            }
+                          }}
+                          ><Check size={30}/>Approve</Button>
+                          <Button className='w-[150px] h-[50px] border-2 border-red-500 -mt-2 font-bold text-1xl rounded-full  shadow-none'
+                          onClick={async()=>{
+                            const res = await cancelBooking(bookingId);
+                             if(res.success){
+                              toast("Cancelled SuccessFully" ,  {position:'top-right' ,
+                                className:'bg-red-400 text-white'
+                              })
                             router.refresh();
                             }
                           }}
-                          ><Check size={30}/></Button>
-                          <Button className='w-[50px] h-[50px] border-2 border-red-500 -mt-2 font-bold text-1xl rounded-full  shadow-none'><X /></Button>
+                          ><X /> Cancel</Button>
                         </div>
                     </div>
   )

@@ -106,3 +106,12 @@ console.log(error);
 return    {success : false}
 }
 }
+export const cancelBooking = async(bookingId:string)=>{
+    try {
+        const result = await db.update(bookings).set({bookingStatus:'CANCLED'}).where(eq(bookings.id , bookingId))
+        return {success:true}
+    } catch (error) {
+        console.log(error)
+        return {success : false}
+    }
+}
