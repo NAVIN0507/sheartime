@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { Button } from '../ui/button'
-import { CalendarCog, CalendarSync, CircleUserRound, LogOut, Store } from 'lucide-react'
+import { BookmarkX, CalendarCheck, CalendarCog, CalendarSync, CircleDotDashed, CircleUserRound, CircleX, ExternalLink, IndianRupee, LogOut, MessageSquareText, Store, UserPen, UsersRound } from 'lucide-react'
 
 const LeftSideBar = () => {
   return (
@@ -25,18 +25,18 @@ const LeftSideBar = () => {
                  
                 <div className='flex flex-col gap-2 ml-7 mt-5'>
                 <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline '><CalendarSync />Today's Bookings</Button>
-                <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline text-start justify-start'><CalendarSync />Confirmed Bookings</Button>
-                <Button className='shadow-none w-[180px] h-[40px] text-1xl hhover:underline'><CalendarSync />Pending Bookings</Button>
-                <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline ml-1'><CalendarSync />Cancelled Bookings</Button>
+                <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline text-start justify-start'><CalendarCheck />Confirmed Bookings</Button>
+                <Button className='shadow-none w-[180px] h-[40px] text-1xl hhover:underline'><CircleDotDashed />Pending Bookings</Button>
+                <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline ml-1'><BookmarkX />Cancelled Bookings</Button>
                 </div>
                 
               </div>
               <div className=''>
                 <div className='flex flex-row  gap-28 '><h1 className='text-2xl ml-2'>Customers </h1> <CircleUserRound className='mt-1'/></div>
                 <div className='flex flex-col gap-2 ml-7 mt-5'>
-                  <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline -ml-1'><CalendarSync />Your Customers</Button>
-                <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline ml-3'><CalendarSync />Customers FeedBack</Button>
-                <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline ml-3'><CalendarSync />Customer Payments</Button>
+                  <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline -ml-1'><UsersRound />Your Customers</Button>
+                <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline ml-3'><MessageSquareText />Customers FeedBack</Button>
+                <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline ml-3'><IndianRupee />Customer Payments</Button>
                 
                 </div>
                 
@@ -44,9 +44,9 @@ const LeftSideBar = () => {
                <div className=''>
                 <div className='flex flex-row  gap-28 '><h1 className='text-2xl ml-2'>Your Shop </h1> <Store className='mt-1'/></div>
                 <div className='flex flex-col gap-2 ml-7 mt-5 justify-start'>
-                  <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline  text-start justify-start'><CalendarSync />Your Profile</Button>
-                <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline text-start justify-start'><CalendarSync />Close Customer Bookings</Button>
-                <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline text-start justify-start'><CalendarSync /> Open Customer Bookings</Button>
+                  <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline  text-start justify-start'><UserPen />Your Profile</Button>
+                <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline text-start justify-start'><CircleX />Close Customer Bookings</Button>
+                <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline text-start justify-start'><ExternalLink />Open Customer Bookings</Button>
                 
                 </div>
                 
