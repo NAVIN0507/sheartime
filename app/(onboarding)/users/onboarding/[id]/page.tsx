@@ -22,7 +22,7 @@ const router = useRouter();
       const user = await db.update(users).set({onBoarded: true}).where(eq(users.id , params.id));
       const getuser = await getUserById(params.id);
       if(getuser?.onBoarded) {
-        return router.push(`/admin/${params.id}`)
+        return router.push(`/admin/todaysbooking/${params.id}`)
       }
        setisLoading(false)
 
