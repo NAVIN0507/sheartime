@@ -49,7 +49,7 @@ toast("SuccessFully Signed In" ,{
         //@ts-ignore
         if(result.userData[0].isAdmins){
           //@ts-ignore
-           return router.push(`/admin/${result.userData[0].id}`)
+           return router.push(`/admin/todaysbooking/${result.userData[0].id}`)
           }
           //@ts-ignore
           else{

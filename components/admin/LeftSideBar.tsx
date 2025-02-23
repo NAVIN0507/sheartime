@@ -28,7 +28,7 @@ const LeftSideBar = async() => {
                 <div className='flex flex-row  gap-32 '><h1 className='text-2xl ml-2'>Bookings </h1> <CalendarCog className='right-3 mt-1' /></div>
                  
                 <div className='flex flex-col gap-2 ml-7 mt-5'>
-                <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline '><CalendarSync />Today's Bookings</Button>
+             <Link href={`/admin/todaysbooking/${session.user?.id}`}>   <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline '><CalendarSync />Today's Bookings</Button></Link>
                 <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline text-start justify-start'><CalendarCheck />Confirmed Bookings</Button>
                 <Button className='shadow-none w-[180px] h-[40px] text-1xl hhover:underline'><CircleDotDashed />Pending Bookings</Button>
                 <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline ml-1'><BookmarkX />Cancelled Bookings</Button>
@@ -48,7 +48,7 @@ const LeftSideBar = async() => {
                <div className=''>
                 <div className='flex flex-row  gap-28 '><h1 className='text-2xl ml-2'>Your Shop </h1> <Store className='mt-1'/></div>
                 <div className='flex flex-col gap-2 ml-7 mt-5 justify-start'>
-                  <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline  text-start justify-start'><UserPen />Your Profile</Button>
+                <Link href={"/admin/yourprofile"}>  <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline  text-start justify-start'><UserPen />Your Profile</Button></Link>
                 <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline text-start justify-start'><CircleX />Close Customer Bookings</Button>
                 <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline text-start justify-start'><ExternalLink />Open Customer Bookings</Button>
                 
