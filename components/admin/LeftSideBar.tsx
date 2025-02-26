@@ -48,7 +48,7 @@ const LeftSideBar = async() => {
                <div className=''>
                 <div className='flex flex-row  gap-28 '><h1 className='text-2xl ml-2'>Your Shop </h1> <Store className='mt-1'/></div>
                 <div className='flex flex-col gap-2 ml-7 mt-5 justify-start'>
-                <Link href={"/admin/yourprofile"}>  <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline  text-start justify-start'><UserPen />Your Profile</Button></Link>
+                <Link href={`/admin/yourprofile/${session.user?.id}`}>  <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline  text-start justify-start'><UserPen />Your Profile</Button></Link>
                 <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline text-start justify-start'><CircleX />Close Customer Bookings</Button>
                 <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline text-start justify-start'><ExternalLink />Open Customer Bookings</Button>
                 

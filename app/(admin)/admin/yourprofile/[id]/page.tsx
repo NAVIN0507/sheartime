@@ -9,7 +9,17 @@ import { FolderPen, Mail, MapPinHouse, NotepadText, Pencil, Phone, Users } from 
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
 import React from 'react'
-
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 const page = async() => {
 const session = await auth();
 if(!session) return redirect("/sign-in");
@@ -56,18 +66,50 @@ if(!shop) return null;
   </div>
 </div>
 <div className='flex gap-2 mt-10 relative'>
-<div className='w-1/2 flex gap-3 h-[300px] rounded-lg bg-white px-4 pt-3 pb-4'>
-<div className='w-[80px] -ml-8 -mt-7 h-[50px] rounded-full bg-secondry-1 text-white text-center'>
+<div className='w-1/3 flex gap-3 h-[300px] rounded-lg bg-white px-4 pt-3 pb-4 items-start text-start justify-start'>
+<Dialog>
+      <DialogTrigger asChild>
+       <div className='w-[50px] -ml-8 -mt-7 h-[50px] rounded-full bg-secondry-1 text-white text-center cursor-pointer'>
     <h1 className='text-center'><Pencil className='ml-3 mt-3'/></h1>
 </div>
-<div className='mt-10 ml-10 flex flex-col'>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Edit profile</DialogTitle>
+          <DialogDescription>
+            Make changes to your profile here. Click save when you're done.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="grid gap-4 py-4">
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="name" className="text-right">
+              Name
+            </Label>
+            <Input id="name" value="Pedro Duarte" className="col-span-3" />
+          </div>
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="username" className="text-right">
+              Username
+            </Label>
+            <Input id="username" value="@peduarte" className="col-span-3" />
+          </div>
+        </div>
+        <DialogFooter>
+          <Button type="submit">Save changes</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+
+<div className='mt-10 -ml-6 flex flex-col items-start justify-start'>
     <TooltipProvider>
     <Tooltip>
         <TooltipTrigger>
 <h1 className='mt-4 truncate text-[17px] flex gap-4'><FolderPen /> {shop.shopName}</h1>
+
 </TooltipTrigger>
-<TooltipContent className='bg-secondry-1 text-white p-2 text-center rounded-xl'>Shop Name</TooltipContent>
+<TooltipContent className='bg-secondry-1 text-white p-2  rounded-xl'>Shop Name</TooltipContent>
 </Tooltip>
+
 </TooltipProvider>
  <TooltipProvider>
     <Tooltip>
@@ -102,19 +144,7 @@ if(!shop) return null;
 </Tooltip>
 </TooltipProvider>
 </div>
-<div className=' w-1/2 h-full my-auto mx-auto ml-40'>
-<Image
-src={shop.shopImages!}
-alt='shop Image'
-width={150}
-height={150}
-className='rounded-full mt-10'
-/>
-<div className='flex flex-col gap-5 mt-7'>
-<Button className='bg-secondry-1 w-[170px] text-primary-1 rounded-full'>Open Bookings</Button>
-<Button className='bg-secondry-1 w-[170px] text-primary-1 rounded-full'>Close Bookings</Button>
-</div>
-</div>
+
 </div>
 
 </div>
