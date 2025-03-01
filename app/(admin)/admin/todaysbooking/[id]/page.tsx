@@ -56,7 +56,7 @@ className='mt-4 rounded-2xl mr-3'
   </div>
   
   </div>
-  <h1 className='mt-6 text-3xl text-center'>Today's Booking</h1>
+  <h1 className='mt-10 text-3xl text-center'>Today's Booking</h1>
 <div className='mx-auto mt-7 mr-10'>
   <ListBooking id={params.id}/>
 </div>

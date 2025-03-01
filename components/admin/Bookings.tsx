@@ -3,6 +3,7 @@ import { formatDateTime } from '@/lib/utils';
 import React from 'react'
 import { Button } from '../ui/button';
 import { Check, Loader2, X } from 'lucide-react';
+import {motion} from "framer-motion"
 import {
   Table,
   TableBody,
@@ -38,8 +39,16 @@ const Bookings = ({fullName , bookingDate , bookingStatus , userPhone , bookingI
   }
   const router = useRouter();
   return (
-
-  <div></div>
+  <motion.div
+        initial={{opacity:0 , y:20}}
+        transition={{duration:0.5}}
+        whileInView={{opacity:1 , y:0}}
+        viewport={{once:true}}
+        >
+  <div className='w-full md:w-full h-24 bg-primary-1 shadow-xl rounded-xl'>
+    <div className='flex justify-between gap-2'></div>
+  </div>
+  </motion.div>
   )
 }
 
