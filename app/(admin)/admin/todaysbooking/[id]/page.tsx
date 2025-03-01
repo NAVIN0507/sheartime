@@ -54,7 +54,9 @@ className='mt-4 rounded-2xl mr-3'
 <StateCard title="Confirmed Bookings" num ={booked} icon={<CalendarCheck2 color='#ffff80' width={50} height={50}/>}/>
 <StateCard title="Cancelled Bookings" num ={canclled} icon={<TriangleAlert color='#ff8080' width={50} height={50}/>}/>
   </div>
+  
   </div>
+  <h1 className='mt-6 text-3xl text-center'>Today's Booking</h1>
 <div className='mx-auto mt-7 mr-10'>
   <ListBooking id={params.id}/>
 </div>

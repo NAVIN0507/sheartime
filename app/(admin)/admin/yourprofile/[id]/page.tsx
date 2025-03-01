@@ -21,6 +21,8 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 const page = async() => {
+
+  
 const session = await auth();
 if(!session) return redirect("/sign-in");
 const user = await getUserById(session.user?.id!);
@@ -54,7 +56,7 @@ if(!shop) return null;
   />
   
   {/* Button inside the image */}
-  <Button className="absolute top-6 right-1/3 mr-3 bg-white text-black  flex gap-2 hover:scale-110 rounded-full p-4 duration-300">
+  <Button className="absolute bottom-0 ml-10 mb-5  mr-3 bg-white text-black  flex gap-2 hover:scale-110 rounded-full p-4 duration-300">
     Change Logo <Pencil />
   </Button>
   {/* To Change width and height  */}

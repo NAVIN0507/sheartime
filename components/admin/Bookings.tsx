@@ -39,52 +39,7 @@ const Bookings = ({fullName , bookingDate , bookingStatus , userPhone , bookingI
   const router = useRouter();
   return (
 
-    <div className='w-[1480px] h-[120px] border-b-2 -mt-1 mx-auto rounded-xl  flex flex-row justify-between'>
-                        
-                        <div className='flex flex-col my-auto mt-5'>
-                           <Table className='hover:bg-none'>
-
-  
-  <TableBody>
-    <TableRow className='flex flex-row gap-14'>
-      <TableCell className="font-medium text-1xl">{fullName}</TableCell>
-      <TableCell className='truncate'>{formatDateTime(bookingDate).dateTime}</TableCell>
-      <TableCell>{userPhone}</TableCell>
-      <TableCell>{StatusButton(bookingStatus)}</TableCell>
-      
-    </TableRow>
-  </TableBody>
-</Table>
-                        </div>
-                        <div className='flex flex-row  mt-[50px] ml-7 gap-5'>
-                          
-                          <Button className='w-[150px] h-[50px] border-2 border-green-500 -mt-2 font-bold text-1xl rounded-full shadow-none'
-                          onClick={async()=>{
-                           const res =  await sheduleBookings(bookingId)
-                            if(res.success){
-                              toast("Scheduled SuccessFully" ,  {position:'top-right' ,
-                                className:'bg-green-1 text-white'
-                              })
-                            router.refresh();
-                            }
-                            else{
-
-                            }
-                          }}
-                          ><Check size={30}/>Approve</Button>
-                          <Button className='w-[150px] h-[50px] border-2 border-red-500 -mt-2 font-bold text-1xl rounded-full  shadow-none'
-                          onClick={async()=>{
-                            const res = await cancelBooking(bookingId);
-                             if(res.success){
-                              toast("Cancelled SuccessFully" ,  {position:'top-right' ,
-                                className:'bg-red-400 text-white'
-                              })
-                            router.refresh();
-                            }
-                          }}
-                          ><X /> Cancel</Button>
-                        </div>
-                    </div>
+  <div></div>
   )
 }
 
