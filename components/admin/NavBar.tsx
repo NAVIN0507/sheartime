@@ -12,7 +12,7 @@ import { Input } from '../ui/input'
 const NavBar = ({session}:{session:Session}) => {
     if(!session) return redirect("/sign-in")
   return (
-<header className='w-full top-3 mt-4 h-[110px] ml-[340px] bg-primary-1 rounded-2xl mr-4'>
+<header className='w-full top-3 mt-4 h-[110px] md:ml-[340px] bg-primary-1 rounded-2xl mr-4 '>
 <nav className='my-auto mt-8 ml-10 justify-between flex flex-row'>
     <div className='flex flex-row gap-5 my-auto'>
         <Button className= 'text-2xl my-auto w-[50px] h-[50px] rounded-full bg-secondry-1'><Search

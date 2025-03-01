@@ -11,7 +11,7 @@ const LeftSideBar = async() => {
   const session = await auth();
   if(!session) redirect("/sign-in")
   return (
-    <section className='min-h-screen w-[300px] bg-primary-1 top-0 fixed rounded-xl'>
+    <section className='min-h-screen hidden md:block w-[300px] bg-primary-1 top-0 fixed rounded-xl'>
         <div className='flex flex-col'>
             <Link href={"/"} className='flex flex-row -ml-1 mt-5'>
             <Image

@@ -89,7 +89,7 @@ body {
     @apply mx-auto flex max-w-xl flex-col gap-6 rounded-lg p-10
 }
 .auth-illustration{
-  @apply sticky h-40 w-full pr-10 sm:top-0 sm:min-h-screen sm:flex-1
+  @apply sticky h-40 w-full pr-10 sm:top-0 sm:min-h-screen sm:flex-1 hidden md:block
 }
 .user {
     @apply mt-2.5 flex flex-row flex-wrap gap-5;

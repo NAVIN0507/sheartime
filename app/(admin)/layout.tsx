@@ -16,7 +16,7 @@ const layout = async({children}:{children:ReactNode}) => {
             <LeftSideBar/>
             <NavBar session={session}/>
             </div>
-            <section className='flex min-h-screen flex-1 flex-col  ml-[290px]  pt-28   sm:px-0.5'>
+            <section className='flex min-h-screen flex-1 flex-col p-28 md:ml-[290px] left-2  sm:px-0.5'>
                
                 <div className='w-full'>
                     {children}
