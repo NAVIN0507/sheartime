@@ -5,11 +5,14 @@ import { Button } from '../ui/button';
 import { Check, CheckCheck, Ellipsis, Eye, Loader, Loader2, LoaderCircle, X } from 'lucide-react';
 import {motion} from "framer-motion"
 import {
-  ContextMenu,
-  ContextMenuContent,
-  ContextMenuItem,
-  ContextMenuTrigger,
-} from "@/components/ui/context-menu"
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
 import {
   Dialog,
   DialogContent,
@@ -37,12 +40,22 @@ const Bookings = ({fullName , bookingDate , bookingStatus , userPhone , bookingI
     
       default:
         return(
-          <Button className='w-[50px] h-[50px] bg-red-400 -mt-3  font-bold text-1xl rounded-full border-none shadow-none  text-white' ><X className='animate-ping' size={20} color='#000'/></Button>
+          <Button className='w-[50px] h-[50px] bg-red-400 -mt-3  font-bold text-1xl rounded-full border-none shadow-none  text-white' ><X className='animate-pulse' size={20} color='#000'/></Button>
         )
         break;
     }
   }
   const router = useRouter();
+  const approveBooking =  async()=>{
+    const res   =await sheduleBookings(bookingId);
+    if(!res) return null;
+    router.refresh()
+  }
+  const rejectBooking = async()=>{
+    const res =  await cancelBooking(bookingId);
+    if(!res) return null;
+    router.refresh();
+  }
   return (
   <motion.div
         initial={{opacity:0 , y:20}}
@@ -54,11 +67,20 @@ const Bookings = ({fullName , bookingDate , bookingStatus , userPhone , bookingI
     <div className='flex justify-between gap-1 p-10'>
       {StatusButton(bookingStatus)}
       
-      <h1>{fullName}</h1>
+      <h1 className='text-1xl'>{fullName}</h1>
       <h2>{formatDateTime(bookingDate).dateTime}</h2>
       <Eye />
-      <Ellipsis />
       
+      <DropdownMenu>
+  <DropdownMenuTrigger className='border-none'><Ellipsis className='-mt-3'/></DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <div className='group'>
+    <DropdownMenuItem onClick={()=>approveBooking()} className='text-green-400 cursor-pointer group-hover:bg-green-400 group-hover:text-white'>Approve</DropdownMenuItem>
+    <DropdownMenuItem className='bg-red-400 cursor-pointer group-hover:text-red-400 group-hover:bg-primary-1' onClick={()=>rejectBooking()}>Cancel</DropdownMenuItem>
+    </div>
+  </DropdownMenuContent>
+</DropdownMenu>
+
     </div>
   </div>
 
