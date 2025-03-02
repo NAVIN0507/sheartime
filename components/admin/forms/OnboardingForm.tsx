@@ -57,7 +57,7 @@ shopImage:"",
         shopImages: imageUrl,
     })
     if(result.success){
-        return router.push(`/admin/${adminid}`);
+        return router.push(`/admin/todaysbooking/${adminid}`);
     }
     setisLoading(false);
     } catch (error) {

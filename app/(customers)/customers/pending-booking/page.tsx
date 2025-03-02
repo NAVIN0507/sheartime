@@ -26,7 +26,7 @@ const page = async() => {
                 return(
                         <div className='flex flex-row gap-10 w-full h-[80px] bg-primary-1 border-b-2 rounded-xl text-center  items-center'>
                            
-                          <h1 className='w-full text-2xl font-light flex flex-row gap-2 ml-5'>
+                          <h1 className='w-full text-2xl font-light flex flex-row gap-2 ml-5 truncate'>
                            {shop[0].shopName}</h1>
                             <h1 className='w-full text-2xl font-light'>{formatDateTime(bookings.bookingDate).dateTime}</h1>
                             <h1 className='w-full'>

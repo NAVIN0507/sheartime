@@ -33,10 +33,10 @@ const page = async() => {
         <SearComponent/>
       </div>
       </div>
-    <div className="grid grid-cols-4 gap-[30px] mx-auto  min-sm:grid-cols-4">
+    <div className="grid grid-cols-3 md:grid-cols-4 gap-[20px]  mx-auto  min-sm:grid-cols-4  ">
         {reuslt?.map((shop)=>(
           
-            <div className='flex flex-row  ml-10 mt-20' key={shop.id}>
+            <div className='flex flex-row   mt-20 ' key={shop.id}>
               
                 <ShopCard
                 shopName={shop.shopName}
