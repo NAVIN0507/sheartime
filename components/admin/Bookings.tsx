@@ -72,8 +72,27 @@ const Bookings = ({fullName , bookingDate , bookingStatus , userPhone , bookingI
       default:
         return(
             <div className={`w-full h-24 rounded-lg bg-red-100`}>
-     
+     <div className="loader"></div>
     </div>
+        )
+        break;
+    }
+  }
+  const StatusBadge =(st : string)=>{
+    switch (st) {
+      case 'PENDING':
+        return(
+        <Button className='w-[110px] h-8 -mt-3 shadow-none rounded-full text-1xl font-light text-blue-500'>Pending ⌛</Button>
+        )
+        break;
+        case 'BOOKED':
+           return(
+        <Button className='w-[110px] h-8 -mt-3 shadow-none rounded-full text-1xl font-light text-green-500'>Booked ✅</Button>
+        )
+        break;
+      default:
+         return(
+        <Button className='w-[110px] h-8 -mt-3 shadow-none rounded-full text-1xl font-light text-red-500'>Canceled ❌</Button>
         )
         break;
     }
@@ -115,7 +134,7 @@ const Bookings = ({fullName , bookingDate , bookingStatus , userPhone , bookingI
       </div>
       <div className='flex gap-5 text-xl px-3 mt-3'>
       <p>{fullName}</p>
-      <p className={`text-yellow-500 ${bookingStatus==='BOOKED' ? 'text-green-500':'text-red-500'}`}>{bookingStatus}</p>
+      <p >{StatusBadge(bookingStatus)}</p>
       </div>
       <div className='flex gap-5 px-3 text-xl'>
       <p>{formatDateTime(bookingDate).dateTime}</p>
