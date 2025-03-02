@@ -7,6 +7,7 @@ import { getIntials } from '@/lib/utils'
 import { signOut } from '@/auth'
 import { Button } from '../ui/button'
 import { redirect } from 'next/navigation'
+import NavBar2 from './NavBar2'
 
 const Navbar = ({session}:{session:Session}) => {
     if(!session) return redirect("/sign-in")

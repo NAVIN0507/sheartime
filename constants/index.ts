@@ -32,22 +32,22 @@ export const sidebarLinks =[
    
      {
         name:'Shops',
-        img:'/icons/booking.svg',
+        img:'/icons/barbershop.png',
         route:'/customers/shops'
     },
      {
         name:'Pending Bookings',
-        img:'/icons/booking.svg',
+        img:'/icons/waiting.png',
         route:'/customers/pending-booking'
     },
      {
         name:'Previous Booking',
-        img:'/icons/booking.svg',
+        img:'/icons/approved.png',
         route:'/customers/previous-booking'
     },
     {
         name:'Payments',
-        img:'/icons/booking.svg',
+        img:'/icons/payment.png',
         route:'/customers/payments'
     },
 ]

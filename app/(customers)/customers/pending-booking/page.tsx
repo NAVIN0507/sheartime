@@ -17,7 +17,11 @@ const page = async() => {
     const handleDelete  = async()=>{}
   return (
     <section className='flex flex-col gap-1 -mt-16'>
+     
         <div className='mt-20 flex flex-col gap-5'>
+               <h1 className='p-6 text-3xl 
+               text-blue-400
+               font-mono'>Pending Bookings</h1>
             {result.map(async(bookings)=>{
                 const shop = await getShopsByShopId(bookings.shopId);
                 if(!shop) return null; //

@@ -84,7 +84,7 @@ const PaymentPage = async()=>{
                                 {booking.amountStatus === 'PAID' ? (<>
                                 <Button className='w-[150px] h-[50px] bg-gray-300 text-1xl rounded-full border-none shadow-none' disabled><BadgeCheck /> Paid</Button>
                                 </>) :(<>
-                                <Button className='w-[150px] h-[50px] bg-red-500 text-1xl rounded-full border-none shadow-none'><TriangleAlert />Not Paid</Button>
+                                <Button className='w-[150px] h-[50px] bg-red-400 text-1xl rounded-full border-none shadow-none'><TriangleAlert />Not Paid</Button>
                                 </>)}
                             </h1>
                               <h1 className='w-full'>
