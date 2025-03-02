@@ -66,6 +66,10 @@ const PaymentPage = async()=>{
       
          
         <div className='mt-20 flex flex-col gap-5'>
+            <h1 className='p-5 text-4xl -mt-2
+              mb-10 
+               text-black
+               font-mono'>Payments</h1>
             {bookings.map(async(booking)=>{
                 const shop = await getShopsByShopId(booking.shopId)
                 if(!shop) return null; //

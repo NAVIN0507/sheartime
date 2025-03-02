@@ -59,6 +59,14 @@ export const getBookingByUserId = async(userId: string)=>{
         console.log(error)
     }
 }
+export const getAllBookingByUserId = async(userId: string)=>{
+    try {
+        const result = await db.select().from(bookings).where(eq(bookings.userId , userId)).orderBy(desc(bookings.createdAt)).limit(10)
+        return result
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 export const deleteBookingById = async(bookingId : string)=>{
     try {

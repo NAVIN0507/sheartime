@@ -133,7 +133,7 @@ const Bookings = ({fullName , bookingDate , bookingStatus , userPhone , bookingI
         <h1 className='text-3xl text-center justify-center p-4 mt-1'>{getIntials(fullName)}</h1>
       </div>
       <div className='flex gap-5 text-xl px-3 mt-3'>
-      <p>{fullName}</p>
+      <p className='truncate'>{fullName}</p>
       <p >{StatusBadge(bookingStatus)}</p>
       </div>
       <div className='flex gap-5 px-3 text-xl'>

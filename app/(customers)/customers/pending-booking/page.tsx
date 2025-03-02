@@ -18,9 +18,10 @@ const page = async() => {
   return (
     <section className='flex flex-col gap-1 -mt-16'>
      
-        <div className='mt-20 flex flex-col gap-5'>
-               <h1 className='p-6 text-3xl 
-               text-blue-400
+        <div className='mt-20 flex flex-col gap-5 justify-between'>
+               <h1 className='p-5 text-4xl -mt-2
+              mb-10 
+               text-black
                font-mono'>Pending Bookings</h1>
             {result.map(async(bookings)=>{
                 const shop = await getShopsByShopId(bookings.shopId);
@@ -28,7 +29,7 @@ const page = async() => {
                 console.log(shop[0].shopName)
 
                 return(
-                        <div className='flex flex-row gap-10 w-full h-[80px] bg-primary-1 border-b-2 rounded-xl text-center  items-center'>
+                        <div className='flex flex-row gap-10 w-full h-[80px] bg-primary-1 border-b-2 rounded-xl  justify-between'>
                            
                           <h1 className='w-full text-2xl font-light flex flex-row gap-2 ml-5 truncate'>
                            {shop[0].shopName}</h1>
@@ -41,10 +42,13 @@ const page = async() => {
                                 {bookings.amountStatus === 'PAID' ? (<>
                                 <Button className='w-[150px] h-[50px] bg-secondry-4 text-white text-1xl rounded-full border-none shadow-none' disabled><BadgeCheck /> Paid</Button>
                                 </>) :(<>
-                                <Button className='w-[150px] h-[50px] bg-red-500 text-1xl rounded-full border-none shadow-none'><TriangleAlert /> Not Paid</Button>
+                                <Button className='w-[150px] h-[50px] bg-red-400 text-1xl rounded-full border-none shadow-none' disabled><TriangleAlert /> Not Paid</Button>
                                 </>)}
                             </h1>
-                           <DeleteButton id={bookings.id}/>
+                            <div className='mr-6'>
+ <DeleteButton id={bookings.id}/>
+                            </div>
+                          
                         </div>
                 )
             })}

@@ -5,6 +5,7 @@ import { db } from '@/database/drizzle';
 import { bookings } from '@/database/schema';
 import { eq } from 'drizzle-orm';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 declare global{
   interface Window{
     Razorpay:any;
@@ -64,7 +65,15 @@ const PaymentButton = ({userName , userEmail , userMobile , id}:Props) => {
     }
   }
   return (
-   <Button className='w-[150px] h-[50px] text-1xl bg-secondry-1 text-white rounded-full' onClick={handlePayment}>{isPaying?'Processing...' :'Pay Now'}</Button>
+/* From Uiverse.io by Javierrocadev */ 
+<button
+  className="group w-12 h-12 hover:bg-green-400 relative bg-secondry-1 text-neutral-50 duration-700  font-bold flex justify-start gap-2 items-center p-2 pr-6 m-auto rounded-full border-2 border-gray-400"
+  onClick={handlePayment}
+>
+ <Image src="/images/razorpay.jpg" alt="" fill  className="object-contain rounded-full" />
+
+</button>
+
   )
 }
 
