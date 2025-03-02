@@ -54,7 +54,7 @@ const PaymentButton = ({userName , userEmail , userMobile , id}:Props) => {
       };
       const rzp1 = new window.Razorpay(options);
       rzp1.open();
-      const pay = await db.update(bookings).set({amountStatus :'PAID'}).where(eq(bookings.userId , id));
+      const pay = await db.update(bookings).set({amountStatus :'PAID'}).where(eq(bookings.id , id));
       router.refresh();
 
     } catch (error) {

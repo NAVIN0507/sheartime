@@ -3,7 +3,7 @@ import React from "react";
 import Script from "next/script";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
-import { getBookingByUserId, getShopsByShopId, getUserById } from "@/lib/actions/user.action";
+import { getAllBookingByUserId, getBookingByUserId, getShopsByShopId, getUserById } from "@/lib/actions/user.action";
 import { formatDateTime } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { BadgeCheck, Loader2, TriangleAlert } from "lucide-react";
@@ -17,48 +17,9 @@ declare global{
 const PaymentPage = async()=>{
    const session = await auth();
     if(!session) return redirect("/sign-in");
-    const bookings = await getBookingByUserId(session.user?.id!);
+    const bookings = await getAllBookingByUserId(session.user?.id!);
     if(!bookings) return null;
   const AMOUNT = 100;
-  
-  const handlePayment = async()=>{
-    
-    try {
-      const response  = await fetch("/api/create-order" , {method:"POST"});
-      const data = await response.json(); 
-
-      //INTILAZI RAZORPAY 
-      const options = {
-        key:process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
-        amount:AMOUNT*100,
-        currency:"INR",
-        name:"Sheartime",
-        description: "Payment for Order",
-        order_id: data.orderId,
-        handler:function(response:any){
-          console.log(response);
-          
-
-        },
-        prefill:{
-          name:'John Doe',
-          email:'John.Doe@example.com',
-          contact:'9999999999'
-        },
-        theme:{
-          color:'#3399cc'
-        }
-         
-      };
-      const rzp1 = new window.Razorpay(options);
-      rzp1.open();
-    } catch (error) {
-      console.log(error);
-    }
-    finally{
-    
-    }
-  }
 
   return(
     <div className="-mt-16" >
@@ -94,7 +55,7 @@ const PaymentPage = async()=>{
                               <h1 className='w-full'>
                                 {booking.amountStatus === 'PAID' ? (<>
                                 <DeleteButton id={session.user?.id!}/>
-                                 </>) :(<><PaymentButton userName={user.fullName} userEmail={user.email} userMobile={user.phone} id={session.user?.id!}/></>)}
+                                 </>) :(<><PaymentButton userName={user.fullName} userEmail={user.email} userMobile={user.phone} id={booking.id}/></>)}
                            
                                
                             </h1>

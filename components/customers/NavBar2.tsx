@@ -24,7 +24,7 @@ const NavBar2 = () => {
                 return( <Link href={link.route}  className='flex flex-col gap-10 mt-4 mx-auto' key={link.name}>
         <Button  key={link.name
           
-        } className={cn('flex flex-col h-[60px] w-[60px]  gap-10 items-center   shadow-none p-4  rounded-full justify-start  hover:underline  ' , `${pathname===link.route ? 'border-2 border-gray-600' :''}`)}>
+        } className={cn('flex flex-col h-[60px] w-[60px]  gap-10 items-center   shadow-none p-4  rounded-xl justify-start  hover:underline  ' , `${pathname===link.route ? 'border-2 border-gray-600' :''}`)}>
        <TooltipProvider>
   <Tooltip>
     <TooltipTrigger> <Image

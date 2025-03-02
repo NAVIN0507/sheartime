@@ -66,8 +66,8 @@ const GuideSection = () => {
   return (
    <section className='flex flex-col flex-wrap gap-2 items-center mt-[70px] w-full'>
     <h1 className='text-center text-5xl font-extrabold max-sm:text-start'>Features</h1>
-    <div className='flex flex-col gap-2 items-center'>
-    <div className='grid grid-cols-1 sm:grid-cols-4  gap-10 mt-[150px]'>
+    <div className='flex flex-col gap-2 md:items-center'>
+    <div className='grid grid-cols-1 md:grid-cols-4 gap-28 md:gap-10 mt-[150px]'>
         {FeatureItems.map((itme)=>{
            
             return(
@@ -77,7 +77,7 @@ const GuideSection = () => {
         })}
     </div>
    
-     <div className='flex flex-row gap-10 mt-[100px]'>
+     <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-28 md:gap-10 mt-[150px]'>
         {FeatureItems2.map((itme)=>{
             
             return(

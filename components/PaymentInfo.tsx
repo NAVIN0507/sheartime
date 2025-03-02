@@ -5,7 +5,7 @@ import { FaDiscord, FaGithub, FaTwitch, FaTwitter ,FaUserTag  , FaWpexplorer , F
 const PaymentInfo = () => {
   return (
     <section className="w-full flex flex-col items-center text-center mt-[100px] mb-10">
-  <div className="w-full max-w-[1200px] bg-primary-1 shadow-lg mx-auto rounded-lg p-6 hover:shadow-2xl">
+  <div className="w-full max-w-[1200px]  bg-primary-1 shadow-lg mx-auto rounded-lg p-6 hover:shadow-2xl">
     <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6">
       <div className="flex justify-center">
         <Image
