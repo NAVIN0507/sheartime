@@ -32,13 +32,21 @@ const router = useRouter();
     }
   }
   return (
-  <section className='flex mx-auto items-center w-full'>
-    <div className='mx-auto  flex flex-col gap-2'>
+  <section className='flex items-center w-full'>
+    <div className='  flex flex-col gap-2'>
     
    
-    <div className='flex flex-col'>
+    <div className='flex flex-col '>
 <OnboardingForm adminid={params.id}/>
     </div>
+    </div>
+    <div className='auth-illustration border-r-2'>
+      <Image
+      src="/images/haircut-f.webp"
+      alt='auth'
+      fill
+      className='object-contain '
+      />
     </div>
   </section>
   )

@@ -66,9 +66,9 @@ shopImage:"",
     console.log(values , imageUrl)
   }
   return (
-    <section className=' mx-auto'>
-        <div className='auth-form '>
-            <div className='mx-auto flex bg-primary-1 shadow-2xl flex-col gap-6 rounded-lg p-10 w-[1200px] '>
+    <section className=' flex items-start justify-start left-0 relative'>
+        <div className='items-start justify-start '>
+            <div className=' flex bg-primary-1 shadow-2xl flex-col gap-6 rounded-lg p-10 w-[1200px] border-r-2 border-gray-200'>
                 <div className='mx-auto'>
                       <Link href="/" className='flex flex-row gap-2'>
                       <Image src="/icons/logo-white.svg" alt='logo' width={67} height={37}  />
