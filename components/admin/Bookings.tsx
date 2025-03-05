@@ -141,8 +141,8 @@ const Bookings = ({fullName , bookingDate , bookingStatus , userPhone , bookingI
       <p>{userPhone}</p>
       </div>
       <div className='flex gap-5 mt-2 px-3'>
-        <Button className='p-5 text-white bg-green-400 border-none shadow-none'>Approve</Button>
-        <Button className='p-5 text-white bg-red-400 border-none shadow-none'>Cancel</Button>
+        <Button className='p-5 text-white bg-green-400 border-none shadow-none' onClick={()=>approveBooking()}>Approve</Button>
+        <Button className='p-5 text-white bg-red-400 border-none shadow-none' onClick={()=>rejectBooking()}>Cancel</Button>
       </div>
     </div>
   </DialogContent>
