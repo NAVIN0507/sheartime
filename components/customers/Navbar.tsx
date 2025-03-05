@@ -8,9 +8,31 @@ import { signOut } from '@/auth'
 import { Button } from '../ui/button'
 import { redirect } from 'next/navigation'
 import NavBar2 from './NavBar2'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import UpdateUserForm from '../admin/forms/UpdateUserForm'
+import { getUserById } from '@/lib/actions/user.action'
 
-const Navbar = ({session}:{session:Session}) => {
-    if(!session) return redirect("/sign-in")
+
+const Navbar = async({session}:{session:Session}) => {
+    if(!session) return redirect("/sign-in");
+    const user = await getUserById(session.user?.id!);
+    if(!user) return redirect("/sign-in")
   return (
     <header className='z-10 fixed w-full p-3 top-0 bg-primary-1 shadow-md '>
         <div className='flex flex-row justify-between'>
@@ -32,8 +54,8 @@ const Navbar = ({session}:{session:Session}) => {
         <ul className='flex flex-row items-center gap-8 mt-2'>
             
             <li>
-            
-                <Link href={`/my-profile/${session?.user?.id}`} className='flex flex-row gap-3 my-auto'>
+            <DropdownMenu>
+  <DropdownMenuTrigger><Link href={``} className='flex flex-row gap-3 my-auto'>
                 
                 <Avatar className='my-auto'>
                     <AvatarFallback className='bg-gray-300'>{
@@ -46,13 +68,44 @@ const Navbar = ({session}:{session:Session}) => {
                 <p className='font-light text-2xl text-dark-200 my-auto'>{session?.user?.name}</p>
          
             </div>
-                </Link>
-            </li>
-            <li className='mr-15'> 
-            <form action={async()=>{
+                </Link></DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem asChild>
+     <Dialog>
+      <DialogTrigger >
+             Update Your Profile
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[500px]">
+        <DialogHeader>
+          <DialogTitle>Edit profile</DialogTitle>
+          <DialogDescription>
+            Make changes to your profile here. Click save when you're done.
+          </DialogDescription>
+        </DialogHeader>
+        <UpdateUserForm 
+        userName={user.fullName}
+        userEmail = {user.email}
+        userPhone={user.phone}
+        userId={user.id}
+        />
+   
+      </DialogContent>
+    </Dialog>
+    </DropdownMenuItem>
+
+    
+    <DropdownMenuItem className='w-full'>     <form action={async()=>{
                 "use server"
                 await signOut();
-            }}><Button className='bg-secondry-1 text-primary-1 shadow-none'>Logout</Button></form>
+            }}><Button className='bg-secondry-1 text-primary-1 shadow-none w-full'>Logout</Button></form></DropdownMenuItem>
+  </DropdownMenuContent>
+  </DropdownMenu>
+                
+            </li>
+            <li className='mr-15'> 
+       
             </li>
         </ul>
         </div>
