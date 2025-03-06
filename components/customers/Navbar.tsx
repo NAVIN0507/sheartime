@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/dialog"
 import UpdateUserForm from '../admin/forms/UpdateUserForm'
 import { getUserById } from '@/lib/actions/user.action'
+import { ChevronDown, LogOut } from 'lucide-react'
 
 
 const Navbar = async({session}:{session:Session}) => {
@@ -65,19 +66,19 @@ const Navbar = async({session}:{session:Session}) => {
                     
                 </Avatar>
                  <div className='flex flex-col max-md:hidden'>
-                <p className='font-light text-2xl text-dark-200 my-auto'>{session?.user?.name}</p>
+                <p className='font-light text-2xl text-dark-200 my-auto flex gap-2'>{session?.user?.name} <ChevronDown className='mt-1'/></p>
          
             </div>
                 </Link></DropdownMenuTrigger>
   <DropdownMenuContent>
     <DropdownMenuLabel>My Account</DropdownMenuLabel>
     <DropdownMenuSeparator />
-    <DropdownMenuItem asChild>
-     <Dialog>
+    <DropdownMenuItem >
+     <Dialog >
       <DialogTrigger >
              Update Your Profile
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[500px]">
+      <DialogContent className="sm:max-w-[500px]" >
         <DialogHeader>
           <DialogTitle>Edit profile</DialogTitle>
           <DialogDescription>
@@ -96,10 +97,10 @@ const Navbar = async({session}:{session:Session}) => {
     </DropdownMenuItem>
 
     
-    <DropdownMenuItem className='w-full'>     <form action={async()=>{
+    <DropdownMenuItem className='w-full bg-secondry-1 text-white'>     <form action={async()=>{
                 "use server"
                 await signOut();
-            }}><Button className='bg-secondry-1 text-primary-1 shadow-none w-full'>Logout</Button></form></DropdownMenuItem>
+            }}><Button className=' shadow-none w-full flex justify-between'>Logout <LogOut className='rotate-180'/></Button></form></DropdownMenuItem>
   </DropdownMenuContent>
   </DropdownMenu>
                 
