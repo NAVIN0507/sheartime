@@ -41,10 +41,9 @@ shopImage:"",
     },
   })
  
-  // 2. Define a submit handler.
+
  async function onSubmit(values: z.infer<typeof shopSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
+
     setisLoading(true);
     try {
         const result = await registerShop({
