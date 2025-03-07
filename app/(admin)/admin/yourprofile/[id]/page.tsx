@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/dialog"
 
 import UpdateUserForm from '@/components/admin/forms/UpdateUserForm';
+import ShopUpdationForm from '@/components/admin/forms/ShopUpdationForm';
 
 
 const page = async() => {
@@ -31,16 +32,16 @@ if(!user) return redirect("/sign-in")
 const shop =  await getShopById(user.id);
 if(!shop) return null;
   return (
-<section className='ml-28 mr-10 -mt-16'>
+<section className='ml-24 mr-10 -mt-16'>
   <div className='relative flex '>
     <Image
-    src={shop.shopImages!}
-    alt=''
+    src="/images/bg_banner.jpg"
+    alt=''  
     width={1000}
     height={50}
     className='absolute w-full h-64 rounded-3xl'
     />
-    <div className='w-32 h-32 shadow-xl  bg-purple-50 z-50 rounded-full mt-44 ml-20 items-center justify-center'>
+    <div className='w-32 h-32 shadow-xl  bg-blue-100 z-50 rounded-xl mt-44 ml-20 items-center justify-center'>
 <h1 className='text-center text-4xl mt-10'>{getIntials(session.user?.name!)}</h1>
     </div>
 
@@ -76,7 +77,15 @@ if(!shop) return null;
    
       </DialogContent>
     </Dialog>
-
+<div className='-ml-10 w-full h-full p-10'>
+  <div className='flex flex-row gap-3'>
+  <h1 className='text-3xl'>Edit Your Shop</h1>
+  <Button className='text-white bg-secondry-3 rounded-full w-10 h-10 shadow-none border-none '><Pencil/></Button>
+  </div>
+  <div>
+    <ShopUpdationForm shopImage={shop.shopImages!} shopName={shop.shopName} shopAddress={shop.shopAddress} shopDescription={shop.shopDescription!} shopEmail={shop.shopEmail!} shopPhone={shop.shopPhone!} />
+  </div>
+</div>
   </div>
 </section>
   )
