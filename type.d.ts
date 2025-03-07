@@ -9,7 +9,7 @@ interface OnBoardingCredentials{
     adminId:string;
     shopName:string;
     shopAddress:string;
-    shopPhone:number;
+    shopPhone:string;
     shopEmail:string;
     shopDescription:string;
     shopImages:string;

@@ -78,13 +78,14 @@ if(!shop) return null;
       </DialogContent>
     </Dialog>
 <div className='-ml-10 w-full h-full p-10'>
-  <div className='flex flex-row gap-3'>
-  <h1 className='text-3xl'>Edit Your Shop</h1>
-  <Button className='text-white bg-secondry-3 rounded-full w-10 h-10 shadow-none border-none '><Pencil/></Button>
-  </div>
-  <div>
+  <div className='flex flex-col gap-3 -ml-10 '>
+  <h1 className='text-3xl flex gap-3'>Edit Your Shop <Button className='text-white bg-secondry-3 rounded-full w-10 h-10 shadow-none border-none '><Pencil/></Button></h1>
+  
+  <div className='w-full'>
     <ShopUpdationForm shopImage={shop.shopImages!} shopName={shop.shopName} shopAddress={shop.shopAddress} shopDescription={shop.shopDescription!} shopEmail={shop.shopEmail!} shopPhone={shop.shopPhone!} />
   </div>
+  </div>
+  
 </div>
   </div>
 </section>

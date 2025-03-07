@@ -1,5 +1,5 @@
 import { Phone } from "lucide-react"
-import { z } from "zod"
+import { string, z } from "zod"
  
 export const signInSchema = z.object({
   email: z.string().email(),
@@ -15,7 +15,7 @@ export const signUpSchema = z.object({
 export const shopSchema = z.object({
   shopName: z.string().min(3 , {message:"Shop name should be atleast 3 charcters"}).max(50),
   shopAddress: z.string().min(10 , {message:"Shop address should be atleast 10 charcters"}).max(200),
-  shopPhone: z.coerce.number(),
+  shopPhone: z.string(),
   shopEmail: z.string().email(),
   shopDescription: z.string().min(10 , {message:"Shop description should be atleast 10 charcters"}).max(500),
   shopImage: z.string()

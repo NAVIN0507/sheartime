@@ -34,7 +34,7 @@ const OnboardingForm = ({adminid}:{adminid:string}) => {
     defaultValues: {
       shopName:"",
 shopAddress:"",
-shopPhone:0,
+shopPhone:"",
 shopEmail:"",
 shopDescription:"",
 shopImage:"",
@@ -129,7 +129,7 @@ shopImage:"",
             <FormItem className='w-full'>
               <FormLabel className='text-1xl'>Phone Number (Add +91)</FormLabel>
               <FormControl>
-                <Input placeholder="Enter Your Shop Name" className='form-input' type='tel' {...field} />
+                <Input placeholder="Enter Your Shop Name" className='form-input' type='text' {...field} />
               </FormControl>
               
               <FormMessage />

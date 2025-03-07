@@ -24,6 +24,9 @@ import { Loader } from "lucide-react"
 import Image from "next/image"
 import { Textarea } from "@/components/ui/textarea"
 import { UploadDropzone } from '@/lib/utils/uploadthing'
+import { motion } from "framer-motion"
+import { db } from "@/database/drizzle"
+import { shops } from "@/database/schema"
 const ShopUpdationForm = ({shopImage , shopName , shopPhone , shopAddress , shopDescription , shopEmail} :{
     shopImage:string;shopName:string;shopAddress:string;shopDescription:string;shopPhone:string;
     shopEmail:string;
@@ -36,16 +39,53 @@ const ShopUpdationForm = ({shopImage , shopName , shopPhone , shopAddress , shop
         const form = useForm<z.infer<typeof shopSchema>>({
         resolver: zodResolver(shopSchema),
         defaultValues: {
-          shopName:"",
-    shopAddress:"",
-    shopPhone:0,
-    shopEmail:"",
-    shopDescription:"",
-    shopImage:"",
+          shopName:shopName,
+    shopAddress:shopAddress,
+    shopPhone:shopPhone,
+    shopEmail:shopEmail,
+    shopDescription:shopDescription,
+    shopImage:shopImage,
         },
       })
-     const onSubmit  =async()=>{}
+     const onSubmit  =async(values : z.infer<typeof shopSchema>)=>{
+        try {
+            setisLoading(true);
+               const update = await db.update(shops).set({
+            shopName:values.shopName,
+            shopAddress:values.shopAddress,
+            shopEmail:values.shopEmail,
+            shopPhone:values.shopPhone,
+            shopDescription:values.shopDescription,
+            shopImages:values.shopImage
+        })
+        if(!update) {
+            toast("Sorry something went wrong !" ,{
+                className:"bg-red-400 text-white",
+                position:"top-center"
+            })
+
+        }
+        toast("Updated Success Fully" ,{
+                className:"bg-green-400 text-white",
+                position:"top-center"
+            })
+
+            router.refresh();
+
+        setisLoading(false);
+        } catch (error) {
+            
+        }
+     
+
+     }
   return (
+    <motion.div 
+    initial={{opacity:0 , y:20}}
+    transition={{duration:0.5}}
+    whileInView={{opacity:1 , y:0}}
+    viewport={{once:true}}
+    >
     <div className="mt-5">
                         <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 text-base">
@@ -158,22 +198,23 @@ const ShopUpdationForm = ({shopImage , shopName , shopPhone , shopAddress , shop
                             <Image
                             src={shopLogo}
                             alt="Shop Image"    
-                            width={500}
-                            height={500}
-                            className='mx-auto'
+                            width={450}
+                            height={450}
+                            className=' w-[650px] h-[250px] rounded-2xl'
                             />
                         </div>
                         </>
                         </div>
                 </div>
-                <div className="justify-end items-center">
-                <Button type="submit" className='bg-secondry-1 text-primary-1 w-[150px] text-1xl right-0 h-14' disabled={isLoading}>
+                <div className="justify-end ">
+                <Button type="submit" className='bg-secondry-1 text-white w-[150px] text-1xl right-0 h-14' disabled={isLoading}>
                     {isLoading ? (<>Updating <Loader className='animate-spin' width={20} height={20}/></>) :'Update'}
                 </Button>
                 </div>
               </form>
             </Form>
     </div>
+    </motion.div>
   )
 }
 
