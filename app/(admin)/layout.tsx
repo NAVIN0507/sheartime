@@ -13,7 +13,7 @@ const layout = async({children}:{children:ReactNode}) => {
         
         <div className='flex flex-col' >
             <div className='flex flex-row'>
-            <LeftSideBar/>
+            <LeftSideBar session={session}/>
             <NavBar session={session}/>
             </div>
             <section className='flex min-h-screen flex-1 flex-col p-28 md:ml-[290px] left-2  sm:px-0.5'>

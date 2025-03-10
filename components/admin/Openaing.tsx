@@ -25,12 +25,12 @@ const Openaing = ({type , id} :{type:'CLOSE' | 'OPEN' ; id:string}) => {
   return (
     <div>
         {type === 'CLOSE' ? (
-            <Button className='bg-secondry-1 text-white w-[250px] mx-auto h-[60px] text-[20px] mr-2' onClick={()=>handleClosing(id)}>{isLoading ? (<>Closing <Loader2Icon className='animate-spin'/></>):(<>
+            <Button className='bg-red-400 text-white w-full mx-auto h-[60px] mt-5 mb-5 text-[20px] mr-2' onClick={()=>handleClosing(id)}>{isLoading ? (<>Closing <Loader2Icon className='animate-spin'/></>):(<>
             <LockKeyhole color="#ffffff" />
             Close Bookings
             </>)}</Button>
         ) :(
-             <Button className='bg-secondry-5 text-white w-[250px] mx-auto h-[60px] text-[20px] mr-2' onClick={()=>handleOpenings(id)}>{isLoading ? (<>Opening <Loader2Icon className='animate-spin'/></>) : (<><LockKeyholeOpen color="#ffffff" /> Open Bookings</>)}</Button>
+             <Button className='bg-green-400 text-white w-full mx-auto h-[60px] text-[20px] mt-5 mb-5  mr-2' onClick={()=>handleOpenings(id)}>{isLoading ? (<>Opening <Loader2Icon className='animate-spin'/></>) : (<><LockKeyholeOpen color="#ffffff" /> Open Bookings</>)}</Button>
         )}
     </div>
   )

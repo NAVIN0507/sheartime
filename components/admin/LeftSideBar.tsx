@@ -1,3 +1,4 @@
+
 import { AdminSideBar } from '@/constants'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -6,9 +7,18 @@ import { Button } from '../ui/button'
 import { auth, signOut } from '@/auth';
 import { BookmarkX, CalendarCheck, CalendarCog, CalendarSync, CircleDotDashed, CircleUserRound, CircleX, ExternalLink, IndianRupee, LogOut, MessageSquareText, Store, UserPen, UsersRound } from 'lucide-react'
 import { redirect } from 'next/navigation'
-
-const LeftSideBar = async() => {
-  const session = await auth();
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { Session } from 'next-auth'
+import Openaing from './Openaing'
+const LeftSideBar = ({session}:{session:Session}) => {
+  
   if(!session) redirect("/sign-in")
   return (
     <section className='min-h-screen hidden md:block w-[300px] bg-primary-1 top-0 fixed rounded-xl'>
@@ -49,8 +59,26 @@ const LeftSideBar = async() => {
                 <div className='flex flex-row  gap-28 '><h1 className='text-2xl ml-2'>Your Shop </h1> <Store className='mt-1'/></div>
                 <div className='flex flex-col gap-2 ml-7 mt-5 justify-start'>
                 <Link href={`/admin/yourprofile/${session.user?.id}`}>  <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline  text-start justify-start'><UserPen />Your Profile</Button></Link>
-                <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline text-start justify-start'><CircleX />Close Customer Bookings</Button>
-                <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline text-start justify-start'><ExternalLink />Open Customer Bookings</Button>
+                <Dialog>
+  <DialogTrigger>
+    <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline -ml-5'><CircleX />Close Customer Bookings</Button>
+  </DialogTrigger>
+  <DialogContent >
+    <DialogTitle>Close Bookings for customers</DialogTitle>
+<Openaing type='CLOSE' id={session.user?.id!}/>
+  </DialogContent>
+</Dialog>
+<Dialog>
+              <DialogTrigger>
+    <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline -ml-5'><ExternalLink />Open Customer Bookings</Button>
+  </DialogTrigger>
+  <DialogContent >
+    <DialogTitle>Open Bookings for customers</DialogTitle>
+<Openaing type='OPEN' id={session.user?.id!}/>
+  </DialogContent>
+</Dialog>
+            
+               
                 
                 </div>
                 
