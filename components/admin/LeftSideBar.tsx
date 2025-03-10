@@ -39,7 +39,7 @@ const LeftSideBar = ({session}:{session:Session}) => {
                  
                 <div className='flex flex-col gap-2 ml-7 mt-5'>
              <Link href={`/admin/todaysbooking/${session.user?.id}`}>   <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline '><CalendarSync />Today's Bookings</Button></Link>
-                <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline text-start justify-start'><CalendarCheck />Confirmed Bookings</Button>
+            <Link href={`/admin/confirmedbooking/${session.user?.id}`}>    <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline text-start justify-start'><CalendarCheck />Confirmed Bookings</Button></Link>
                 <Button className='shadow-none w-[180px] h-[40px] text-1xl hhover:underline'><CircleDotDashed />Pending Bookings</Button>
                 <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline ml-1'><BookmarkX />Cancelled Bookings</Button>
                 </div>
