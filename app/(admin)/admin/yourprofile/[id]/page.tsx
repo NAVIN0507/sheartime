@@ -5,7 +5,7 @@ import { getShopById } from '@/lib/actions/admin.action';
 import { getUserById } from '@/lib/actions/user.action';
 import { getIntials } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@radix-ui/react-tooltip';
-import { FolderPen, Mail, MapPinHouse, NotepadText, Pencil, Phone, Users } from 'lucide-react';
+import { FolderPen, LockKeyholeOpen, Mail, MapPinHouse, NotepadText, Pencil, Phone, Users } from 'lucide-react';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
 import React from 'react'
@@ -55,6 +55,25 @@ if(!shop) return null;
 </span>
 <p className='text-black'>Active</p>
 </Button>
+ {shop.opened ? <>
+  <Button className='flex gap-3 border-none shadow-none rounded-full ml-2 bg-green-300' >
+        <span className="relative flex size-3 ">
+  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+  <span className="relative inline-flex size-3 rounded-full bg-green-400"></span>
+</span>
+<p className='text-black flex gap-2'>Open <LockKeyholeOpen color="#000000" /></p>
+</Button>
+ </> :
+ 
+ <>
+  <Button className='flex gap-3 border-none shadow-none rounded-full ml-2 bg-red-400' >
+        <span className="relative flex size-3 ">
+  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75"></span>
+  <span className="relative inline-flex size-3 rounded-full bg-red-500"></span>
+</span>
+<p className='text-black'>Closed</p>
+</Button>
+ </>}
       </h1>
       <h1 className='text-[20px] '>{user.email}</h1>
          <Dialog>
