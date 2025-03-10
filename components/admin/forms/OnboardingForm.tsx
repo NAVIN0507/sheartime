@@ -187,7 +187,7 @@ shopImage:"",
                     alt="Shop Image"    
                     width={500}
                     height={500}
-                    className='mx-auto'
+                    className='mx-auto rounded-lg'
                     />
                 </div>
                 </>) :''}

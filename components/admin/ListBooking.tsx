@@ -1,4 +1,4 @@
-import { getBookingByShopId, getShopId } from '@/lib/actions/admin.action'
+import { getBookingByShopId, getBookingByType, getShopId } from '@/lib/actions/admin.action'
 import { getUserById } from '@/lib/actions/user.action';
 import { formatDateTime } from '@/lib/utils';
 import React from 'react'
@@ -7,7 +7,7 @@ import Bookings from './Bookings';
 const ListBooking = async({id}:{id:string}) => {
     const shopId = await getShopId(id);
     if(!shopId) return null;
-    const bookings = await getBookingByShopId(shopId);
+    const bookings = await getBookingByType({shopId:shopId , type:'PENDING'})
     if(!bookings) return <h1>No Bookings</h1>
     
   return (

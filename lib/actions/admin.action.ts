@@ -1,6 +1,7 @@
 "use server"
 import { db } from "@/database/drizzle"
-import { bookings, shops, users } from "@/database/schema"
+import { bookings ,  shops, users } from "@/database/schema"
+
 import { and, eq } from "drizzle-orm"
 
 export const registerShop = async({adminId, shopName , shopAddress , shopPhone , shopEmail , shopDescription , shopImages}:OnBoardingCredentials)=>{
@@ -113,5 +114,18 @@ export const cancelBooking = async(bookingId:string)=>{
     } catch (error) {
         console.log(error)
         return {success : false}
+    }
+}
+interface BOOKINGTYPEPROPS{
+    shopId:string;
+    type:'PENDING'|'BOOKED'|'CANCLED'
+}
+export const getBookingByType = async({shopId , type}:BOOKINGTYPEPROPS)=>{
+    try {
+        const booking = await db.select().from(bookings).where(and(eq(bookings.shopId , shopId) ,eq(bookings.bookingStatus , type)))
+        if(booking) console.log("There is error while fetching booking using type");
+        return booking
+    } catch (error) {
+        console.log(error)        
     }
 }
