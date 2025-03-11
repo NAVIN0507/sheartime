@@ -3,7 +3,7 @@ import {confirmedBooking ,  getBookingByType, getShopId } from '@/lib/actions/ad
 import { getUserById } from '@/lib/actions/user.action';
 import { redirect } from 'next/navigation';
 import React from 'react'
-import { CircleX } from 'lucide-react';
+import { CircleCheckBig, CircleX } from 'lucide-react';
 import BookingCountCard from '@/components/admin/BookingCountCard';
 const page = async({params}:{params :{id:string}}) => {
     const shopId = await getShopId(params.id);
@@ -16,7 +16,7 @@ const page = async({params}:{params :{id:string}}) => {
     <div>
         <div className="justify-between items-center flex">
         <h1 className='font-mono text-3xl p-4'>Confirmed Bookings</h1>
-            <BookingCountCard type='confirm' typeName='confirm' count={bookingcount} icon={<CircleX />} className='bg-red-200' />
+            <BookingCountCard type='confirm' typeName='confirm' count={bookingCount} icon={<CircleCheckBig />} className='bg-green-200' />
             </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 mt-10'>
       {bookings.map(async(booking)=>{
