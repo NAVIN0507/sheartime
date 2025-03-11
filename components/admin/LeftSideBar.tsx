@@ -41,7 +41,7 @@ const LeftSideBar = ({session}:{session:Session}) => {
              <Link href={`/admin/todaysbooking/${session.user?.id}`}>   <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline '><CalendarSync />Today's Bookings</Button></Link>
             <Link href={`/admin/confirmedbooking/${session.user?.id}`}>    <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline text-start justify-start'><CalendarCheck />Confirmed Bookings</Button></Link>
                <Link href={`/admin/pendingbooking/${session.user?.id}`}> <Button className='shadow-none w-[180px] h-[40px] text-1xl hhover:underline'><CircleDotDashed />Pending Bookings</Button></Link>
-                <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline ml-1'><BookmarkX />Cancelled Bookings</Button>
+           <Link href={`/admin/cancelledbooking/${session.user?.id}`}>     <Button className='shadow-none w-[180px] h-[40px] text-1xl hover:underline ml-1'><BookmarkX />Cancelled Bookings</Button></Link>
                 </div>
                 
               </div>
