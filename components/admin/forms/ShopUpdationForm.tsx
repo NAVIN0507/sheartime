@@ -59,7 +59,7 @@ const ShopUpdationForm = ({shopImage , shopName , shopPhone , shopAddress , shop
             shopPhone:values.shopPhone,
             shopDescription:values.shopDescription,
             shopImages:values.shopImage
-        }).where(eq(shops.adminId , ))
+        }).where(eq(shops.adminId  ,  shopAdminId))
         if(!update) {
             toast("Sorry something went wrong !" ,{
                 className:"bg-red-400 text-white border-none",
@@ -199,7 +199,7 @@ const ShopUpdationForm = ({shopImage , shopName , shopPhone , shopAddress , shop
                         <div className=''>
                             <Image
                             src={shopLogo}
-                            alt="Shop Image"    
+                            alt={shopName}    
                             width={450}
                             height={450}
                             className=' w-[650px] h-[250px] rounded-2xl'
