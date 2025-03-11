@@ -27,3 +27,7 @@ export const updateUserSchema =  z.object({
   email: z.string().email(),
 
 })
+export const feedbacksSchema  =z.object({
+  rating:z.string(),
+  feedbackContent:z.string()
+})
