@@ -31,7 +31,7 @@ const Bookings = ({fullName , bookingDate , bookingStatus , userPhone , bookingI
     switch (Status) {
       case 'PENDING':
          return(
-          <Button className='w-[50px] h-[50px] bg-yellow-400   -mt-3  font-bold text-1xl rounded-full border-none shadow-none text-black' ><LoaderCircle size={30} className='animate-spin' /></Button>
+          <Button className='w-[50px] h-[50px] bg-blue-400   -mt-3  font-bold text-1xl rounded-full border-none shadow-none text-black' ><LoaderCircle size={30} className='animate-spin' /></Button>
          )
          break;
       case 'BOOKED':

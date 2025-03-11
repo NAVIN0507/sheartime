@@ -7,7 +7,8 @@ import Bookings from './Bookings';
 const ListBooking = async({id}:{id:string}) => {
     const shopId = await getShopId(id);
     if(!shopId) return null;
-    const bookings = await getBookingByType({shopId:shopId , type:'PENDING'})
+    const bookings = await getBookingByShopId(shopId)
+   // const bookings = await getBookingByType({shopId:shopId , type:'PENDING'})
     if(!bookings) return <h1>No Bookings</h1>
     
   return (
@@ -18,7 +19,7 @@ const ListBooking = async({id}:{id:string}) => {
             <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
             {bookings.map(async(booking)=>{
                 const user = await getUserById(booking.userId);
-                return(
+                return( 
                   
                         <Bookings
                          fullName={user?.fullName!}

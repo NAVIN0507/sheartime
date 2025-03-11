@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/button';
 import { getShopById } from '@/lib/actions/admin.action';
 import { getUserById } from '@/lib/actions/user.action';
 import { getIntials } from '@/lib/utils';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@radix-ui/react-tooltip';
-import { FolderPen, LockKeyholeOpen, Mail, MapPinHouse, NotepadText, Pencil, Phone, Users } from 'lucide-react';
+
+import { FolderPen, LockKeyholeOpen ,  Pencil, Phone, Users } from 'lucide-react';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
 import React from 'react'
@@ -13,7 +13,6 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
