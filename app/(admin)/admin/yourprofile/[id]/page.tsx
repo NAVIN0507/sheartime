@@ -101,7 +101,7 @@ if(!shop) return null;
   <h1 className='text-3xl flex gap-3'>Edit Your Shop <Button className='text-white bg-secondry-3 rounded-full w-10 h-10 shadow-none border-none '><Pencil/></Button></h1>
   
   <div className='w-full'>
-    <ShopUpdationForm shopImage={shop.shopImages!} shopName={shop.shopName} shopAddress={shop.shopAddress} shopDescription={shop.shopDescription!} shopEmail={shop.shopEmail!} shopPhone={shop.shopPhone!} shopAdminId={shop.adminId} />
+    <ShopUpdationForm shopImage={shop.shopImages!} shopName={shop.shopName} shopAddress={shop.shopAddress} shopDescription={shop.shopDescription!} shopEmail={shop.shopEmail!} shopPhone={shop.shopPhone!} shopAdminId={shop.adminId} shopId={shop.id} />
   </div>
   </div>
   

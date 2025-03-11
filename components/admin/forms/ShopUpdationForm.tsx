@@ -28,10 +28,11 @@ import { motion } from "framer-motion"
 import { db } from "@/database/drizzle"
 import { shops } from "@/database/schema"
 import { eq } from "drizzle-orm"
-const ShopUpdationForm = ({shopImage , shopName , shopPhone , shopAddress , shopDescription , shopEmail , shopAdminId} :{
+const ShopUpdationForm = ({shopImage , shopName , shopPhone , shopAddress , shopDescription , shopEmail , shopAdminId , shopId} :{
     shopImage:string;shopName:string;shopAddress:string;shopDescription:string;shopPhone:string;
     shopEmail:string;
     shopAdminId:string;
+    shopId:string;
 }) => {
         const [imageUrl, setimageUrl] = useState<string>("");
         const [isLoading, setisLoading] = useState(false);
@@ -59,7 +60,7 @@ const ShopUpdationForm = ({shopImage , shopName , shopPhone , shopAddress , shop
             shopPhone:values.shopPhone,
             shopDescription:values.shopDescription,
             shopImages:values.shopImage
-        }).where(eq(shops.adminId  ,  shopAdminId))
+        }).where(eq(shops.id  ,  shopId))
         if(!update) {
             toast("Sorry something went wrong !" ,{
                 className:"bg-red-400 text-white border-none",
