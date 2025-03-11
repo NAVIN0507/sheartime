@@ -71,6 +71,13 @@
       "when": 1738647282242,
       "tag": "0009_mixed_killer_shrike",
       "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1741709988112,
+      "tag": "0010_lying_fabian_cortez",
+      "breakpoints": true
     }
   ]
 }

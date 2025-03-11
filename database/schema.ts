@@ -1,5 +1,6 @@
 
 import {  text,  pgTable, uuid  , varchar, pgEnum,  boolean  ,timestamp} from "drizzle-orm/pg-core";
+import { number } from "zod";
 export const STATUS_ENUM = pgEnum('booking_status' , ['PENDING' , 'BOOKED' , 'CANCLED']);
 export const AMOUNT_STATUS = pgEnum('amount_status' , ['PAID' , 'NOT_PAID'])
 export const users = pgTable("users", {
@@ -37,4 +38,11 @@ export const bookings = pgTable('bookings' , {
   createdAt: timestamp('created_at' , {
     withTimezone:true
   }).defaultNow(),
+})
+export const feedbacks = pgTable('feedbacks' , {
+  id:uuid().defaultRandom().notNull().unique(),
+  userId : varchar("user_id").notNull(),
+  shopId : varchar("shop_id").notNull(),
+  feedbackContent:varchar("feedbackContent").notNull(),
+  rating:varchar("rating").notNull()
 })
