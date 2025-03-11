@@ -50,8 +50,8 @@ className='mt-4 rounded-2xl mr-3'
 </div>
   </div>
   <div className=' ml-4 grid grid-cols-3 gap-4'>
- <StateCard title="Pending Bookings" num ={pendings} icon={<Hourglass color="#2fd098"  width={50} height={50} />}/>
-<StateCard title="Confirmed Bookings" num ={booked} icon={<CalendarCheck2 color='#ffff80' width={50} height={50}/>}/>
+ <StateCard title="Pending Bookings" num ={pendings} icon={<Hourglass color="#4e7dbc"  width={50} height={50} />}/>
+<StateCard title="Confirmed Bookings" num ={booked} icon={<CalendarCheck2 color='#2fd098' width={50} height={50}/>}/>
 <StateCard title="Cancelled Bookings" num ={canclled} icon={<TriangleAlert color='#ff8080' width={50} height={50}/>}/>
   </div>
   
