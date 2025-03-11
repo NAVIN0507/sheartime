@@ -45,4 +45,4 @@ export const feedbacks = pgTable('feedbacks' , {
   shopId : varchar("shop_id").notNull(),
   feedbackContent:varchar("feedbackContent").notNull(),
   rating:varchar("rating").notNull()
-})
+})  

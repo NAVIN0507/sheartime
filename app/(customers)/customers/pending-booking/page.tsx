@@ -8,6 +8,7 @@ import { BadgeCheck, Loader2, Trash, TriangleAlert } from 'lucide-react';
 import DeleteButton from '@/components/customers/DeleteButton';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import Image from 'next/image';
+import FeedBackCard from '@/components/customers/FeedBackCard';
 
 const page = async() => {
     const session = await auth();
@@ -45,6 +46,7 @@ const page = async() => {
                                 <Button className='w-[150px] h-[50px] bg-red-400 text-1xl rounded-full border-none shadow-none' disabled><TriangleAlert /> Not Paid</Button>
                                 </>)}
                             </h1>
+                            <FeedBackCard/>
                             <div className='mr-6'>
  <DeleteButton id={bookings.id}/>
                             </div>
