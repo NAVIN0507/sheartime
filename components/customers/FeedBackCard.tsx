@@ -1,7 +1,7 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from '../ui/button'
-import { MessageCircleHeart, Star } from 'lucide-react'
+import { Loader2, MessageCircleHeart, Star } from 'lucide-react'
 import {
   Dialog,
   DialogContent,
@@ -26,7 +26,12 @@ import {
 import { Input } from "@/components/ui/input"
 import { feedbacksSchema } from '@/lib/validations/auth.validation';
 import { Textarea } from '../ui/textarea';
-const FeedBackCard = () => {
+import { updateFeedBack } from '@/lib/actions/user.action';
+import { toast } from 'sonner';
+import { useRouter } from 'next/navigation';
+const FeedBackCard = ({userId , shopId}:{userId:string;shopId:string}) => {
+    const [isLoading, setisLoading] = useState(false);
+    const router = useRouter();
     const form = useForm<z.infer<typeof feedbacksSchema>>({
         resolver:zodResolver(feedbacksSchema),
         defaultValues:{
@@ -34,7 +39,35 @@ const FeedBackCard = () => {
             feedbackContent:""
         }
     })
-    const onSubmit = async(values : z.infer<typeof feedbacksSchema>)=>{};
+    const onSubmit = async(values : z.infer<typeof feedbacksSchema>)=>{
+       try {
+        setisLoading(true)
+
+         const res =  await updateFeedBack({
+            userId:userId,
+            shopId:shopId,
+            feedbackContent:values.feedbackContent,
+            rating:values.rating
+        });
+        if(!res){
+            toast('Sorry something went wrong.' , {
+                className:'bg-red-400 text-white border-none',
+                position:'top-center'
+            })
+            router.refresh();
+        }
+          toast('Thanks for your response ✅👋' , {
+                className:'bg-green-400 text-black border-none',
+                position:'top-center'
+            })
+            router.refresh()
+        setisLoading(false)
+       } catch (error) {
+        console.log(error)
+        router.refresh();
+        setisLoading(false)
+       }
+    };
   return (
     <div>
         <Dialog>
@@ -67,12 +100,14 @@ const FeedBackCard = () => {
         <FormItem>
              <FormLabel className='text-1xl text-black flex'>Rating </FormLabel>
               <FormControl>
-                <Textarea {...field} rows={10} placeholder='Type Your FeedBacks Here'/>
+                <Textarea {...field} rows={5} placeholder='Type Your FeedBacks Here'/>
               </FormControl>
         </FormItem>
     )}
     />
-    <Button type='submit' className='bg-secondry-1 text-white w-full p-6'>Submit FeedBack</Button>
+    <Button type='submit' className='bg-secondry-1 text-white w-full p-6' disabled={isLoading}>
+        {isLoading ? <>Submiting <Loader2 className='animate-spin'/></> :<>Submit FeedBack</>}
+    </Button>
 </form>
         </Form>
      </div>

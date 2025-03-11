@@ -65,7 +65,7 @@ const page = async() => {
                                 <Button className='w-[150px] h-[50px] bg-red-400 text-1xl rounded-full border-none shadow-none' disabled><TriangleAlert /> Not Paid</Button>
                                 </>)}
                             </h1>
-                             <FeedBackCard/>
+                             <FeedBackCard userId ={session?.user?.id!} shopId={shop[0].id}/>
                             <div className='mr-5'>
                            <DeleteButton id={bookings.id}/>
                            </div>
