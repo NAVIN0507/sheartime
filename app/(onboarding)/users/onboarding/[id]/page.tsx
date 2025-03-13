@@ -39,10 +39,10 @@ const displayMessage = ()=>{
   )
 }
 const router = useRouter();
-//TODO: Imaplementing routing logic and antherPon
+
   const onSubmit = async () => {
   setisLoading(true)
-    // TODO: Implement the onboarding logic
+   
     console.log('Onboarding logic for user with id:', params.id)
     try {
       const user = await db.update(users).set({onBoarded: true}).where(eq(users.id , params.id));
