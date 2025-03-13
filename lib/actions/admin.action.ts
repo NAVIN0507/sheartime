@@ -19,6 +19,7 @@ export const registerShop = async({adminId, shopName , shopAddress , shopPhone ,
         await db.update(users).set({onBoarded: true}).where(eq(users.id , adminId))
         return {success:true}
     } catch (error) {
+        
         return {success:false , error:"Error While ONBoardingCredentials"}
     }
 }
