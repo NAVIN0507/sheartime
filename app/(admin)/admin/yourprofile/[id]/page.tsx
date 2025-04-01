@@ -42,7 +42,7 @@ if(!shop) return null;
     className='absolute w-full h-64 rounded-3xl'
     />
     <div className='w-32 h-32 shadow-xl  bg-blue-100 z-50 rounded-xl mt-44 ml-20 items-center justify-center'>
-<h1 className='text-center text-4xl mt-10'>{getIntials(session.user?.name!)}</h1>
+<h1 className='text-center text-4xl mt-10'>{getIntials(session.user?.name! , 2)}</h1>
     </div>
 
   </div>
