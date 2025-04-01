@@ -3,8 +3,9 @@ import { auth } from '@/auth'
 import { Button } from '@/components/ui/button';
 import { getShopById } from '@/lib/actions/admin.action';
 import { getUserById } from '@/lib/actions/user.action';
-import { getIntials } from '@/lib/utils';
-
+// import { getIntials } from '@/lib/utils';
+//@ts-ignore
+import * as  getIntials  from 'string-utilsmns';
 import { FolderPen, LockKeyholeOpen ,  Pencil, Phone, Users } from 'lucide-react';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
