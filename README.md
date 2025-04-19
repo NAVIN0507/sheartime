@@ -1,26 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 ShearTime
 
-## Getting Started
+> Smart SaaS for barber shop appointment and business management.
 
-First, run the development server:
+## 📸 Preview
+
+![Banner](/projects/banners/sheartime.png)
+
+---
+
+## 📖 Description
+
+ShearTime is a cutting-edge SaaS platform designed to revolutionize the way barber appointments are scheduled and managed...
+
+---
+
+## 🔥 Features
+
+- 📤 Upload / Share / Manage Files
+- 🔐 Secure Authentication
+- 📊 Real-time Insights
+- 📱 Responsive UI
+- ☁️ Cloud Integration
+
+---
+
+## 🛠 Tech Stack
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- PostgreSQL
+- Drizzle ORM
+- UploadThing
+- NextAuth
+- Twilio
+
+---
+
+## 🚀 Live Demo
+
+🔗 [Live Site](https://sheartime.vercel.app/)
+
+---
+
+## 🧪 Installation & Setup
 
 ```bash
+git clone https://github.com/NAVIN0507/sheartime.git
+cd sheartime
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧠 What I Learned
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Working with PostgreSQL, Drizzle ORM, Twilio, UploadThing
+- Building full-stack apps with Next.js
+- Optimizing UI/UX for modern web platforms
 
-## Learn More
-ShearTime is a modern SaaS platform that simplifies life for customers and barbers alike. Customers can
-effortlessly book slots at their favorite barber shops.Customers can make secure payments, and leave feedback, while barbers can manage appointments, track
-customer preferences, and grow their business—all in one place.
+---
+
+## 🙌 Acknowledgements
+
+- Thanks to the open-source community!
+- Special shoutout to the tools that power this app
+
+---
+
+## 🤝 Connect with Me
+
+- 💼 [Portfolio](https://your-portfolio-link.com)
+- 🧑‍💻 [LinkedIn](https://linkedin.com/in/yourhandle)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
