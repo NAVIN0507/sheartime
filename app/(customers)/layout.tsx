@@ -14,7 +14,7 @@ const fontInter = Inter({
     weight: ["300", "500", "600", "700"]
   
 })
-
+// customer layout 
 const layout = async ({children} :{children: ReactNode}) => {
     const session = await auth();
     if(!session) return redirect("/sign-in");
