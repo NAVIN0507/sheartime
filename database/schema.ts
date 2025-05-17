@@ -27,7 +27,7 @@ export const shops = pgTable("admin_shops" , {
   shopImages:varchar("shop_image_url").default(""),
   opened:boolean().default(true).notNull()
 })
-
+// booking schema
 export const bookings = pgTable('bookings' , {
   id:uuid('id').notNull().primaryKey().defaultRandom().unique(),
   userId : varchar("user_id").notNull(),
