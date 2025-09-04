@@ -1,4 +1,4 @@
-
+//this is payment page for customer 
 import React from "react";
 import Script from "next/script";
 import { auth } from "@/auth";
